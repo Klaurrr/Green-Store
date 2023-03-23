@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    align-items: center;
+
+    margin-left: 261px;
+
+    .images {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+
+        img {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.container {
+    margin: 8px 0px 0px 230px;
+
+    a {
+        margin-right: 50px;
+        text-decoration: none;
+        color: #3D3D3D;
+        font-size: 16px;
+        line-height: 20px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+
+    .active {
+        font-weight: 700;
+        padding-bottom: 22px;
+        border-bottom: 3px solid #46A358;
+    }
+}
