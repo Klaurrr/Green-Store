@@ -1,4 +1,4 @@
-import Layout from "@/components/Templates/Layout";
+import Layout from "@/components/templates/Layout";
 
 const Blogs = () => {
     return (

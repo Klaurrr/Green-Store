@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import Header from "../organisms/Header";
+import Header from "../../organisms/Header";
 
 import styles from "./Layout.module.scss";
 
