@@ -1,7 +1,7 @@
 import Logo from "./Logo.jpg";
 import SearchIcon from "./SearchIcon.jpg";
 import Cart from "./Cart.jpg";
-import Logout from "./Logout.jpg";
+import Logout from "./Logout.png";
 
 import { StaticImageData } from "next/image";
 

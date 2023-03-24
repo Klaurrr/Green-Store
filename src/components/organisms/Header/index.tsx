@@ -1,8 +1,8 @@
 import React from "react";
 
-import Logo from "@/components/molecules/Header/Logo";
-import NavBar from "@/components/molecules/Header/NavBar";
-import Menu from "@/components/molecules/Header/Menu";
+import Logo from "@/components/molecules/HeaderMolecule/Logo";
+import NavBar from "@/components/molecules/HeaderMolecule/NavBar";
+import Menu from "@/components/molecules/HeaderMolecule/Menu";
 
 import styles from "./Header.module.scss";
 

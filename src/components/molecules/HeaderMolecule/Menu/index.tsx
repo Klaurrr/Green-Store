@@ -1,6 +1,6 @@
 import icons from "@/assets/icons";
-import Cart from "@/components/atoms/Header/Cart";
-import LoginButton from "@/components/atoms/Header/LoginButton";
+import Cart from "@/components/atoms/HeaderAtom/Cart";
+import Button from "@/components/atoms/HeaderAtom/Button";
 import styles from "./Menu.module.scss";
 
 const Menu = () => {
@@ -10,7 +10,7 @@ const Menu = () => {
                 <img src={icons.SearchIcon.src} alt="searchIcon-img" />
                 <Cart />
             </div>
-            <LoginButton />
+            <Button width={"100px"} height={"35px"} text={"Login"} />
         </div>
     );
 };

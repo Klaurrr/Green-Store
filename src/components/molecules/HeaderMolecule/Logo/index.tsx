@@ -1,5 +1,5 @@
-import LogoImage from "@/components/atoms/Header/LogoImage";
-import LogoTitle from "@/components/atoms/Header/LogoTitle";
+import LogoImage from "@/components/atoms/HeaderAtom/LogoImage";
+import LogoTitle from "@/components/atoms/HeaderAtom/LogoTitle";
 
 import styles from "./Logo.module.scss";
 

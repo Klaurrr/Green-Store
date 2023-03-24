@@ -1,10 +1,12 @@
-import Layout from "@/components/Templates/Layout";
 import React from "react";
+
+import GuestSlider from "@/components/organisms/GuestSlider";
+import Layout from "@/components/templates/Layout";
 
 const Home = () => {
     return (
         <Layout>
-            <div></div>
+            <GuestSlider />
         </Layout>
     );
 };
