@@ -1,0 +1,116 @@
+{
+    "plants": [
+        {
+            "id": 1,
+            "name": "Ficus elastica",
+            "img": "FicusElastica",
+            "price": 29.99,
+            "size": "Small"
+          },
+          {
+            "id": 2,
+            "name": "Monstera deliciosa",
+            "img": "MonsteraDeliciosa",
+            "price": 39.99,
+            "size": "Medium"
+          },
+          {
+            "id": 3,
+            "name": "Snake plant",
+            "img": "Snake",
+            "price": 24.99,
+            "size": "Small"
+          },
+          {
+            "id": 4,
+            "name": "Peace lily",
+            "img": "PeaceLily",
+            "price": 29.99,
+            "size": "Small"
+          },
+          {
+            "id": 5,
+            "name": "ZZ plant",
+            "img": "ZZ",
+            "price": 19.99,
+            "size": "Small"
+          },
+          {
+            "id": 6,
+            "name": "Philodendron Brasil",
+            "img": "PhilodendronBrasil",
+            "price": 24.99,
+            "size": "Small"
+          },
+          {
+            "id": 7,
+            "name": "Spider plant",
+            "img": "Spider",
+            "price": 16.99,
+            "size": "Small"
+          },
+          {
+            "id": 8,
+            "name": "Chinese money plant",
+            "img": "ChineseMoney",
+            "price": 29.99,
+            "size": "Small"
+          },
+          {
+            "id": 9,
+            "name": "Pothos",
+            "img": "Pothos",
+            "price": 35.99,
+            "size": "Large"
+          },
+          {
+            "id": 10,
+            "name": "Calathea",
+            "img": "Calathea",
+            "price": 34.99,
+            "size": "Small"
+          },
+          {
+            "id": 11,
+            "name": "Bird's Nest Fern",
+            "img": "BirdsNestFern",
+            "price": 29.99,
+            "size": "Small"
+          },
+          {
+            "id": 12,
+            "name": "Pilea peperomioides",
+            "img": "PileaPeperomioides",
+            "price": 34.99,
+            "size": "Small"
+          },
+          {
+            "id": 13,
+            "name": "Alocasia",
+            "img": "Alocasia",
+            "price": 39.99,
+            "size": "Medium"
+          },
+          {
+            "id": 14,
+            "name": "Boston Fern",
+            "img": "BostonFern",
+            "price": 29.99,
+            "size": "Small"
+          },
+          {
+            "id": 15,
+            "name": "Fiddle Leaf Fig",
+            "img": "FiddleLeafFig",
+            "price": 49.99,
+            "size": "Large"
+          },
+          {
+            "id": 16,
+            "name": "String of Pearls",
+            "img": "StringOfPearls",
+            "price": 34.99,
+            "size": "Small"
+          }
+    ]
+}

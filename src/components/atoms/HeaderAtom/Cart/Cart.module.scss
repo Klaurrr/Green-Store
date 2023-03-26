@@ -4,6 +4,7 @@
     margin: 0px 30px;
 
     .counter {
+        user-select: none;
         position: absolute;
         top: 0px;
         right: -3px;

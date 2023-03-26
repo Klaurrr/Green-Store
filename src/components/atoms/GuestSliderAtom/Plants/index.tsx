@@ -1,4 +1,4 @@
-import plants from "@/assets/plants";
+import plants from "@/assets/plantsImg";
 
 const Plants = () => {
     return (
