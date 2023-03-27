@@ -2,6 +2,7 @@ import Logo from "./Logo.jpg";
 import SearchIcon from "./SearchIcon.jpg";
 import Cart from "./Cart.jpg";
 import Logout from "./Logout.png";
+import Banner from "./Banner.jpg";
 
 import { StaticImageData } from "next/image";
 
@@ -14,4 +15,5 @@ export default <Images>{
     SearchIcon,
     Cart,
     Logout,
+    Banner,
 };

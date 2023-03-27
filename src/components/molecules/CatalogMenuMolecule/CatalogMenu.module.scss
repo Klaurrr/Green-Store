@@ -5,7 +5,11 @@
     margin-top: 50px;
 
     .wrapper {
-        padding: 15px 25px 20px 20px;
+
+        .inner {
+            padding: 15px 25px 20px 20px;
+        }
+
 
         h3 {
             font-weight: 700;
