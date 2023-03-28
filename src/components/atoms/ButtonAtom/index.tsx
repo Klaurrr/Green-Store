@@ -1,5 +1,7 @@
-import icons from "@/assets/icons";
 import { FC } from "react";
+
+import icons from "@/assets/icons";
+
 import styles from "./Button.module.scss";
 
 interface ButtonProps {

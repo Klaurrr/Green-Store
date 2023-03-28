@@ -5,7 +5,6 @@ import styles from "./NavBar.module.scss";
 const NavBar = () => {
     const router = useRouter();
 
-    console.log("Plant Care".trim());
     return (
         <nav className={styles.container}>
             {["Home", "Shop", "Plant Care", "Blogs"].map((item, index) => (

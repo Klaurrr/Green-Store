@@ -1,9 +1,10 @@
-import Description from "@/components/atoms/GuestSliderAtom/Description";
-import Plants from "@/components/atoms/GuestSliderAtom/Plants";
-import Button from "@/components/atoms/HeaderAtom/Button";
-import styles from "./GuestSlider.module.scss";
+import Description from "@/components/atoms/MainSliderAtoms/Description";
+import Plants from "@/components/atoms/MainSliderAtoms/Plants";
+import Button from "@/components/atoms/ButtonAtom";
 
-const GuestSliderMolecule = () => {
+import styles from "./MainSlider.module.scss";
+
+const MainSliderMolecule = () => {
     return (
         <div className={styles.container}>
             <div className={styles.wrapper_1}>
@@ -17,4 +18,4 @@ const GuestSliderMolecule = () => {
     );
 };
 
-export default GuestSliderMolecule;
+export default MainSliderMolecule;

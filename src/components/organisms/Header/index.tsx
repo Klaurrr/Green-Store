@@ -1,17 +1,13 @@
 import React from "react";
 
-import Logo from "@/components/molecules/HeaderMolecule/Logo";
-import NavBar from "@/components/molecules/HeaderMolecule/NavBar";
-import Menu from "@/components/molecules/HeaderMolecule/Menu";
+import HeaderMolecule from "@/components/molecules/HeaderMolecule";
 
 import styles from "./Header.module.scss";
 
 const Header = React.memo(() => {
     return (
         <header className={styles.container}>
-            <Logo />
-            <NavBar />
-            <Menu />
+            <HeaderMolecule />
         </header>
     );
 });

@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import Categories from "@/components/atoms/CatalogMenuAtom/Categories";
-import PriceRange from "@/components/atoms/CatalogMenuAtom/PriceRange";
-import Size from "@/components/atoms/CatalogMenuAtom/Size";
+import Categories from "@/components/atoms/CatalogMenuAtoms/Categories";
+import PriceRange from "@/components/atoms/CatalogMenuAtoms/PriceRange";
+import Size from "@/components/atoms/CatalogMenuAtoms/Size";
 
 import icons from "@/assets/icons";
 

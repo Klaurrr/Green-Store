@@ -19,7 +19,7 @@
             "name": "Snake plant",
             "img": "Snake",
             "price": 24.99,
-            "size": "Small"
+            "size": "Medium"
           },
           {
             "id": 4,
@@ -110,7 +110,7 @@
             "name": "String of Pearls",
             "img": "StringOfPearls",
             "price": 34.99,
-            "size": "Small"
+            "size": "Large"
           }
     ]
 }

@@ -1,6 +1,6 @@
 import icons from "@/assets/icons";
-import Cart from "@/components/atoms/HeaderAtom/Cart";
-import Button from "@/components/atoms/HeaderAtom/Button";
+import Cart from "@/components/atoms/HeaderAtoms/Cart";
+import Button from "@/components/atoms/ButtonAtom";
 import styles from "./Menu.module.scss";
 
 const Menu = () => {
