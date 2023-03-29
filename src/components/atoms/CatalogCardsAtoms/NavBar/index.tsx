@@ -1,9 +1,14 @@
-import icons from "@/assets/icons";
 import React, { useState } from "react";
+
+import icons from "@/assets/icons";
 
 import styles from "./NavBar.module.scss";
 
-const NavBar = () => {
+interface NavBarProps {
+    plantsFilter: (e: string) => void;
+}
+
+const NavBar = ({ plantsFilter }: NavBarProps) => {
     const [active, setActive] = useState("All Plants");
 
     const [sort, setSort] = useState({
@@ -16,6 +21,14 @@ const NavBar = () => {
             ...prev,
             dropActive: !sort.dropActive,
         }));
+    };
+
+    const sortHandler = (sort: string) => {
+        setSort((prev) => ({
+            ...prev,
+            sortView: sort,
+        }));
+        plantsFilter(sort);
     };
 
     return (
@@ -38,14 +51,7 @@ const NavBar = () => {
                 {sort.dropActive && (
                     <div className={styles.drop}>
                         {["Ascending", "Descending"].map((sort) => (
-                            <p
-                                onClick={() =>
-                                    setSort((prev) => ({
-                                        ...prev,
-                                        sortView: sort,
-                                    }))
-                                }
-                            >
+                            <p onClick={() => sortHandler(sort)}>
                                 {sort} sorting
                             </p>
                         ))}

@@ -13,8 +13,12 @@ const PriceRange = () => {
 
     const plants = usePlantsStore((state: IPlantsState) => state?.plants);
 
-    const priceMin = Math.ceil(Math.min(...plants.map((plant) => plant.price)));
-    const priceMax = Math.ceil(Math.max(...plants.map((plant) => plant.price)));
+    const priceMin = Math.ceil(
+        Math.min(...plants?.map((plant) => plant.price))
+    );
+    const priceMax = Math.ceil(
+        Math.max(...plants?.map((plant) => plant.price))
+    );
 
     return (
         <div className={styles.container}>

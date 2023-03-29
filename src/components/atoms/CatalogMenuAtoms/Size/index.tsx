@@ -29,7 +29,7 @@ const Size = ({ active, setActive }: ICatalogMenuAtomProps) => {
                     <p>
                         (
                         {
-                            plants.filter((plant) => plant.size === size)
+                            plants?.filter((plant) => plant.size === size)
                                 .length as ReactNode
                         }
                         )

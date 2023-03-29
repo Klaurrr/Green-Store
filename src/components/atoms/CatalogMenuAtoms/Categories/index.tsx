@@ -28,7 +28,7 @@ const Categories = ({ active, setActive }: ICatalogMenuAtomProps) => {
                     <p>
                         (
                         {
-                            plants.filter((plant) =>
+                            plants?.filter((plant) =>
                                 size === "Big Plants"
                                     ? plant.size === "Large"
                                     : plant.size === "Small"

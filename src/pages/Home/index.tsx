@@ -25,8 +25,8 @@ const Home = ({ plants }: { plants: IPlants[] }) => {
 export const getStaticProps = async () => {
     try {
         const response = await fetch(
-            // "https://green-store-beige.vercel.app/api/plants"
-            "http://localhost:3000/api/plants"
+            "https://green-store-beige.vercel.app/api/plants"
+            // "http://localhost:3000/api/plants"
         );
         const plants = await response.json();
         return {
