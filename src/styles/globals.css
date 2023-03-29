@@ -33,6 +33,7 @@ body {
 }
 
 * {
+  color: #3D3D3D;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
