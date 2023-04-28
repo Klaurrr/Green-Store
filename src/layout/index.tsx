@@ -4,7 +4,7 @@ import { Props } from "./Layout.props";
 
 import Header from "@/components/common/Header";
 
-import styles from "@/styles/Layout/Layout.module.scss";
+import styles from "@/styles/layout/Layout.module.scss";
 
 const Layout: FC<Props> = ({ children }) => {
       return (
