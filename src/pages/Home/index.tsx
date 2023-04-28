@@ -1,45 +1,42 @@
 import React, { useLayoutEffect } from "react";
 
-import MainSlider from "@/components/organisms/MainSlider";
-import Layout from "@/components/templates/Layout";
-import Catalog from "@/components/organisms/Catalog";
 import { usePlantsStore } from "@/store";
 import { IPlants } from "@/types/IPlants";
 import { IPlantsState } from "@/types/IPlantsState";
+import Layout from "@/layout";
+import MainBanner from "@/components/ui/MainBanner";
+import Catalog from "@/components/ui/Catalog";
 
 const Home = ({ plants }: { plants: IPlants[] }) => {
-    const addPlants = usePlantsStore((state: IPlantsState) => state.addPlants);
+      const addPlants = usePlantsStore((state: IPlantsState) => state.addPlants);
 
-    useLayoutEffect(() => {
-        addPlants(plants);
-    }, []);
+      useLayoutEffect(() => {
+            addPlants(plants);
+      }, []);
 
-    return (
-        <Layout>
-            <MainSlider />
-            <Catalog />
-        </Layout>
-    );
+      return (
+            <Layout>
+                  <MainBanner />
+                  <Catalog />
+            </Layout>
+      );
 };
 
 export const getStaticProps = async () => {
-    try {
-        const response = await fetch(
-            "https://green-store-beige.vercel.app/api/plants"
-            // "http://localhost:3000/api/plants"
-        );
-        const plants = await response.json();
-        return {
-            props: {
-                plants,
-            },
-        };
-    } catch (err) {
-        console.log("Ошибка, ", err);
-        return {
-            props: {},
-        };
-    }
+      try {
+            const response = await fetch("https://green-store-beige.vercel.app/api/plants");
+            const plants = await response.json();
+            return {
+                  props: {
+                        plants,
+                  },
+            };
+      } catch (err) {
+            console.log("Ошибка, ", err);
+            return {
+                  props: {},
+            };
+      }
 };
 
 export default Home;

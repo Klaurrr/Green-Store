@@ -1,11 +1,11 @@
-import Layout from "@/components/templates/Layout";
+import Layout from "@/layout";
 
 const PlantCare = () => {
-    return (
-        <Layout>
-            <div></div>
-        </Layout>
-    );
+      return (
+            <Layout>
+                  <div></div>
+            </Layout>
+      );
 };
 
 export default PlantCare;

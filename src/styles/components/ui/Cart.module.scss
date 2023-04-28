@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    cursor: pointer;
+
+    margin: 0px 30px;
+
+    width: 25px;
+    height: 28px;
+
+
+    svg {
+        fill: #3D3D3D;
+    }
+
+    .counter {
+        user-select: none;
+        position: absolute;
+        top: 0px;
+        right: -3px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #46A358;
+        border: 2px solid #FFFFFF;
+        border-radius: 50%;
+
+        width: 15px;
+        height: 15px;
+        font-size: 10px;
+
+        line-height: 13px;
+        color: #FFFFFF;
+    }
+}

@@ -1,11 +1,11 @@
-import Layout from "@/components/templates/Layout";
+import Layout from "@/layout";
 
 const Blogs = () => {
-    return (
-        <Layout>
-            <div></div>
-        </Layout>
-    );
+      return (
+            <Layout>
+                  <div></div>
+            </Layout>
+      );
 };
 
 export default Blogs;
