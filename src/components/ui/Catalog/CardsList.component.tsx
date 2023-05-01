@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { usePlantsStore } from "@/store";
 
@@ -12,20 +12,30 @@ import styles from "@/styles/components/ui/CardsList.module.scss";
 const CardsList = () => {
       const plants = usePlantsStore((state: IPlantsState) => state?.plants);
 
-      const plantsFilter = (sort: string): void => {
-            if (sort === "Ascending") {
-                  console.log(plants.sort((a, b) => a.price - b.price));
-            } else console.log(plants.sort((a, b) => b.price - a.price));
+      const [sort, setSort] = useState<string>("default");
+
+      const showPlants = () => {
+            switch (sort) {
+                  case "default":
+                        return plants?.map((plant) => <Card plant={plant} />);
+                        break;
+                  case "Ascending":
+                        return plants
+                              ?.sort((a, b) => a.price - b.price)
+                              .map((plant) => <Card plant={plant} />);
+                        break;
+                  case "Descending":
+                        return plants
+                              ?.sort((a, b) => b.price - a.price)
+                              .map((plant) => <Card plant={plant} />);
+                        break;
+            }
       };
 
       return (
             <div className={styles.container}>
-                  <NavBar plantsFilter={(sort: string) => plantsFilter(sort)} />
-                  <div className={styles.wrapper}>
-                        {plants?.map((plant) => (
-                              <Card plant={plant} />
-                        ))}
-                  </div>
+                  <NavBar plantsFilter={setSort} />
+                  <div className={styles.wrapper}>{showPlants()}</div>
             </div>
       );
 };
