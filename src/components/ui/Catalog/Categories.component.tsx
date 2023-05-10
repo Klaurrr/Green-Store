@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { CatalogMenuProps } from "@/components/ui/Catalog/props/CatalogMenu.props";
+import { ICatalogMenuProps } from "@/components/ui/Catalog/props/CatalogMenu.props";
 
 import { IPlantsState } from "@/types/IPlantsState";
 
@@ -10,13 +10,13 @@ import { usePlantsStore } from "@/store";
 
 import styles from "@/styles/components/ui/Categories.module.scss";
 
-const Categories = ({ active, setActive }: CatalogMenuProps) => {
+const Categories: FC<ICatalogMenuProps> = ({ active, setActive }) => {
       const plants = usePlantsStore((state: IPlantsState) => state?.plants);
 
       return (
             <div className={styles.container}>
                   <h3>Categories</h3>
-                  {["Big Plants", "Small Plants"].map((size, index) => (
+                  {["Large Plants", "Small Plants"].map((size, index) => (
                         <div
                               key={index}
                               className={
@@ -31,7 +31,7 @@ const Categories = ({ active, setActive }: CatalogMenuProps) => {
                                     (
                                     {
                                           plants?.filter((plant) =>
-                                                size === "Big Plants"
+                                                size === "Large Plants"
                                                       ? plant.size === "Large"
                                                       : plant.size === "Small"
                                           ).length as ReactNode

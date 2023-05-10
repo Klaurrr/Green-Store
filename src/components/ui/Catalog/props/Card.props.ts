@@ -1,5 +1,5 @@
 import { IPlants } from "@/types/IPlants";
 
-export interface CardProps {
+export interface ICardProps {
       plant: IPlants;
 }

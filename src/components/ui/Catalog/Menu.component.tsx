@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { FC } from "react";
+
+import { IMenuProps } from "./props/Menu.props";
 
 import icons from "../../../../public/assets/icons";
 
@@ -8,9 +10,7 @@ import Size from "./Size.component";
 
 import styles from "@/styles/components/ui/CatalogMenu.module.scss";
 
-const Menu = () => {
-      const [active, setActive] = useState("Big Plants");
-
+const Menu: FC<IMenuProps> = ({ active, setActive }) => {
       return (
             <div className={styles.container}>
                   <div className={styles.wrapper}>

@@ -13,6 +13,12 @@ const PriceRange = () => {
 
       const plants = usePlantsStore((state: IPlantsState) => state?.plants);
 
+      const addFilteredPlants = usePlantsStore((state: IPlantsState) => state.addFilteredPlants);
+
+      const filterHandler = () => {
+            addFilteredPlants(plants.filter((plant) => plant.price <= value));
+      };
+
       const priceMin = Math.ceil(Math.min(...plants.map((plant) => plant.price)));
       const priceMax = Math.ceil(Math.max(...plants.map((plant) => plant.price)));
 
@@ -33,7 +39,7 @@ const PriceRange = () => {
                                     ${priceMin} - ${value === 0 ? priceMin : value}
                               </span>
                         </div>
-                        <div onClick={() => console.log("hey filter")}>
+                        <div onClick={() => filterHandler()}>
                               <Button width={"90px"} height={"35px"} text={"Filter"} />
                         </div>
                   </div>

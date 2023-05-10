@@ -1,15 +1,15 @@
-import React, { ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 
 import { usePlantsStore } from "@/store";
 
 import clsx from "clsx";
 
 import { IPlantsState } from "@/types/IPlantsState";
-import { CatalogMenuProps } from "@/components/ui/Catalog/props/CatalogMenu.props";
+import { ICatalogMenuProps } from "@/components/ui/Catalog/props/CatalogMenu.props";
 
 import styles from "@/styles/components/ui/Size.module.scss";
 
-const Size = ({ active, setActive }: CatalogMenuProps) => {
+const Size: FC<ICatalogMenuProps> = ({ active, setActive }) => {
       const plants = usePlantsStore((state: IPlantsState) => state?.plants);
 
       return (

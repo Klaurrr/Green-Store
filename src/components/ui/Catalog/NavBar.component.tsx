@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
+
+import GenerateKey from "@/components/common/GenerateKey";
 
 import icons from "../../../../public/assets/icons";
 
-import { NavBarProps } from "./props/NavBar.props";
+import { INavBarProps } from "./props/NavBar.props";
 
 import styles from "@/styles/components/ui/NavBar.module.scss";
 
-const NavBar = ({ plantsFilter }: NavBarProps) => {
+const NavBar: FC<INavBarProps> = ({ plantsFilter }) => {
       const [active, setActive] = useState("All Plants");
 
       const [sort, setSort] = useState({
@@ -36,6 +38,7 @@ const NavBar = ({ plantsFilter }: NavBarProps) => {
                               <li
                                     onClick={() => setActive(li)}
                                     className={active === li ? styles.active : ""}
+                                    key={GenerateKey(li)}
                               >
                                     {li}
                               </li>
@@ -49,7 +52,12 @@ const NavBar = ({ plantsFilter }: NavBarProps) => {
                         {sort.dropActive && (
                               <div className={styles.drop}>
                                     {["Ascending", "Descending"].map((sort) => (
-                                          <p onClick={() => sortHandler(sort)}>{sort} sorting</p>
+                                          <p
+                                                onClick={() => sortHandler(sort)}
+                                                key={GenerateKey(sort)}
+                                          >
+                                                {sort} sorting
+                                          </p>
                                     ))}
                               </div>
                         )}

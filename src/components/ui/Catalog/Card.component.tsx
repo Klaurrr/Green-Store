@@ -1,10 +1,11 @@
+import { FC } from "react";
 import plantsImg from "../../../../public/assets/plantsImg";
 
-import { CardProps } from "./props/Card.props";
+import { ICardProps } from "./props/Card.props";
 
 import styles from "@/styles/components/ui/Card.module.scss";
 
-const Card = ({ plant }: CardProps) => {
+const Card: FC<ICardProps> = ({ plant }) => {
       return (
             <div className={styles.container}>
                   <div className={styles.wrapper_1}>

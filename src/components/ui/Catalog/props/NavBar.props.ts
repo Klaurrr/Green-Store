@@ -1,3 +1,3 @@
-export interface NavBarProps {
+export interface INavBarProps {
       plantsFilter: (e: string) => void;
 }
