@@ -11,10 +11,11 @@ export const usePlantsStore = create<IPlantsState>((set) => ({
                   plants: plants,
             }));
       },
-      addCart: (plants: IPlants) =>
+      addCart: (plants: IPlants) => {
             set((state) => ({
                   cart: [...state.cart, plants],
-            })),
+            }));
+      },
       addFilteredPlants: (plants: IPlants[]) => {
             set((state) => ({
                   filteredPlants: plants,
