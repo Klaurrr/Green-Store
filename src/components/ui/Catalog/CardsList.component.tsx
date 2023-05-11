@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 import { usePlantsStore } from "@/store";
 
@@ -12,7 +12,12 @@ import Card from "./Card.component";
 
 import styles from "@/styles/components/ui/CardsList.module.scss";
 
-const CardsList: FC<ICardsListProps> = ({ active }) => {
+const CardsList: FC<ICardsListProps> = ({
+      active,
+      firstDataIndex,
+      lastDataIndex,
+      setTotalData,
+}) => {
       const plants = usePlantsStore((state: IPlantsState) => state?.plants);
 
       const [sort, setSort] = useState<string>("default");
@@ -45,8 +50,14 @@ const CardsList: FC<ICardsListProps> = ({ active }) => {
                                 <Card plant={plant} key={GenerateKey(plant.name)} />
                           ));
 
-            return resultPlants.length > 0 ? resultPlants : <h1>Ничего не найдено...</h1>;
-      }, [active, filteredPlants, plants, sort]);
+            setTotalData(resultPlants.length);
+
+            return resultPlants.length > 0 ? (
+                  resultPlants.slice(firstDataIndex, lastDataIndex)
+            ) : (
+                  <h1>Ничего не найдено...</h1>
+            );
+      }, [active, filteredPlants, plants, sort, firstDataIndex, lastDataIndex]);
 
       return (
             <div className={styles.container}>
