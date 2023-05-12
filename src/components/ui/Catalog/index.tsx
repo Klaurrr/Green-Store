@@ -12,7 +12,7 @@ const Catalog = () => {
       const plants = usePlantsStore((state) => state.plants);
 
       const [currentPage, setCurrentPage] = useState<number>(1);
-      const [dataPerPage] = useState<number>(1);
+      const [dataPerPage] = useState<number>(6);
       const [totalData, setTotalData] = useState(plants.length);
 
       const lastDataIndex = currentPage * dataPerPage;

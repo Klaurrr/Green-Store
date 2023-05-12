@@ -51,11 +51,10 @@ const Pagination = ({
 
       return (
             <div className={styles.container}>
-                  {currentPage > 1 && (
-                        <div className={styles.previous_button} onClick={previousPageHandler}>
-                              <img src={icons.ArrowForPagination.src} alt="arrow-img" />
-                        </div>
-                  )}
+                  <div className={styles.previous_button} onClick={previousPageHandler}>
+                        <img src={icons.ArrowForPagination.src} alt="arrow-img" />
+                  </div>
+
                   {pageNumbers.slice(firstButtonIndex, lastButtonIndex).map((number) => (
                         <div
                               className={
@@ -68,11 +67,10 @@ const Pagination = ({
                               {number}
                         </div>
                   ))}
-                  {currentPage < pageNumbers.length && (
-                        <div className={styles.next_button} onClick={nextPageHandler}>
-                              <img src={icons.ArrowForPagination.src} alt="arrow-img" />
-                        </div>
-                  )}
+
+                  <div className={styles.next_button} onClick={nextPageHandler}>
+                        <img src={icons.ArrowForPagination.src} alt="arrow-img" />
+                  </div>
             </div>
       );
 };
