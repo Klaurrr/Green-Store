@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 
 import { usePlantsStore } from "@/store";
 
 import Button from "../Button/Button";
 
 import { IPlantsState } from "@/types/IPlantsState";
+import { IPriceRangeProps } from "./props/PriceRange.props";
 
 import styles from "@/styles/components/ui/PriceRange.module.scss";
 
-const PriceRange = () => {
+const PriceRange: FC<IPriceRangeProps> = ({ setCurrentPage }) => {
       const [value, setValue] = useState(0);
 
       const plants = usePlantsStore((state: IPlantsState) => state?.plants);
@@ -16,6 +17,7 @@ const PriceRange = () => {
       const addFilteredPlants = usePlantsStore((state: IPlantsState) => state.addFilteredPlants);
 
       const filterHandler = () => {
+            setCurrentPage(1);
             addFilteredPlants(plants.filter((plant) => plant.price <= value));
       };
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardsList from "./CardsList.component";
 import Menu from "./Menu.component";
 
@@ -10,19 +10,26 @@ const Catalog = () => {
       const [active, setActive] = useState("default");
 
       const plants = usePlantsStore((state) => state.plants);
-      const filteredPlants = usePlantsStore((state) => state.filteredPlants);
 
       const [currentPage, setCurrentPage] = useState<number>(1);
-      const [dataPerPage] = useState<number>(9);
+      const [dataPerPage] = useState<number>(1);
       const [totalData, setTotalData] = useState(plants.length);
 
       const lastDataIndex = currentPage * dataPerPage;
       const firstDataIndex = lastDataIndex - dataPerPage;
 
+      useEffect(() => {
+            setCurrentPage(1);
+      }, [active]);
+
       return (
             <div className={styles.container}>
                   <div className={styles.wrapper}>
-                        <Menu active={active} setActive={setActive} />
+                        <Menu
+                              active={active}
+                              setActive={setActive}
+                              setCurrentPage={setCurrentPage}
+                        />
                         <CardsList
                               active={active}
                               lastDataIndex={lastDataIndex}
@@ -35,6 +42,7 @@ const Catalog = () => {
                               dataPerPage={dataPerPage}
                               totalData={totalData}
                               currentPage={currentPage}
+                              setCurrentPage={setCurrentPage}
                               paginate={setCurrentPage}
                         />
                   </div>

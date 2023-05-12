@@ -10,13 +10,13 @@ import Size from "./Size.component";
 
 import styles from "@/styles/components/ui/CatalogMenu.module.scss";
 
-const Menu: FC<IMenuProps> = ({ active, setActive }) => {
+const Menu: FC<IMenuProps> = ({ active, setActive, setCurrentPage }) => {
       return (
             <div className={styles.container}>
                   <div className={styles.wrapper}>
                         <div className={styles.inner}>
                               <Categories active={active} setActive={setActive} />
-                              <PriceRange />
+                              <PriceRange setCurrentPage={setCurrentPage} />
                               <Size active={active} setActive={setActive} />
                         </div>
 
