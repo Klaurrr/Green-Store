@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Cart from "@/components/ui/Cart";
-import Button from "@/components/ui/Button/Button";
+import Button from "@/components/ui/Button";
 
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
 
@@ -43,7 +43,12 @@ const Header = React.memo(() => {
                               <SearchIcon />
                               <Cart />
                         </div>
-                        <Button width={"100px"} height={"35px"} text={"Login"} />
+                        <Button
+                              width={"100px"}
+                              height={"35px"}
+                              text={"Login"}
+                              img={icons.Logout.src}
+                        />
                   </div>
             </header>
       );

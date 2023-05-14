@@ -1,3 +1,3 @@
 export interface IProps {
-      [key: string]: string;
+      [key: string]: string | undefined;
 }

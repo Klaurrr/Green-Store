@@ -3,20 +3,22 @@
     align-items: center;
     justify-content: center;
 
-    // width: 100px;
-    // height: 35px;
-
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-
-    color: #FFFFFF;
     background: #46A358;
+
+    div {
+        display: flex;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FFFFFF;
+    }
+
+
+
+
+
+
     border-radius: 6px;
     border: none;
     cursor: pointer;
-
-    img {
-        margin-right: 2px;
-    }
 }

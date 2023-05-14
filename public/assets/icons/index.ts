@@ -3,6 +3,7 @@ import Logout from "./Logout.png";
 import Banner from "./Banner.jpg";
 import Arrow from "./arrow.jpg";
 import ArrowForPagination from "./arrowForPagination.jpg";
+import ArrowRight from "./ArrowRight.png";
 
 import { StaticImageData } from "next/image";
 
@@ -16,4 +17,5 @@ export default <Images>{
       Banner,
       Arrow,
       ArrowForPagination,
+      ArrowRight,
 };

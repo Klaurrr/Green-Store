@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 
 import { usePlantsStore } from "@/store";
 
-import Button from "../Button/Button";
+import Button from "../Button";
 
 import { IPlantsState } from "@/types/IPlantsState";
 import { IPriceRangeProps } from "./props/PriceRange.props";

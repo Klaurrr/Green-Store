@@ -17,28 +17,32 @@ import Alocasia from "./Alocasia.jpg";
 import BostonFern from "./BostonFern.jpg";
 import FiddleLeafFig from "./FiddleLeafFig.jpg";
 import StringOfPearls from "./StringOfPearls.jpg";
+import Monstera from "./Monstera_2.png";
+import Arugula from "./Arugula.png";
 
 type Images = {
-    [key: string]: StaticImageData;
+      [key: string]: StaticImageData;
 };
 
 export default <Images>{
-    BigPlant,
-    SmallPlant,
-    FicusElastica,
-    MonsteraDeliciosa,
-    Snake,
-    PeaceLily,
-    ZZ,
-    PhilodendronBrasil,
-    Spider,
-    ChineseMoney,
-    Pothos,
-    Calathea,
-    BirdsNestFern,
-    PileaPeperomioides,
-    Alocasia,
-    BostonFern,
-    FiddleLeafFig,
-    StringOfPearls,
+      BigPlant,
+      SmallPlant,
+      FicusElastica,
+      MonsteraDeliciosa,
+      Snake,
+      PeaceLily,
+      ZZ,
+      PhilodendronBrasil,
+      Spider,
+      ChineseMoney,
+      Pothos,
+      Calathea,
+      BirdsNestFern,
+      PileaPeperomioides,
+      Alocasia,
+      BostonFern,
+      FiddleLeafFig,
+      StringOfPearls,
+      Monstera,
+      Arugula,
 };
