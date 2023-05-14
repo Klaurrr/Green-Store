@@ -5,7 +5,7 @@ import { usePlantsStore } from "@/store";
 import Button from "../Button";
 
 import { IPlantsState } from "@/types/IPlantsState";
-import { IPriceRangeProps } from "./Props/PriceRange.props";
+import { IPriceRangeProps } from "./props/PriceRange.props";
 
 import styles from "@/styles/components/ui/PriceRange.module.scss";
 

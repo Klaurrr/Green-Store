@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { IMenuProps } from "./Props/Menu.props";
+import { IMenuProps } from "./props/Menu.props";
 
 import icons from "../../../../public/assets/icons";
 

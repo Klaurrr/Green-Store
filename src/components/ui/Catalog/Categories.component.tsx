@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { ICatalogMenuProps } from "@/components/ui/Catalog/Props/CatalogMenu.props";
+import { ICatalogMenuProps } from "@/components/ui/Catalog/props/CatalogMenu.props";
 
 import { IPlantsState } from "@/types/IPlantsState";
 

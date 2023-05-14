@@ -4,7 +4,7 @@ import GenerateKey from "@/components/common/GenerateKey";
 
 import icons from "../../../../public/assets/icons";
 
-import { INavBarProps } from "./Props/NavBar.props";
+import { INavBarProps } from "./props/NavBar.props";
 
 import styles from "@/styles/components/ui/NavBar.module.scss";
 

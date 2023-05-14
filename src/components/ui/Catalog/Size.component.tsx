@@ -5,7 +5,7 @@ import { usePlantsStore } from "@/store";
 import clsx from "clsx";
 
 import { IPlantsState } from "@/types/IPlantsState";
-import { ICatalogMenuProps } from "@/components/ui/Catalog/Props/CatalogMenu.props";
+import { ICatalogMenuProps } from "@/components/ui/Catalog/props/CatalogMenu.props";
 
 import styles from "@/styles/components/ui/Size.module.scss";
 
