@@ -4,7 +4,7 @@ import { usePlantsStore } from "@/store";
 
 import { IPlantsState } from "@/types/IPlantsState";
 import { IPlants } from "@/types/IPlants";
-import { ICardsListProps } from "./props/CardsList.props";
+import { ICardsListProps } from "./Props/CardsList.props";
 
 import GenerateKey from "@/components/common/GenerateKey";
 import NavBar from "./NavBar.component";

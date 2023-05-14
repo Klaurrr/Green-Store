@@ -5,7 +5,7 @@ import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
 import HeartSvg from "@/../../public/assets/svg/heart.svg";
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
 
-import { ICardProps } from "./props/Card.props";
+import { ICardProps } from "./Props/Card.props";
 
 import styles from "@/styles/components/ui/Card.module.scss";
 

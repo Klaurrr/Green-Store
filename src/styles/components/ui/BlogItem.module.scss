@@ -1,0 +1,54 @@
+.container {
+    height: 362px;
+    width: 268px;
+
+
+    .wrapper {
+        background: #FBFBFB;
+
+        padding: 9px 30px 13px 15px;
+
+        .date {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: #46A358;
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 26px;
+            margin: 4px 0px;
+        }
+
+        .desc {
+            font-size: 14px;
+            line-height: 22px;
+            color: #727272;
+        }
+
+        .read {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            margin-top: 9px;
+
+            svg {
+                fill: #3D3D3D;
+                margin-left: 5px;
+            }
+
+            &:hover {
+                color: #46A358;
+
+                svg {
+                    fill: #46A358;
+                }
+            }
+        }
+    }
+}
