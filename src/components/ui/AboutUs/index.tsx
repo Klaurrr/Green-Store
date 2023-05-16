@@ -20,12 +20,7 @@ const AboutUs = () => {
                                           We are an online plant shop offering a wide range of cheap
                                           and trendy plants
                                     </p>
-                                    <Button
-                                          width={"140px"}
-                                          height={"40px"}
-                                          text={"Find More"}
-                                          img={icons.ArrowRight.src}
-                                    />
+                                    <Button width={"140px"} height={"40px"} text={"Find More"} />
                               </div>
                         </div>
                   ))}
