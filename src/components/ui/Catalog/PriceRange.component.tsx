@@ -41,9 +41,14 @@ const PriceRange: FC<IPriceRangeProps> = ({ setCurrentPage }) => {
                                     ${priceMin} - ${value === 0 ? priceMin : value}
                               </span>
                         </div>
-                        <div onClick={() => filterHandler()}>
-                              <Button width={"90px"} height={"35px"} text={"Filter"} />
-                        </div>
+
+                        <Button
+                              handler={() => filterHandler()}
+                              width={"90px"}
+                              height={"35px"}
+                              text={"Filter"}
+                              fontWeight={"700"}
+                        />
                   </div>
             </div>
       );

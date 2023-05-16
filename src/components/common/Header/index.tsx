@@ -8,7 +8,7 @@ import Button from "@/components/ui/Button";
 
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
 
-import icons from "../../../../public/assets/icons";
+import Logo from "@/components/ui/Logo";
 
 import styles from "@/styles/components/common/Header.module.scss";
 
@@ -19,10 +19,7 @@ const Header = React.memo(() => {
 
       return (
             <header className={styles.container}>
-                  <div className={styles.logo}>
-                        <img src={icons.Logo.src} alt="logo-img" />
-                        <h1 className={styles.title}>GREENSHOP</h1>
-                  </div>
+                  <Logo />
                   <nav className={styles.nav}>
                         {NAV_ITEMS.map((item, index) => (
                               <Link
@@ -43,12 +40,7 @@ const Header = React.memo(() => {
                               <SearchIcon />
                               <Cart />
                         </div>
-                        <Button
-                              width={"100px"}
-                              height={"35px"}
-                              text={"Login"}
-                              img={icons.Logout.src}
-                        />
+                        <Button width={"100px"} height={"35px"} text={"Login"} />
                   </div>
             </header>
       );

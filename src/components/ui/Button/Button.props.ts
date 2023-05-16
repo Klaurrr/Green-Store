@@ -1,3 +1,8 @@
 export interface IProps {
-      [key: string]: string | undefined;
+      handler?: (e: any) => void;
+      width?: string;
+      height?: string;
+      text?: string;
+      fontSize?: string;
+      fontWeight?: string;
 }

@@ -1,0 +1,35 @@
+.container {
+    background: rgba(70, 163, 88, 0.1);
+    height: 92px;
+    border-top: 1px solid rgba(70, 163, 88, 0.2);
+    border-bottom: 1px solid rgba(70, 163, 88, 0.2);
+
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        padding: 27px 0px 27px 23px;
+
+
+        div {
+            display: flex;
+            align-items: center;
+
+            &:first-child {
+                margin-right: 90px;
+            }
+
+            &:nth-child(3) {
+                margin: 0px 75px 0px 62px;
+            }
+
+            img {
+                margin-right: 12px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -18,7 +18,12 @@ const Screen = () => {
                                     Order your favorite plants!
                               </p>
                         </div>
-                        <Button text={"SHOP NOW"} width={"140px"} height={"40px"} />
+                        <Button
+                              text={"SHOP NOW"}
+                              width={"140px"}
+                              height={"40px"}
+                              fontWeight={"700"}
+                        />
                   </div>
                   <div className={styles.wrapper_2}>
                         <img src={plantsImg.BigPlant.src} alt="BigPlant-img" />
