@@ -1,46 +1,56 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import CardsList from "./CardsList.component";
 import Menu from "./Menu.component";
-
-import styles from "@/styles/components/ui/Catalog.module.scss";
+import ShowPlants from "./ShowPlants.component";
 import Pagination from "@/components/common/Pagination";
+
 import { usePlantsStore } from "@/store";
 
+import styles from "@/styles/components/ui/Catalog.module.scss";
+
 const Catalog = () => {
-      const [active, setActive] = useState("default");
+      const [activeCategory, setActiveCategory] = useState("default");
+      const [sort, setSort] = useState<string>("default");
 
       const plants = usePlantsStore((state) => state.plants);
 
+      const [dataForPagination, setDataForPagination] = useState(0);
       const [currentPage, setCurrentPage] = useState<number>(1);
       const [dataPerPage] = useState<number>(6);
-      const [totalData, setTotalData] = useState(plants.length);
 
       const lastDataIndex = currentPage * dataPerPage;
       const firstDataIndex = lastDataIndex - dataPerPage;
 
       useEffect(() => {
             setCurrentPage(1);
-      }, [active]);
+      }, [activeCategory]);
 
       return (
             <div className={styles.container}>
                   <div className={styles.wrapper}>
                         <Menu
-                              active={active}
-                              setActive={setActive}
+                              active={activeCategory}
+                              setActive={setActiveCategory}
                               setCurrentPage={setCurrentPage}
                         />
                         <CardsList
-                              active={active}
-                              lastDataIndex={lastDataIndex}
-                              firstDataIndex={firstDataIndex}
-                              setTotalData={setTotalData}
+                              setSort={setSort}
+                              showPlants={ShowPlants({
+                                    sort,
+                                    activeCategory,
+                                    setDataForPagination,
+                                    firstDataIndex,
+                                    lastDataIndex,
+                              })}
                         />
                   </div>
                   <div className={styles.pagination}>
                         <Pagination
                               dataPerPage={dataPerPage}
-                              totalData={totalData}
+                              totalData={
+                                    dataForPagination === 0 ? plants.length : dataForPagination
+                              }
                               currentPage={currentPage}
                               setCurrentPage={setCurrentPage}
                               paginate={setCurrentPage}

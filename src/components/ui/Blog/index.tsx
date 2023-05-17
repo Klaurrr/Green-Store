@@ -2,12 +2,11 @@ import React from "react";
 
 import icons from "../../../../public/assets/icons";
 
-import styles from "@/styles/components/ui/Blog.module.scss";
 import BlogItem from "./BlogItem.component";
 
-const Blog = () => {
-      //   const MOCKS = ["PlantForBlog_1", "PlantForBlog_2", "PlantForBlog_3", "PlantForBlog_4"];
+import styles from "@/styles/components/ui/Blog.module.scss";
 
+const Blog = () => {
       const MOCKS = [
             {
                   date: "September 12",
@@ -47,8 +46,8 @@ const Blog = () => {
                         plants.{" "}
                   </p>
                   <div className={styles.blogs}>
-                        {MOCKS.map((plant) => (
-                              <BlogItem plant={plant} />
+                        {MOCKS.map((plant, index) => (
+                              <BlogItem plant={plant} key={`${plant}_${index}`} />
                         ))}
                   </div>
             </div>

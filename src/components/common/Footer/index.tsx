@@ -3,13 +3,17 @@ import icons from "../../../../public/assets/icons";
 import Button from "@/components/ui/Button";
 import UpFooter from "./UpFooter.component";
 import CenterFooter from "./CenterFooter.component";
+import DownFooter from "./DownFooter.component";
 
 const Footer = () => {
       return (
             <footer className={styles.container}>
                   <UpFooter />
                   <CenterFooter />
-                  <div className={styles.wrapper_3}></div>
+                  <DownFooter />
+                  <p className={styles.signature}>
+                        © 2023 GreenShop. All Rights Reserved. UsachevDev.
+                  </p>
             </footer>
       );
 };

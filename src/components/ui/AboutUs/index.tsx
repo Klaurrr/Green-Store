@@ -4,15 +4,13 @@ import plantsImg from "../../../../public/assets/plantsImg";
 
 import Button from "../Button";
 
-import icons from "../../../../public/assets/icons";
-
 import styles from "@/styles/components/ui/AboutUs.module.scss";
 
 const AboutUs = () => {
       return (
             <div className={styles.container}>
-                  {["Arugula", "Monstera"].map((plant) => (
-                        <div className={styles.wrapper}>
+                  {["Arugula", "Monstera"].map((plant, index) => (
+                        <div className={styles.wrapper} key={`${plant}_${index}`}>
                               <img src={plantsImg[`${plant}`].src} alt="plant-img" />
                               <div className={styles.description}>
                                     <h3>Summer cactus & succulents</h3>

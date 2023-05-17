@@ -55,7 +55,7 @@ const Pagination = ({
                         <img src={icons.ArrowForPagination.src} alt="arrow-img" />
                   </div>
 
-                  {pageNumbers.slice(firstButtonIndex, lastButtonIndex).map((number) => (
+                  {pageNumbers.slice(firstButtonIndex, lastButtonIndex).map((number, index) => (
                         <div
                               className={
                                     currentPage === number
@@ -63,6 +63,7 @@ const Pagination = ({
                                           : styles.paginate__item
                               }
                               onClick={() => paginate(number)}
+                              key={`${number}_${index}`}
                         >
                               {number}
                         </div>

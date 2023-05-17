@@ -14,6 +14,12 @@ import FooterIcon_3 from "./FooterIcon_3.jpg";
 import Calling from "./Calling.png";
 import Location from "./Location.png";
 import Message from "./Message.png";
+import Union from "./Union.png";
+import Linkedin from "./Linkedin.png";
+import Twitter from "./Twitter.png";
+import Instagram from "./Instagram.png";
+import FaceBook from "./Facebook.png";
+import Payment from "./payment.png";
 
 import { StaticImageData } from "next/image";
 
@@ -38,4 +44,10 @@ export default <Images>{
       Calling,
       Message,
       Location,
+      Union,
+      Linkedin,
+      Twitter,
+      Instagram,
+      FaceBook,
+      Payment,
 };
