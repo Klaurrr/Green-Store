@@ -10,7 +10,7 @@ import Layout from "@/layout";
 import { usePlantsStore } from "@/store";
 
 import { IPlantsState } from "@/types/IPlantsState";
-import { IHomeProps } from "./props/Home.props";
+import { IHomeProps } from "@/types/IHome.props";
 
 const Home: FC<IHomeProps> = ({ plants }) => {
       const addPlants = usePlantsStore((state: IPlantsState) => state.addPlants);

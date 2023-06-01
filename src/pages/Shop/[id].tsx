@@ -7,7 +7,7 @@ import PlantDetail from "@/components/ui/PlantDetail";
 import Layout from "@/layout";
 
 import { IPlants } from "@/types/IPlants";
-import { IShopDetailProps } from "./props/ShopDetail.props";
+import { IShopDetailProps } from "@/types/IShopDetail.props";
 
 const PlantDetailPage: FC<IShopDetailProps> = ({ plants }) => {
       const router = useRouter();
