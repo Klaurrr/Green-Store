@@ -1,6 +1,12 @@
 .container {
     width: 100%;
 
+    h3 {
+        font-weight: 500;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
     .title {
         font-weight: 700;
         font-size: 28px;
@@ -10,7 +16,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 21px 0px 28px;
+        margin: 21px 0px 15px;
         padding-bottom: 13px;
         border-bottom: 1px solid rgba(70, 163, 88, 0.2);
 
@@ -21,10 +27,98 @@
             color: #46A358;
         }
 
+        .rating {
+            display: flex;
+            align-items: center;
 
-        .review {
-            margin-left: 12px;
-            font-size: 15px;
+            .review {
+                margin-left: 12px;
+                font-size: 15px;
+            }
+        }
+
+
+
+    }
+
+    .info {
+        p {
+            font-size: 14px;
+            color: #727272;
+            line-height: 24px;
+            margin-bottom: 25px;
         }
     }
+
+    .size {
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            width: 27px;
+            height: 27px;
+            border: 1px solid #EAEAEA;
+            border-radius: 50%;
+            font-weight: 500;
+            font-size: 14px;
+            color: #727272;
+        }
+
+        .active {
+            border: 1px solid #46A358;
+            font-weight: 700;
+            font-size: 18px;
+            color: #46A358;
+
+        }
+    }
+
+    .buttons__wrapper {
+        display: flex;
+        align-items: center;
+
+
+        .buttons {
+            display: flex;
+            margin-left: 25px;
+            gap: 10px;
+        }
+
+
+        .counter {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+            margin: 23px 0px;
+
+            span {
+                font-size: 20px;
+                width: 20px;
+                height: 20px;
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background: #46A358;
+                font-size: 28px;
+                color: #fff;
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+    }
+
+
 }

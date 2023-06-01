@@ -1,9 +1,9 @@
 import { FC, useState } from "react";
+import Image from "next/image";
 
 import { IPlantSliderProps } from "./props/PlantsSlider.props";
 
 import styles from "@/styles/components/ui/PlantSlider.module.scss";
-import Image from "next/image";
 
 const PlantSlider: FC<IPlantSliderProps> = ({ images }) => {
       const [currentImage, setCurrentImage] = useState(0);

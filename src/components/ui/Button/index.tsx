@@ -5,8 +5,9 @@ import { IProps } from "./Button.props";
 import icons from "../../../../public/assets/icons";
 
 import styles from "@/styles/components/ui/Button.module.scss";
+import clsx from "clsx";
 
-const Button: FC<IProps> = ({ width, height, text, fontSize, fontWeight, handler }) => {
+const Button: FC<IProps> = ({ width, height, text, fontSize, fontWeight, handler, invert }) => {
       const fontStyle = {
             alignItems: text === "Find More" ? "end" : "center",
             fontSize,
@@ -14,7 +15,11 @@ const Button: FC<IProps> = ({ width, height, text, fontSize, fontWeight, handler
       };
 
       return (
-            <button className={styles.button} style={{ width, height }} onClick={handler}>
+            <button
+                  className={invert ? clsx(styles.button, styles.invert) : styles.button}
+                  style={{ width, height }}
+                  onClick={handler}
+            >
                   <div style={fontStyle}>
                         {text === "Login" && (
                               <img

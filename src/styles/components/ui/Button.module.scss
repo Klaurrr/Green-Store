@@ -13,12 +13,17 @@
         color: #FFFFFF;
     }
 
-
-
-
-
-
     border-radius: 6px;
     border: none;
     cursor: pointer;
+}
+
+.invert {
+    background: #FFF;
+    outline: 1px solid #46A358;
+
+    div {
+        color: #46A358;
+    }
+
 }
