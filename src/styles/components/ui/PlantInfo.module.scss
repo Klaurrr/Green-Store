@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+
+    .title {
+        font-weight: 700;
+        font-size: 28px;
+    }
+
+    .important {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 21px 0px 28px;
+        padding-bottom: 13px;
+        border-bottom: 1px solid rgba(70, 163, 88, 0.2);
+
+
+        span {
+            font-weight: 700;
+            font-size: 22px;
+            color: #46A358;
+        }
+
+
+        .review {
+            margin-left: 12px;
+            font-size: 15px;
+        }
+    }
+}

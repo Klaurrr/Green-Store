@@ -7,4 +7,5 @@ const Shop = () => {
             </Layout>
       );
 };
+
 export default Shop;

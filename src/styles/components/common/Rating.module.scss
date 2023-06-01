@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    gap: 5px;
+
+    .star {
+        cursor: pointer;
+        fill: #C4C4C4;
+    }
+
+    .fill {
+
+        fill: red;
+
+    }
+}

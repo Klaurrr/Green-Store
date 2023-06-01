@@ -15,18 +15,19 @@ import styles from "@/styles/components/common/Header.module.scss";
 const Header = React.memo(() => {
       const router = useRouter();
 
-      const NAV_ITEMS = ["Home", "Shop", "Plant Care", "Blogs"];
+      const links = ["Home", "Shop", "Plant Care", "Blogs"];
 
       return (
             <header className={styles.container}>
                   <Logo />
                   <nav className={styles.nav}>
-                        {NAV_ITEMS.map((item, index) => (
+                        {links.map((item, index) => (
                               <Link
                                     key={index}
                                     href={`/${item.replace(/\s/g, "")}`}
                                     className={
-                                          router.pathname === `/${item.replace(/\s/g, "")}`
+                                          router.pathname.split("/")[1] ===
+                                          `${item.replace(/\s/g, "")}`
                                                 ? styles.active
                                                 : ""
                                     }

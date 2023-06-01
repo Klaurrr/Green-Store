@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+
+    .switches {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .active {
+            outline: 1px solid #46A358;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+
+    .image {
+        margin: 0 76px 0 46px;
+    }
+}

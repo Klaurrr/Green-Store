@@ -1,7 +1,9 @@
 export interface IPlants {
-    id: number;
-    name: string;
-    img: string;
-    price: number;
-    size: string;
+      id: number;
+      name: string;
+      img: string;
+      price: number;
+      size: string;
+      description: string;
+      rating: number;
 }

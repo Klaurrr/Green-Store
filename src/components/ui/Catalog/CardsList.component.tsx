@@ -9,7 +9,7 @@ import styles from "@/styles/components/ui/CardsList.module.scss";
 const CardsList: FC<ICardsListProps> = ({ setSort, showPlants }) => {
       return (
             <div className={styles.container}>
-                  <NavBar plantsFilter={() => setSort} />
+                  <NavBar plantsFilter={setSort} />
                   <div className={styles.wrapper}>{showPlants}</div>
             </div>
       );

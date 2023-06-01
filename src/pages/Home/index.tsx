@@ -1,18 +1,22 @@
-import React, { useLayoutEffect } from "react";
+import React, { FC, useLayoutEffect } from "react";
 
-import { usePlantsStore } from "@/store";
-import { IPlants } from "@/types/IPlants";
-import { IPlantsState } from "@/types/IPlantsState";
-import Layout from "@/layout";
 import MainBanner from "@/components/ui/MainBanner";
 import Catalog from "@/components/ui/Catalog";
 import AboutUs from "@/components/ui/AboutUs";
 import Blog from "@/components/ui/Blog";
 
-const Home = ({ plants }: { plants: IPlants[] }) => {
+import Layout from "@/layout";
+
+import { usePlantsStore } from "@/store";
+
+import { IPlantsState } from "@/types/IPlantsState";
+import { IHomeProps } from "./props/Home.props";
+
+const Home: FC<IHomeProps> = ({ plants }) => {
       const addPlants = usePlantsStore((state: IPlantsState) => state.addPlants);
 
       useLayoutEffect(() => {
+            localStorage.setItem("plants", JSON.stringify(plants));
             addPlants(plants);
       }, []);
 
