@@ -20,6 +20,10 @@ import Twitter from "./Twitter.png";
 import Instagram from "./Instagram.png";
 import FaceBook from "./Facebook.png";
 import Payment from "./payment.png";
+import TwitterGray from "./Twitter_gray.png";
+import MessageGray from "./Message_gray.png";
+import FacebookGray from "./Facebook_gray.png";
+import LinkedinGray from "./Linkedin_gray.png";
 
 import { StaticImageData } from "next/image";
 
@@ -50,4 +54,8 @@ export default <Images>{
       Instagram,
       FaceBook,
       Payment,
+      TwitterGray,
+      MessageGray,
+      FacebookGray,
+      LinkedinGray,
 };

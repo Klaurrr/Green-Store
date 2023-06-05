@@ -10,9 +10,9 @@ import Layout from "@/layout";
 import { usePlantsStore } from "@/store";
 
 import { IPlantsState } from "@/types/IPlantsState";
-import { IHomeProps } from "@/types/IHome.props";
+import { IpageProps } from "@/types/IPage.props";
 
-const Home: FC<IHomeProps> = ({ plants }) => {
+const Home: FC<IpageProps> = ({ plants }) => {
       const addPlants = usePlantsStore((state: IPlantsState) => state.addPlants);
 
       useLayoutEffect(() => {

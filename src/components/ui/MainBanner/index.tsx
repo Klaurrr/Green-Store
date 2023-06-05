@@ -8,7 +8,7 @@ import styles from "@/styles/components/ui/MainBanner.module.scss";
 const MainBanner = () => {
       return (
             <section className={styles.container}>
-                  <Carousel>
+                  <Carousel Banner>
                         <Screen />
                         <Screen />
                         <Screen />

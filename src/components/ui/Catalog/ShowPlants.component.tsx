@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "./Card.component";
+import Card from "../Card";
 import GenerateKey from "@/components/common/GenerateKey";
 
 import { usePlantsStore } from "@/store";

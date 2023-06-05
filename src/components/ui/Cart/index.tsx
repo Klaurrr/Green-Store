@@ -7,10 +7,10 @@ import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
 import styles from "@/styles/components/ui/Cart.module.scss";
 
 const Cart = () => {
-      const plants = usePlantsStore((state: IPlantsState) => state?.cart);
+      const { plants, quantity } = usePlantsStore((state: IPlantsState) => state?.cart);
 
       return (
-            <div className={styles.container} onClick={() => console.log(plants)}>
+            <div className={styles.container} onClick={() => console.log(plants, quantity)}>
                   <CartSvg />
                   <div className={styles.counter}>{plants.length}</div>
             </div>

@@ -7,9 +7,10 @@ import PlantDetail from "@/components/ui/PlantDetail";
 import Layout from "@/layout";
 
 import { IPlants } from "@/types/IPlants";
-import { IShopDetailProps } from "@/types/IShopDetail.props";
+import PlantsSlider from "@/components/ui/PlantsSlider";
+import { IpageProps } from "@/types/IPage.props";
 
-const PlantDetailPage: FC<IShopDetailProps> = ({ plants }) => {
+const PlantDetailPage: FC<IpageProps> = ({ plants }) => {
       const router = useRouter();
 
       const currentPlant =
@@ -19,14 +20,30 @@ const PlantDetailPage: FC<IShopDetailProps> = ({ plants }) => {
             <Layout>
                   <BreadCrumbs />
                   <PlantDetail currentPlant={currentPlant} />
+                  <PlantsSlider plants={plants} title="Releted Products" />
             </Layout>
       );
 };
 
-export const getServerSideProps = async () => {
+export async function getStaticPaths() {
+      let paths = [];
+
+      for (let i = 1; i <= 16; i++) {
+            const currentObject = { params: { id: `${i}` } };
+            paths.push(currentObject);
+      }
+
+      return {
+            paths,
+            fallback: false,
+      };
+}
+
+export const getStaticProps = async () => {
       try {
-            const response = await fetch("https://green-store-beige.vercel.app/api/plants");
+            const response = await fetch(`https://green-store-beige.vercel.app/api/plants`);
             const plants = await response.json();
+
             return {
                   props: {
                         plants,

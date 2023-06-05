@@ -1,0 +1,34 @@
+.container {
+    margin-top: 100px;
+
+    .switches {
+        display: flex;
+        gap: 30px;
+        border-bottom: 1px solid rgba(70, 163, 88, 0.2);
+
+
+        p {
+            font-size: 17px;
+            line-height: 16px;
+            padding-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .active {
+            font-weight: 700;
+            color: #46A358;
+            border-bottom: 3px solid #46A358;
+        }
+    }
+
+    .desc {
+        margin-top: 18px;
+
+        p {
+            font-size: 14px;
+            line-height: 24px;
+            color: #727272;
+        }
+    }
+
+}

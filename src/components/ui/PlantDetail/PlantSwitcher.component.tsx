@@ -1,11 +1,11 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 
-import { IPlantSliderProps } from "./props/PlantsSlider.props";
+import { IPlantSwitcherProps } from "./props/PlantsSwitcher.props";
 
-import styles from "@/styles/components/ui/PlantSlider.module.scss";
+import styles from "@/styles/components/ui/PlantSwitcher.module.scss";
 
-const PlantSlider: FC<IPlantSliderProps> = ({ images }) => {
+const PlantSwitcher: FC<IPlantSwitcherProps> = ({ images }) => {
       const [currentImage, setCurrentImage] = useState(0);
 
       return (
@@ -17,6 +17,7 @@ const PlantSlider: FC<IPlantSliderProps> = ({ images }) => {
                                     alt="slider with plants"
                                     className={index === currentImage ? styles.active : ""}
                                     onClick={() => setCurrentImage(index)}
+                                    key={index}
                               />
                         ))}
                   </div>
@@ -32,4 +33,4 @@ const PlantSlider: FC<IPlantSliderProps> = ({ images }) => {
       );
 };
 
-export default PlantSlider;
+export default PlantSwitcher;

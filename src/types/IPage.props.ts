@@ -1,5 +1,6 @@
 import { IPlants } from "@/types/IPlants";
 
-export interface IHomeProps {
+export interface IpageProps {
       plants: IPlants[];
+      title: string;
 }

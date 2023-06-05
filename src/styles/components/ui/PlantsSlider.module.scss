@@ -1,0 +1,18 @@
+.container {
+    margin: 127px 0px;
+
+    .title {
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 16px;
+        color: #46A358;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(70, 163, 88, 0.2);
+    }
+
+    .chunk {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+    }
+}

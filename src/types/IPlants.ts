@@ -6,4 +6,5 @@ export interface IPlants {
       size: string;
       description: string;
       rating: number;
+      quantity?: any;
 }

@@ -4,7 +4,7 @@ import { Props } from "./Carousel.props";
 
 import styles from "@/styles/components/common/Carousel.module.scss";
 
-const Carousel: React.FC<Props> = ({ children }) => {
+const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
       const [pages, setPages] = useState<any>([]);
       const [offset, setOffset] = useState(0);
       const [currentPage, setCurrentPage] = useState(0);
@@ -39,7 +39,7 @@ const Carousel: React.FC<Props> = ({ children }) => {
                               {pages}
                         </div>
                   </div>
-                  <div className={styles.dots}>
+                  <div className={Banner ? styles.dots : styles.switches}>
                         {pages.map((_item: undefined, index: string) => (
                               <button
                                     key={index}

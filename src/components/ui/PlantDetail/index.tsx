@@ -1,7 +1,9 @@
 import { FC } from "react";
 
-import PlantSlider from "./PlantSlider.component";
 import PlantInfo from "./PlantInfo.component";
+import PlantSwitcher from "./PlantSwitcher.component";
+import PlantDescription from "./PlantDescription.component";
+import PlantsSlider from "../PlantsSlider";
 
 import plantsImg from "../../../../public/assets/plantsImg";
 
@@ -14,8 +16,11 @@ const PlantDetail: FC<IPlantDetailProps> = ({ currentPlant }) => {
 
       return (
             <main className={styles.container}>
-                  <PlantSlider images={mock_images} />
-                  <PlantInfo currentPlant={currentPlant} />
+                  <div className={styles.wrapper}>
+                        <PlantSwitcher images={mock_images} />
+                        <PlantInfo currentPlant={currentPlant} />
+                  </div>
+                  <PlantDescription currentPlant={currentPlant} />
             </main>
       );
 };

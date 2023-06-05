@@ -1,10 +1,15 @@
 .container {
 
-    width: 258px;
-    height: 355px;
+    // width: 258px;
+    // height: 355px;
     cursor: pointer;
     margin-bottom: 50px;
     position: relative;
+
+    // &__slider {
+    //     width: 220px;
+    //     height: 255px;
+    // }
 
     &::before {
         content: "";
@@ -33,7 +38,6 @@
         align-items: center;
         position: absolute;
         opacity: 0;
-        left: 73px;
         bottom: 14px;
         transition: all 0.2s ease-in-out;
 

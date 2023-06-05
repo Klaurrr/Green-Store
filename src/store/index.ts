@@ -4,18 +4,30 @@ import { create } from "zustand";
 
 export const usePlantsStore = create<IPlantsState>((set) => ({
       plants: [],
-      cart: [],
+      cart: {
+            plants: [],
+            quantity: {},
+      },
       filteredPlants: [],
       dataForPagination: 0,
       activeCategory: "default",
+
       addPlants: (plants: IPlants[]) => {
             set((state) => ({
                   plants: plants,
             }));
       },
-      addCart: (plants: IPlants) => {
+      addCart: (currentPlant: IPlants, quantity: number) => {
             set((state) => ({
-                  cart: [...state.cart, plants],
+                  cart: {
+                        plants: state.cart.plants.some((plant) => plant.name === currentPlant.name)
+                              ? [...state.cart.plants]
+                              : [...state.cart.plants, currentPlant],
+                        quantity: {
+                              ...state.cart.quantity,
+                              [currentPlant.name]: quantity,
+                        },
+                  },
             }));
       },
       addFilteredPlants: (plants: IPlants[]) => {

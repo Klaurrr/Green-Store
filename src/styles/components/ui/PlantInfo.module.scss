@@ -41,7 +41,7 @@
 
     }
 
-    .info {
+    .short__info {
         p {
             font-size: 14px;
             color: #727272;
@@ -116,6 +116,43 @@
                 color: #fff;
                 cursor: pointer;
                 user-select: none;
+            }
+        }
+    }
+
+    .other {
+        font-size: 15px;
+        line-height: 16px;
+
+        :nth-child(2) {
+            margin: 10px 0px;
+        }
+
+        p {
+            color: #A5A5A5;
+
+            span {
+                color: #727272;
+            }
+        }
+    }
+
+    .socials {
+        display: flex;
+        align-items: center;
+        margin-top: 18px;
+
+        h3 {
+            margin: 0px 16px 0px 0px;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                cursor: pointer;
             }
         }
     }
