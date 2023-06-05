@@ -10,7 +10,7 @@ import GenerateKey from "@/components/common/GenerateKey";
 
 const PlantsSlider: FC<IpageProps> = ({ plants, title }) => {
       const slicePlants = () => {
-            let slicedPlants = [];
+            const slicedPlants = [];
 
             const chunkSize = 5;
 

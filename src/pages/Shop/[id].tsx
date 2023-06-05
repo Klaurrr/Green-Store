@@ -26,7 +26,7 @@ const PlantDetailPage: FC<IpageProps> = ({ plants }) => {
 };
 
 export async function getStaticPaths() {
-      let paths = [];
+      const paths = [];
 
       for (let i = 1; i <= 16; i++) {
             const currentObject = { params: { id: `${i}` } };
