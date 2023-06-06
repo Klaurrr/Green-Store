@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
 import PlantDetail from "@/components/ui/PlantDetail";
+import PlantsSlider from "@/components/ui/PlantsSlider";
 
 import Layout from "@/layout";
 
 import { IPlants } from "@/types/IPlants";
-import PlantsSlider from "@/components/ui/PlantsSlider";
 import { IpageProps } from "@/types/IPage.props";
 
 const PlantDetailPage: FC<IpageProps> = ({ plants }) => {

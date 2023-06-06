@@ -1,18 +1,13 @@
-import { usePlantsStore } from "@/store";
-
-import { IPlantsState } from "@/types/IPlantsState";
-
-import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
+import PlantsList from "./PlantsList.component";
+import CartTotals from "./CartTotals.component";
 
 import styles from "@/styles/components/ui/Cart.module.scss";
 
 const Cart = () => {
-      const { plants, quantity } = usePlantsStore((state: IPlantsState) => state?.cart);
-
       return (
-            <div className={styles.container} onClick={() => console.log(plants, quantity)}>
-                  <CartSvg />
-                  <div className={styles.counter}>{plants.length}</div>
+            <div className={styles.container}>
+                  <PlantsList />
+                  <CartTotals />
             </div>
       );
 };

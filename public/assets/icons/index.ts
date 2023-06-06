@@ -24,6 +24,7 @@ import TwitterGray from "./Twitter_gray.png";
 import MessageGray from "./Message_gray.png";
 import FacebookGray from "./Facebook_gray.png";
 import LinkedinGray from "./Linkedin_gray.png";
+import Delete from "./Delete.png";
 
 import { StaticImageData } from "next/image";
 
@@ -58,4 +59,5 @@ export default <Images>{
       MessageGray,
       FacebookGray,
       LinkedinGray,
+      Delete,
 };

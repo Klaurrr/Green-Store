@@ -30,7 +30,7 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
       }, []);
 
       return (
-            <div className={styles.container}>
+            <article className={styles.container}>
                   <div className={styles.window}>
                         <div
                               className={styles.pages_container}
@@ -55,7 +55,7 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
                               />
                         ))}
                   </div>
-            </div>
+            </article>
       );
 };
 

@@ -1,15 +1,8 @@
 .container {
-
-    // width: 258px;
-    // height: 355px;
     cursor: pointer;
     margin-bottom: 50px;
     position: relative;
 
-    // &__slider {
-    //     width: 220px;
-    //     height: 255px;
-    // }
 
     &::before {
         content: "";

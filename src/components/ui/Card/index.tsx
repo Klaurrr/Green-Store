@@ -19,7 +19,8 @@ const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
 
       const addCart = usePlantsStore((state) => state.addCart);
 
-      const addCartHandler = () => {
+      const addCartHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            e.stopPropagation();
             addCart(plant, 1);
       };
 
@@ -30,6 +31,7 @@ const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
                         width: forSlider ? "220px" : "258px",
                         height: forSlider ? "255px" : "355px",
                   }}
+                  onClick={() => router.push(`/Shop/${plant.id}`)}
             >
                   <div
                         className={styles.wrapper_1}
@@ -40,7 +42,7 @@ const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
                               <div onClick={addCartHandler}>
                                     <CartSvg />
                               </div>
-                              <HeartSvg onClick={() => router.push(`/Shop/${plant.id}`)} />
+                              <HeartSvg />
                               <SearchIcon />
                         </div>
                   </div>

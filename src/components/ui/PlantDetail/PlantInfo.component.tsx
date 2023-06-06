@@ -32,6 +32,9 @@ const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
             addCart(currentPlant[0], counter);
       };
 
+      //TODO вынести логику counter в отдельный компонент, чтобы у каждого растения было свое состояние.
+      // Это нужно для того, чтобы в корзине менять количество растений.
+
       return (
             <section className={styles.container}>
                   <h2 className={styles.title}>{name}</h2>

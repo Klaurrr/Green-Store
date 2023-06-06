@@ -1,0 +1,105 @@
+.container {
+    .titles {
+        display: flex;
+        margin-bottom: 20px;
+
+        h3 {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+
+        :nth-child(2) {
+            margin: 0 106px 0 245px;
+        }
+
+        :last-child {
+            margin-left: 100px;
+        }
+
+    }
+
+    .list {
+        .plant {
+            display: flex;
+            align-items: center;
+            height: 70px;
+            width: 782px;
+            background: #FBFBFB;
+            position: relative;
+
+            .image {
+                width: 70px;
+                height: 70px;
+                margin-right: 15px;
+            }
+
+
+            &-title {
+                h4 {
+                    font-weight: 500;
+                    font-size: 16px;
+                }
+
+                p {
+                    color: #A5A5A5;
+                    font-size: 14px;
+
+
+                    span {
+                        color: #727272;
+
+                    }
+                }
+            }
+
+            .price {
+                position: absolute;
+                left: 312px;
+
+                p {
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #727272;
+                }
+            }
+
+            .quantity {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                position: absolute;
+                left: 458px;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 23px;
+                    height: 23px;
+                    border-radius: 100%;
+                    color: #FFF;
+                    cursor: pointer;
+                    background: linear-gradient(180deg, #46A358 0%, rgba(70, 163, 88, 0.8) 100%);
+                }
+            }
+
+            .total {
+                position: absolute;
+                left: 621px;
+
+                p {
+                    font-weight: 700;
+                    font-size: 16px;
+                    color: #46A358;
+                }
+            }
+
+            .delete {
+                position: absolute;
+                right: 30px;
+                cursor: pointer;
+            }
+        }
+    }
+}
