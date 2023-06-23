@@ -21,21 +21,15 @@ const PlantDetailPage: FC<IPageProps> = ({ plants: plant, allPlants }) => {
 };
 
 export async function getStaticPaths() {
-      try {
-            const response = await fetch(`https://green-store-beige.vercel.app/api/plants`);
-            const plants = await response.json();
-
-            const paths = plants.map(({ id }: { id: string }) => ({
-                  params: { id: id.toString() },
-            }));
-
-            return {
-                  paths,
-                  fallback: false,
-            };
-      } catch (err) {
-            console.log("Ошибка, ", err);
+      const paths = [];
+      for (let i = 1; i <= 16; i++) {
+            const currentObject = { params: { id: `${i}` } };
+            paths.push(currentObject);
       }
+      return {
+            paths,
+            fallback: false,
+      };
 }
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
