@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useRouter } from "next/router";
+import { GetStaticPropsContext } from "next";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
 import PlantDetail from "@/components/ui/PlantDetail";
@@ -7,46 +7,52 @@ import PlantsSlider from "@/components/ui/PlantsSlider";
 
 import Layout from "@/layout";
 
-import { IPlants } from "@/types/IPlants";
-import { IpageProps } from "@/types/IPage.props";
+import { IPageProps } from "@/types/IPage.props";
+import { IContextParams } from "@/types/IContextParams";
 
-const PlantDetailPage: FC<IpageProps> = ({ plants }) => {
-      const router = useRouter();
-
-      const currentPlant =
-            plants && plants.filter((plant: IPlants) => plant.id === Number(router.query.id));
-
+const PlantDetailPage: FC<IPageProps> = ({ plants: plant, allPlants }) => {
       return (
             <Layout>
                   <BreadCrumbs />
-                  <PlantDetail currentPlant={currentPlant} />
-                  <PlantsSlider plants={plants} title="Releted Products" />
+                  <PlantDetail currentPlant={plant} />
+                  <PlantsSlider plants={allPlants} title="Releted Products" />
             </Layout>
       );
 };
 
 export async function getStaticPaths() {
-      const paths = [];
-
-      for (let i = 1; i <= 16; i++) {
-            const currentObject = { params: { id: `${i}` } };
-            paths.push(currentObject);
-      }
-
-      return {
-            paths,
-            fallback: false,
-      };
-}
-
-export const getStaticProps = async () => {
       try {
             const response = await fetch(`https://green-store-beige.vercel.app/api/plants`);
             const plants = await response.json();
 
+            const paths = plants.map(({ id }: { id: string }) => ({
+                  params: { id: id.toString() },
+            }));
+
+            return {
+                  paths,
+                  fallback: false,
+            };
+      } catch (err) {
+            console.log("Ошибка, ", err);
+      }
+}
+
+export const getStaticProps = async (context: GetStaticPropsContext) => {
+      const { id } = context.params as IContextParams;
+      try {
+            // const response = await fetch(`https://green-store-beige.vercel.app/api/plants`);
+            const currentPlantResponse = await fetch(`http://localhost:3000/api/plants/${id}`);
+            const plants = await currentPlantResponse.json();
+
+            const allPlantsResponse = await fetch("http://localhost:3000/api/plants");
+
+            const allPlants = await allPlantsResponse.json();
+
             return {
                   props: {
                         plants,
+                        allPlants,
                   },
             };
       } catch (err) {

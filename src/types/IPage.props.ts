@@ -1,6 +1,8 @@
 import { IPlants } from "@/types/IPlants";
 
-export interface IpageProps {
+export interface IPageProps {
       plants: IPlants[];
       title: string;
+      allPlants?: IPlants[];
+      plant?: IPlants[];
 }
