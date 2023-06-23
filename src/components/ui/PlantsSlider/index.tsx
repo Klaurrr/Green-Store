@@ -7,8 +7,9 @@ import { IPageProps } from "@/types/IPage.props";
 
 import styles from "@/styles/components/ui/PlantsSlider.module.scss";
 import GenerateKey from "@/components/common/GenerateKey";
+import { IPlantsSliderProps } from "./IPlantsSlider.props";
 
-const PlantsSlider: FC<IPageProps> = ({ plants, title }) => {
+const PlantsSlider: FC<IPlantsSliderProps> = ({ plants, title }) => {
       const slicePlants = () => {
             const slicedPlants = [];
 
