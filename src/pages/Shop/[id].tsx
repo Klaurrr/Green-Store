@@ -14,8 +14,8 @@ const PlantDetailPage: FC<IPageProps> = ({ plants: plant, allPlants }) => {
       return (
             <Layout>
                   <BreadCrumbs />
-                  {/* <PlantDetail currentPlant={plant} />
-                  <PlantsSlider plants={allPlants} title="Releted Products" /> */}
+                  <PlantDetail currentPlant={plant} />
+                  <PlantsSlider plants={allPlants} title="Releted Products" />
             </Layout>
       );
 };
