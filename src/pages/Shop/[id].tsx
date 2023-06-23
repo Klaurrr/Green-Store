@@ -41,8 +41,9 @@ export async function getStaticPaths() {
 export const getStaticProps = async (context: GetStaticPropsContext) => {
       const { id } = context.params as IContextParams;
       try {
-            // const response = await fetch(`https://green-store-beige.vercel.app/api/plants`);
-            const currentPlantResponse = await fetch(`http://localhost:3000/api/plants/${id}`);
+            const currentPlantResponse = await fetch(
+                  `https://green-store-beige.vercel.app/api/plants/${id}`
+            );
             const plants = await currentPlantResponse.json();
 
             const allPlantsResponse = await fetch("http://localhost:3000/api/plants");
