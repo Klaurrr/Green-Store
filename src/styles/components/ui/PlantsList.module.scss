@@ -20,6 +20,10 @@
     }
 
     .list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
         .plant {
             display: flex;
             align-items: center;

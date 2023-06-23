@@ -5,25 +5,16 @@ import { usePlantsStore } from "@/store";
 import { IPlantsState } from "@/types/IPlantsState";
 import plantsImg from "../../../../public/assets/plantsImg";
 import icons from "../../../../public/assets/icons";
+import { IPlants } from "@/types/IPlants";
 
 const PlantsList = () => {
       const { plants, quantity } = usePlantsStore((state: IPlantsState) => state?.cart);
 
-      //   const [counter, setCounter] = useState(quantity[]);
+      const deletePlantFromCart = usePlantsStore((state) => state.deletePlantFromCart);
 
-      //   const addCart = usePlantsStore((state) => state.addCart);
-
-      //   const countHandler = (operation: string) => {
-      //         if (operation === "decrease") {
-      //               if (counter > 1) {
-      //                     setCounter(counter - 1);
-      //               }
-      //         } else setCounter(counter + 1);
-      //   };
-
-      //   const addCartHandler = () => {
-      //         addCart(currentPlant[0], counter);
-      //   };
+      const handleClickDelete = (plant: IPlants) => {
+            deletePlantFromCart(plant);
+      };
 
       return (
             <div className={styles.container}>
@@ -69,6 +60,7 @@ const PlantsList = () => {
                                                 src={icons.Delete.src}
                                                 alt="delete icon"
                                                 className={styles.delete}
+                                                onClick={() => handleClickDelete(plant)}
                                           />
                                     </div>
                               ))

@@ -12,12 +12,12 @@ export const usePlantsStore = create<IPlantsState>((set) => ({
       dataForPagination: 0,
       activeCategory: "default",
 
-      addPlants: (plants: IPlants[]) => {
-            set((state) => ({
+      addPlants: (plants) => {
+            set(() => ({
                   plants: plants,
             }));
       },
-      addCart: (currentPlant: IPlants, quantity: number) => {
+      addCart: (currentPlant, quantity) => {
             set((state) => ({
                   cart: {
                         plants: state.cart.plants.some((plant) => plant.name === currentPlant.name)
@@ -30,18 +30,34 @@ export const usePlantsStore = create<IPlantsState>((set) => ({
                   },
             }));
       },
-      addFilteredPlants: (plants: IPlants[]) => {
-            set((state) => ({
+      deletePlantFromCart: (currentPlant) => {
+            set(
+                  (state) => (
+                        delete state.cart.quantity[currentPlant.name],
+                        console.log(state.cart),
+                        {
+                              cart: {
+                                    plants: [...state.cart.plants].filter(
+                                          (item) => item != currentPlant
+                                    ),
+                                    quantity: state.cart.quantity,
+                              },
+                        }
+                  )
+            );
+      },
+      addFilteredPlants: (plants) => {
+            set(() => ({
                   filteredPlants: plants,
             }));
       },
-      addDataForPagination: (number: number) => {
-            set((state) => ({
+      addDataForPagination: (number) => {
+            set(() => ({
                   dataForPagination: number,
             }));
       },
-      setActiveCategory: (category: string) => {
-            set((state) => ({
+      setActiveCategory: (category) => {
+            set(() => ({
                   activeCategory: category,
             }));
       },
