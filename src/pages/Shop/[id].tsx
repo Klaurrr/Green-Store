@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { GetStaticPropsContext } from "next";
+import { GetServerSidePropsContext, GetStaticPropsContext } from "next";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
 import PlantDetail from "@/components/ui/PlantDetail";
@@ -20,19 +20,19 @@ const PlantDetailPage: FC<IPageProps> = ({ plants: plant, allPlants }) => {
       );
 };
 
-export async function getStaticPaths() {
-      const paths = [];
-      for (let i = 1; i <= 16; i++) {
-            const currentObject = { params: { id: `${i}` } };
-            paths.push(currentObject);
-      }
-      return {
-            paths,
-            fallback: false,
-      };
-}
+// export async function getStaticPaths() {
+//       const paths = [];
+//       for (let i = 1; i <= 16; i++) {
+//             const currentObject = { params: { id: `${i}` } };
+//             paths.push(currentObject);
+//       }
+//       return {
+//             paths,
+//             fallback: false,
+//       };
+// }
 
-export const getStaticProps = async (context: GetStaticPropsContext) => {
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
       const { id } = context.params as IContextParams;
       try {
             const currentPlantResponse = await fetch(
