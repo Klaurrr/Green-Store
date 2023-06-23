@@ -14,8 +14,8 @@ const PlantDetailPage: FC<IPageProps> = ({ plants: plant, allPlants }) => {
       return (
             <Layout>
                   <BreadCrumbs />
-                  <PlantDetail currentPlant={plant} />
-                  <PlantsSlider plants={allPlants} title="Releted Products" />
+                  {/* <PlantDetail currentPlant={plant} />
+                  <PlantsSlider plants={allPlants} title="Releted Products" /> */}
             </Layout>
       );
 };
@@ -40,7 +40,9 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
             );
             const plants = await currentPlantResponse.json();
 
-            const allPlantsResponse = await fetch("http://localhost:3000/api/plants");
+            const allPlantsResponse = await fetch(
+                  "https://green-store-beige.vercel.app/api/plants"
+            );
 
             const allPlants = await allPlantsResponse.json();
 
