@@ -13,9 +13,9 @@ import { IContextParams } from "@/types/IContextParams";
 const PlantDetailPage: FC<IPageProps> = ({ plants: plant, allPlants }) => {
       return (
             <Layout>
-                  {/* <BreadCrumbs />
+                  <BreadCrumbs />
                   <PlantDetail currentPlant={plant} />
-                  <PlantsSlider plants={allPlants} title="Releted Products" /> */}
+                  <PlantsSlider plants={allPlants} title="Releted Products" />
             </Layout>
       );
 };
