@@ -3,12 +3,12 @@ import React, { FC } from "react";
 import Card from "../Card";
 import Carousel from "@/components/common/Carousel";
 
-import { IpageProps } from "@/types/IPage.props";
+import { IPageProps } from "@/types/IPage.props";
 
 import styles from "@/styles/components/ui/PlantsSlider.module.scss";
 import GenerateKey from "@/components/common/GenerateKey";
 
-const PlantsSlider: FC<IpageProps> = ({ plants, title }) => {
+const PlantsSlider: FC<IPageProps> = ({ plants, title }) => {
       const slicePlants = () => {
             const slicedPlants = [];
 
