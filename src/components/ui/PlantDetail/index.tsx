@@ -17,20 +17,11 @@ const PlantDetail: FC<IPlantDetailProps> = ({ currentPlant }) => {
       return (
             <main className={styles.container}>
                   <div className={styles.wrapper}>
-                        {currentPlant.length > 0 ? (
-                              <>
-                                    <PlantSwitcher images={mock_images} />
-                                    <PlantInfo currentPlant={currentPlant} />
-                              </>
-                        ) : (
-                              <></>
-                        )}
+                        <PlantSwitcher images={mock_images} />
+                        <PlantInfo currentPlant={currentPlant} />
                   </div>
-                  {currentPlant.length > 0 ? (
-                        <PlantDescription currentPlant={currentPlant} />
-                  ) : (
-                        <></>
-                  )}
+
+                  <PlantDescription currentPlant={currentPlant} />
             </main>
       );
 };

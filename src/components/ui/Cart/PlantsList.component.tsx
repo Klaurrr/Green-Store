@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styles from "@/styles/components/ui/PlantsList.module.scss";
 import { usePlantsStore } from "@/store";
@@ -11,9 +11,22 @@ const PlantsList = () => {
       const { plants, quantity } = usePlantsStore((state: IPlantsState) => state?.cart);
 
       const deletePlantFromCart = usePlantsStore((state) => state.deletePlantFromCart);
+      const changeQuantity = usePlantsStore((state) => state.addCart);
 
       const handleClickDelete = (plant: IPlants) => {
             deletePlantFromCart(plant);
+      };
+
+      const countHandler = (operation: "decrease" | "increase", plant: IPlants) => {
+            if (operation === "decrease") {
+                  if (quantity[plant.name] > 1) {
+                        changeQuantity(plant, (quantity[plant.name] -= 1));
+                  } else {
+                        deletePlantFromCart(plant);
+                  }
+            } else {
+                  changeQuantity(plant, (quantity[plant.name] += 1));
+            }
       };
 
       return (
@@ -43,9 +56,21 @@ const PlantsList = () => {
                                                 <p>${plant.price}</p>
                                           </div>
                                           <div className={styles.quantity}>
-                                                <div>-</div>
+                                                <div
+                                                      onClick={() =>
+                                                            countHandler("decrease", plant)
+                                                      }
+                                                >
+                                                      -
+                                                </div>
                                                 <span>{quantity[plant.name]}</span>
-                                                <div>+</div>
+                                                <div
+                                                      onClick={() =>
+                                                            countHandler("increase", plant)
+                                                      }
+                                                >
+                                                      +
+                                                </div>
                                           </div>
                                           <div className={styles.total}>
                                                 <p>
@@ -65,7 +90,7 @@ const PlantsList = () => {
                                     </div>
                               ))
                         ) : (
-                              <div>Ваша корзина пуста... Переделаешь</div>
+                              <h1 className={styles.empty}>Ваша корзина пуста...</h1>
                         )}
                   </div>
             </div>

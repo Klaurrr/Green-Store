@@ -34,7 +34,6 @@ export const usePlantsStore = create<IPlantsState>((set) => ({
             set(
                   (state) => (
                         delete state.cart.quantity[currentPlant.name],
-                        console.log(state.cart),
                         {
                               cart: {
                                     plants: [...state.cart.plants].filter(
