@@ -1,0 +1,19 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/plants",
+        "destination": "/api/plants"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/api/plants",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ]
+  }
