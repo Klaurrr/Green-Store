@@ -1,9 +1,6 @@
 import React, { FC, useLayoutEffect } from "react";
 
-import MainBanner from "@/components/ui/MainBanner";
-import Catalog from "@/components/ui/Catalog";
-import AboutUs from "@/components/ui/AboutUs";
-import Blog from "@/components/ui/Blog";
+import HomePage from "@/components/screens/Home";
 
 import Layout from "@/layout";
 
@@ -16,16 +13,12 @@ const Home: FC<IPageProps> = ({ plants }) => {
       const addPlants = usePlantsStore((state: IPlantsState) => state.addPlants);
 
       useLayoutEffect(() => {
-            localStorage.setItem("plants", JSON.stringify(plants));
             addPlants(plants);
       }, []);
 
       return (
             <Layout>
-                  <MainBanner />
-                  <Catalog />
-                  <AboutUs />
-                  <Blog />
+                  <HomePage />
             </Layout>
       );
 };

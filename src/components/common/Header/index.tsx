@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Cart from "@/components/ui/Cart";
+import Cart from "@/components/screens/ShoppingCart/components/Cart";
 import Button from "@/components/ui/Button";
 
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";

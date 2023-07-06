@@ -1,0 +1,27 @@
+.container {
+    .title {
+        font-size: 15px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        height: 28px;
+    }
+
+
+    .required {
+        color: #F03800;
+        font-size: 22px;
+        margin-left: 3px;
+    }
+
+    .input {
+        width: 350px;
+        height: 40px;
+        border-radius: 3px;
+        border: 1px solid #EAEAEA;
+        padding-left: 13px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

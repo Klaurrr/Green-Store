@@ -1,0 +1,39 @@
+.container {
+    .title {
+        margin-bottom: 21px;
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .wrapper {
+        display: flex;
+        gap: 22px;
+        margin-bottom: 30px;
+
+
+    }
+
+
+    .textarea {
+        margin-top: 55px;
+
+        h3 {
+            font-size: 15px;
+            line-height: 15px;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 350px;
+            height: 152px;
+            border-radius: 3px;
+            border: 1px solid #EAEAEA;
+            resize: none;
+
+            &:focus {
+                outline: none;
+                padding: 9px;
+            }
+        }
+    }
+}
