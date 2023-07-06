@@ -10,9 +10,8 @@ import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
 
 import { usePlantsStore } from "@/store";
 
-import { ICardProps } from "../Catalog/props/Card.props";
-
 import styles from "@/styles/components/ui/Card.module.scss";
+import { ICardProps } from "@/components/screens/Home/components/Catalog/props/Card.props";
 
 const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
       const router = useRouter();
