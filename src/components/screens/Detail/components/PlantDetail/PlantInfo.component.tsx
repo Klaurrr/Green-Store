@@ -19,6 +19,7 @@ const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
       const [counter, setCounter] = useState(1);
 
       const addCart = usePlantsStore((state) => state.addCart);
+      const { plants } = usePlantsStore((state) => state.cart);
 
       const countHandler = (operation: string) => {
             if (operation === "decrease") {
@@ -73,14 +74,14 @@ const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
                               <div onClick={() => countHandler("increase")}>+</div>
                         </div>
                         <div className={styles.buttons}>
-                              <Button text="BUY NOW" width={"130px"} height="40px" />
+                              <Button style={{ width: "130px", height: "40px" }}>BUY NOW</Button>
                               <Button
-                                    text="ADD TO CART"
-                                    width={"130px"}
-                                    height="40px"
+                                    style={{ width: "130px", height: "40px" }}
                                     invert
                                     handler={addCartHandler}
-                              />
+                              >
+                                    {plants.includes(currentPlant[0]) ? "ADDED" : "ADD TO CART"}
+                              </Button>
                         </div>
                   </div>
                   <div className={styles.other}>

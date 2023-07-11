@@ -7,23 +7,15 @@ import Button from "../../../../ui/Button";
 import { useRouter } from "next/router";
 
 import styles from "./styles/CartTotals.module.scss";
+import Price from "@/components/ui/Price";
 
 const CartTotals = () => {
       const router = useRouter();
 
-      const { plants, quantity } = usePlantsStore((state) => state.cart);
-
       const [inputValue, setInputValue] = useState("");
       const [coupon, setCoupon] = useState(false);
 
-      const subTotalSum = plants
-            .map((plant) => {
-                  if (quantity[plant.name]) {
-                        return Math.round(plant.price * quantity[plant.name]);
-                  }
-                  return 0;
-            })
-            ?.reduce((acc, sum) => acc + sum, 0);
+      const { plants } = usePlantsStore((state) => state.cart);
 
       const handleFormSubmit = (event: any) => {
             event.preventDefault();
@@ -34,8 +26,6 @@ const CartTotals = () => {
 
             setInputValue("");
       };
-
-      const COUPON = 15;
 
       return (
             <div className={styles.container}>
@@ -52,38 +42,27 @@ const CartTotals = () => {
                               Apply
                         </button>
                   </form>
-                  <div className={styles.subtotal}>
-                        <p>Subtotal</p>
-                        <span>${subTotalSum}.00</span>
-                  </div>
-                  <div className={styles.discount}>
-                        <p>Coupon Discount</p>
-                        <span>(-) ${coupon ? COUPON : 0}.00</span>
-                  </div>
-                  <div className={styles.shiping}>
-                        <p>Shiping</p>
-                        <div>
-                              <span>$0.00</span>
-                              <span className={styles.charge}>View shipping charge</span>
-                        </div>
-                  </div>
-                  <div className={styles.total}>
-                        <h4>Total</h4>
-                        <span>
-                              ${subTotalSum ? subTotalSum - (coupon ? COUPON : 0) : subTotalSum}
-                        </span>
-                  </div>
+                  <Price coupon={coupon} />
                   <div className={styles.button}>
                         <Button
-                              text="Proceed To Checkout"
-                              width="332px"
-                              height="40px"
-                              fontWeight="700"
-                              fontSize="15px"
+                              style={{
+                                    width: "332px",
+                                    height: "40px",
+                                    fontWeight: "700",
+                                    fontSize: "15px",
+                                    pointerEvents: plants.length ? "auto" : "none",
+                                    background: plants.length
+                                          ? "rgb(70, 163, 88)"
+                                          : "rgb(70, 163, 88, 0.3)",
+                              }}
                               handler={() => router.push("/Shop/Checkout")}
-                        />
+                        >
+                              Proceed To Checkout
+                        </Button>
                   </div>
-                  <h5 className={styles.continue}>Continue Shopping</h5>
+                  <h5 className={styles.continue} onClick={() => router.push("/Home")}>
+                        Continue Shopping
+                  </h5>
             </div>
       );
 };

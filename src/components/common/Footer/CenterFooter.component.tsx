@@ -1,6 +1,7 @@
 import Logo from "@/components/ui/Logo";
-import styles from "@/styles/components/common/CenterFooter.module.scss";
 import icons from "../../../../public/assets/icons";
+
+import styles from "./styles/CenterFooter.module.scss";
 
 const CenterFooter = () => {
       return (

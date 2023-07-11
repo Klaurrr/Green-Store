@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 3px;
+    padding: 15px 11px;
+    border: 1px solid #EAEAEA;
+
+
+    .circle {
+        width: 16px;
+        height: 16px;
+        border: 1px solid #46A358;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #46A358;
+            border-radius: 50%;
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            opacity: 0;
+        }
+    }
+}
+
+.active {
+    .circle {
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    border: 1px solid #46A358;
+}

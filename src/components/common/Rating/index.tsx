@@ -6,7 +6,7 @@ import Star from "@/../../public/assets/svg/Star.svg";
 
 import { IRatingProps } from "./Rating.props";
 
-import styles from "@/styles/components/common/Rating.module.scss";
+import styles from "./Rating.module.scss";
 
 const Rating: FC<IRatingProps> = ({ isEditable = false, rating, setRating, ...props }) => {
       const [ratingArray, setRatingArray] = useState(new Array(5).fill(<></>));

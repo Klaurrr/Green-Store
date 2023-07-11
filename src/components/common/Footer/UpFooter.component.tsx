@@ -1,7 +1,8 @@
-import styles from "@/styles/components/common/UpFooter.module.scss";
 import icons from "../../../../public/assets/icons";
 import Button from "@/components/ui/Button";
 import { useState } from "react";
+
+import styles from "./styles/UpFooter.module.scss";
 
 const UpFooter = () => {
       const [value, setValue] = useState("");
@@ -50,12 +51,15 @@ const UpFooter = () => {
                               />
                               <Button
                                     handler={handleClick}
-                                    width={"85px"}
-                                    height={"40px"}
-                                    text={"Join"}
-                                    fontWeight={"700"}
-                                    fontSize={"18px"}
-                              />
+                                    style={{
+                                          width: "85px",
+                                          height: "40px",
+                                          fontWeight: "700",
+                                          fontSize: "18px",
+                                    }}
+                              >
+                                    Join
+                              </Button>
                         </div>
                         <p>
                               We usually post offers and challenges in newsletter. We’re your online

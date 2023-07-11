@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 
-import styles from "@/styles/components/ui/Checkbox.module.scss";
 import clsx from "clsx";
 
-const Checkbox = () => {
+import { ICheckboxProps } from "./Checkbox.props";
+
+import styles from "./Checkbox.module.scss";
+
+const Checkbox: FC<ICheckboxProps> = ({ children }) => {
       const [checked, setChecked] = useState(false);
 
       return (
@@ -19,7 +22,7 @@ const Checkbox = () => {
                         className={styles.checkbox}
                         onClick={() => console.log("checked")}
                   />
-                  Ship to a different address?
+                  {children}
             </div>
       );
 };

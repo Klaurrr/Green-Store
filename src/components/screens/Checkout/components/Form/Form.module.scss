@@ -28,11 +28,12 @@
             height: 152px;
             border-radius: 3px;
             border: 1px solid #EAEAEA;
+            padding: 9px;
             resize: none;
 
             &:focus {
                 outline: none;
-                padding: 9px;
+
             }
         }
     }

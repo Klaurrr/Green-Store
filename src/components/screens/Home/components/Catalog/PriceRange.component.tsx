@@ -44,11 +44,10 @@ const PriceRange: FC<IPriceRangeProps> = ({ setCurrentPage }) => {
 
                         <Button
                               handler={() => filterHandler()}
-                              width={"90px"}
-                              height={"35px"}
-                              text={"Filter"}
-                              fontWeight={"700"}
-                        />
+                              style={{ width: "90px", height: "35px", fontWeight: "700" }}
+                        >
+                              Filter
+                        </Button>
                   </div>
             </div>
       );

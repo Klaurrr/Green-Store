@@ -4,32 +4,34 @@ import { IProps } from "./Button.props";
 
 import icons from "../../../../public/assets/icons";
 
-import styles from "@/styles/components/ui/Button.module.scss";
 import clsx from "clsx";
 
-const Button: FC<IProps> = ({ width, height, text, fontSize, fontWeight, handler, invert }) => {
+import styles from "./Button.module.scss";
+
+const Button: FC<IProps> = ({ children, handler, invert, type, style }) => {
       const fontStyle = {
-            alignItems: text === "Find More" ? "end" : "center",
-            fontSize,
-            fontWeight,
+            alignItems: children === "Find More" ? "end" : "center",
+            fontSize: style.fontSize,
+            fontWeight: style.fontWeight,
       };
 
       return (
             <button
                   className={invert ? clsx(styles.button, styles.invert) : styles.button}
-                  style={{ width, height }}
+                  style={style}
                   onClick={handler}
+                  type={type}
             >
                   <div style={fontStyle}>
-                        {text === "Login" && (
+                        {children === "Login" && (
                               <img
                                     src={icons.Logout.src}
                                     alt="logout-img"
                                     style={{ marginRight: "2px" }}
                               />
                         )}
-                        {text}
-                        {text === "Find More" && (
+                        {children}
+                        {children === "Find More" && (
                               <img
                                     src={icons.ArrowRight.src}
                                     alt="arrow-img"

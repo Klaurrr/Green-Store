@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import styles from "@/styles/components/common/BreadCrumbs.module.scss";
+import styles from "./BreadCrumbs.module.scss";
 
 const BreadCrumbs = () => {
       const router = useRouter();

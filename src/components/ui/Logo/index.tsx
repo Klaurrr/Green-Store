@@ -1,5 +1,6 @@
-import styles from "@/styles/components/ui/Logo.module.scss";
 import icons from "../../../../public/assets/icons";
+
+import styles from "./Logo.module.scss";
 
 const Logo = () => {
       return (

@@ -3,11 +3,11 @@ import React, { FC } from "react";
 import Card from "../Card";
 import Carousel from "@/components/common/Carousel";
 
-import { IPageProps } from "@/types/IPage.props";
-
-import styles from "@/styles/components/ui/PlantsSlider.module.scss";
-import GenerateKey from "@/components/common/GenerateKey";
 import { IPlantsSliderProps } from "./IPlantsSlider.props";
+
+import GenerateKey from "@/components/common/GenerateKey";
+
+import styles from "./PlantsSlider.module.scss";
 
 const PlantsSlider: FC<IPlantsSliderProps> = ({ plants, title }) => {
       const slicePlants = () => {

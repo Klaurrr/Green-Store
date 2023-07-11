@@ -2,7 +2,7 @@ import { useEffect, useState, Children, cloneElement } from "react";
 
 import { Props } from "./Carousel.props";
 
-import styles from "@/styles/components/common/Carousel.module.scss";
+import styles from "./Carousel.module.scss";
 
 const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
       const [pages, setPages] = useState<any>([]);

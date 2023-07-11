@@ -6,7 +6,7 @@ import { IPaginationProps } from "./Pagination.props";
 
 import icons from "../../../../public/assets/icons";
 
-import styles from "@/styles/components/common/Pagination.module.scss";
+import styles from "./Pagination.module.scss";
 
 const Pagination = ({
       dataPerPage,

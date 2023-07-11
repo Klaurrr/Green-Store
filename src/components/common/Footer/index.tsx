@@ -1,9 +1,8 @@
-import styles from "@/styles/components/common/Footer.module.scss";
-import icons from "../../../../public/assets/icons";
-import Button from "@/components/ui/Button";
 import UpFooter from "./UpFooter.component";
 import CenterFooter from "./CenterFooter.component";
 import DownFooter from "./DownFooter.component";
+
+import styles from "./styles/Footer.module.scss";
 
 const Footer = () => {
       return (

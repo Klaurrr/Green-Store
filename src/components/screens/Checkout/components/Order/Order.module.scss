@@ -20,14 +20,23 @@
             font-size: 16px;
             font-weight: 500;
             line-height: 16px;
+
+            &:last-child {
+                padding-right: 15px;
+            }
         }
 
     }
 
     .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
         .plant {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             width: 100%;
             height: 70px;
             background: #FBFBFB;
@@ -39,6 +48,8 @@
             }
 
             &-title {
+                width: 150px;
+
                 h4 {
                     font-size: 16px;
                     font-weight: 500;
@@ -56,7 +67,6 @@
             }
 
             .quantity {
-                margin: 0px 37px 0 40px;
                 color: #727272;
                 font-size: 14px;
 
@@ -75,5 +85,44 @@
         }
 
 
+    }
+
+    .wrapper__2 {
+        width: 320px;
+        float: right;
+    }
+
+
+    .totalPrice {
+        margin: 17px 0 47px;
+
+        h5 {
+            text-align: right;
+            margin-bottom: 18px;
+
+            color: #3D3D3D;
+            font-size: 14px;
+            line-height: 16px;
+
+            span {
+                color: #46A358;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .payment {
+        margin-bottom: 50px;
+
+        .payment__items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+
+            .payment__item {
+                cursor: pointer;
+            }
+        }
     }
 }

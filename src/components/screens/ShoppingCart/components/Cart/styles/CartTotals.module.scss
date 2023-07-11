@@ -52,54 +52,7 @@
         }
     }
 
-    .subtotal,
-    .discount,
-    .shiping,
-    .total {
-        display: flex;
-        justify-content: space-between;
-    }
 
-    .subtotal,
-    .shiping {
-        span {
-            font-size: 18px;
-            font-weight: 500;
-        }
-    }
-
-    .subtotal {
-        margin-bottom: 15px;
-    }
-
-    .shiping {
-        margin: 21px 0px 26px;
-
-        div {
-            display: flex;
-            align-items: flex-end;
-            flex-direction: column;
-
-            :last-child {
-                font-size: 12px;
-                color: #46A358;
-                cursor: pointer;
-            }
-        }
-    }
-
-    .total {
-        h4 {
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        span {
-            font-size: 18px;
-            font-weight: 700;
-            color: #46A358;
-        }
-    }
 
     .button {
         margin: 30px 0 15px;

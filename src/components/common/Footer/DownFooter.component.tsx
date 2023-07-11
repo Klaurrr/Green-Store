@@ -1,5 +1,6 @@
-import styles from "@/styles/components/common/DownFooter.module.scss";
 import icons from "../../../../public/assets/icons";
+
+import styles from "./styles/DownFooter.module.scss";
 
 const DownFooter = () => {
       return (

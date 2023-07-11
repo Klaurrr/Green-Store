@@ -18,7 +18,9 @@ export const AboutUs = () => {
                                           We are an online plant shop offering a wide range of cheap
                                           and trendy plants
                                     </p>
-                                    <Button width={"140px"} height={"40px"} text={"Find More"} />
+                                    <Button style={{ width: "140px", height: "40px" }}>
+                                          Find More
+                                    </Button>
                               </div>
                         </div>
                   ))}

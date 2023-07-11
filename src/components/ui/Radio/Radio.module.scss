@@ -1,0 +1,44 @@
+.label {
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+
+        border-radius: 15px;
+        border: 2px solid #46A358;
+        cursor: pointer;
+    }
+
+    &::after {
+        content: "";
+        opacity: 0;
+        width: 9px;
+        height: 9px;
+        background: #46A358;
+        border-radius: 50%;
+
+        cursor: pointer;
+
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+}
+
+.radio {
+    display: none;
+    margin-right: 7px;
+}
+
+.checked {
+    &::after {
+        opacity: 1;
+    }
+}

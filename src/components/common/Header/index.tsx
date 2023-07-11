@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Cart from "@/components/screens/ShoppingCart/components/Cart";
 import Button from "@/components/ui/Button";
 
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
@@ -12,9 +11,10 @@ import Logo from "@/components/ui/Logo";
 
 import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
 
-import styles from "@/styles/components/common/Header.module.scss";
 import { usePlantsStore } from "@/store";
 import { IPlantsState } from "@/types/IPlantsState";
+
+import styles from "./Header.module.scss";
 
 const Header = React.memo(() => {
       const router = useRouter();
@@ -53,7 +53,7 @@ const Header = React.memo(() => {
                                     <div className={styles.counter}>{plants.length}</div>
                               </div>
                         </div>
-                        <Button width={"100px"} height={"35px"} text={"Login"} />
+                        <Button style={{ width: "100px", height: "35px" }}>Login</Button>
                   </div>
             </header>
       );
