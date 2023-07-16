@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
+import ModalWindow from "@/components/ui/ModalWindow";
 
 import { Form } from "./components/Form";
 import { Order } from "./components/Order";
-
-import { useForm, Controller } from "react-hook-form";
 
 import styles from "./Checkout.module.scss";
 
 const CheckoutPage = () => {
       const [currentPaymentMethod, setCurrentPaymentMethod] = useState(0);
+      const [windowIsVisible, setWindowIsVisible] = useState(false);
 
       const {
             handleSubmit,
@@ -22,16 +23,24 @@ const CheckoutPage = () => {
       } = useForm();
 
       const onSubmit = (data: any) => {
-            console.log(
-                  Object.assign(data, {
-                        PaymentMethod:
-                              currentPaymentMethod === 0
-                                    ? "Cashless"
-                                    : currentPaymentMethod === 1
-                                    ? "Dorect bank transfer"
-                                    : "Cash on delivery",
-                  })
-            );
+            const formData = Object.assign(data, {
+                  PaymentMethod:
+                        currentPaymentMethod === 0
+                              ? "Cashless"
+                              : currentPaymentMethod === 1
+                              ? "Dorect bank transfer"
+                              : "Cash on delivery",
+            });
+
+            fetch("https://api.sbercloud.ru/content/v1/bootcamp/frontend", {
+                  method: "POST",
+                  headers: {
+                        "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(formData),
+            })
+                  .then((response) => response.json())
+                  .finally(() => setWindowIsVisible(true));
       };
 
       return (
@@ -51,6 +60,7 @@ const CheckoutPage = () => {
                               setCurrentPaymentMethod={setCurrentPaymentMethod}
                         />
                   </form>
+                  {windowIsVisible && <ModalWindow setWindowIsVisible={setWindowIsVisible} />}
             </>
       );
 };

@@ -1,10 +1,9 @@
 import React, { FC, useState } from "react";
 
-import { usePlantsStore } from "@/store";
-
 import Button from "@/components/ui/Button";
-
+import { usePlantsStore } from "@/store";
 import { IPlantsState } from "@/types/IPlantsState";
+
 import { IPriceRangeProps } from "./props/PriceRange.props";
 
 import styles from "./styles/PriceRange.module.scss";

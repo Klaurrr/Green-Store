@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import { Props } from "./Layout.props";
+import Footer from "@/layout/Footer";
+import Header from "@/layout/Header";
 
-import Header from "@/components/common/Header";
-import Footer from "@/components/common/Footer";
+import { Props } from "./Layout.props";
 
 import styles from "./Layout.module.scss";
 

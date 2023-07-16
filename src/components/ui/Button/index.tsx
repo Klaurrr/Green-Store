@@ -1,10 +1,9 @@
 import { FC } from "react";
-
-import { IProps } from "./Button.props";
+import clsx from "clsx";
 
 import icons from "../../../../public/assets/icons";
 
-import clsx from "clsx";
+import { IProps } from "./Button.props";
 
 import styles from "./Button.module.scss";
 

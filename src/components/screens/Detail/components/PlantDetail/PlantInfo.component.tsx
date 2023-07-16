@@ -1,14 +1,13 @@
 import { FC, useState } from "react";
+import clsx from "clsx";
 
 import Rating from "@/components/common/Rating";
 import Button from "@/components/ui/Button";
-
-import clsx from "clsx";
-
 import { usePlantsStore } from "@/store";
-import { IPlantDetailProps } from "./props/PlantDetail.props";
 
 import icons from "../../../../../../public/assets/icons";
+
+import { IPlantDetailProps } from "./props/PlantDetail.props";
 
 import styles from "./styles/PlantInfo.module.scss";
 

@@ -1,8 +1,7 @@
 import { FC } from "react";
 
-import Layout from "@/layout";
-
 import DetailPage from "@/components/screens/Detail";
+import Layout from "@/layout";
 
 const PlantDetailPage: FC = () => {
       return (

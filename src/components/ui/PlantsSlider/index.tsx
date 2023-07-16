@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 
-import Card from "../Card";
 import Carousel from "@/components/common/Carousel";
+import generateKey from "@/components/common/GenerateKey";
+
+import Card from "../Card";
 
 import { IPlantsSliderProps } from "./IPlantsSlider.props";
-
-import GenerateKey from "@/components/common/GenerateKey";
 
 import styles from "./PlantsSlider.module.scss";
 
@@ -30,13 +30,9 @@ const PlantsSlider: FC<IPlantsSliderProps> = ({ plants, title }) => {
                   <p className={styles.title}>{title}</p>
                   <Carousel>
                         {slicedPlants.map((chunk, index) => (
-                              <div className={styles.chunk} key={index}>
+                              <div className={styles.chunk} key={generateKey(`${index}`)}>
                                     {chunk.map((plant) => (
-                                          <Card
-                                                plant={plant}
-                                                forSlider
-                                                key={GenerateKey(plant.name)}
-                                          />
+                                          <Card plant={plant} forSlider key={plant.id} />
                                     ))}
                               </div>
                         ))}

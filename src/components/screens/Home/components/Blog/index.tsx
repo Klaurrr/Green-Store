@@ -1,8 +1,8 @@
 import React from "react";
 
-import BlogItem from "./BlogItem.component";
-
 import icons from "../../../../../../public/assets/icons";
+
+import BlogItem from "./BlogItem.component";
 
 import styles from "./styles/Blog.module.scss";
 

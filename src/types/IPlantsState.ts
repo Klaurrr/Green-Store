@@ -19,4 +19,6 @@ export interface IPlantsState {
       addFilteredPlants: (plants: IPlants[]) => void;
       addDataForPagination: (number: number) => void;
       setActiveCategory: (category: string) => void;
+      coupon: boolean;
+      setCoupon: () => void;
 }

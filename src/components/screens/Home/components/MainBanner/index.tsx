@@ -1,6 +1,7 @@
 import React from "react";
 
 import Carousel from "@/components/common/Carousel";
+
 import Screen from "./Screen.component";
 
 import styles from "./styles/MainBanner.module.scss";

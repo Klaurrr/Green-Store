@@ -1,9 +1,8 @@
 import { FC } from "react";
 
-import { IMenuProps } from "./props/Menu.props";
-
 import icons from "../../../../../../public/assets/icons";
 
+import { IMenuProps } from "./props/Menu.props";
 import Categories from "./Categories.component";
 import PriceRange from "./PriceRange.component";
 import Size from "./Size.component";

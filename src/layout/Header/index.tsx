@@ -1,16 +1,11 @@
 import React from "react";
-
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Button from "@/components/ui/Button";
-
-import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
-
-import Logo from "@/components/ui/Logo";
-
 import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
-
+import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
+import Button from "@/components/ui/Button";
+import Logo from "@/components/ui/Logo";
 import { usePlantsStore } from "@/store";
 import { IPlantsState } from "@/types/IPlantsState";
 

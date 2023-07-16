@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
-import { IBlogItemProps } from "./props/BlogItem.props";
-
 import ArrowRight from "@/../../public/assets/svg/ArrowRight.svg";
+
+import { IBlogItemProps } from "./props/BlogItem.props";
 
 import styles from "./styles/BlogItem.module.scss";
 

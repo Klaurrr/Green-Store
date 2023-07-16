@@ -1,9 +1,10 @@
+import { useQuery } from "react-query";
+import { ClipLoader } from "react-spinners";
+import { useRouter } from "next/router";
+
 import BreadCrumbs from "@/components/common/BreadCrumbs";
 import PlantsSlider from "@/components/ui/PlantsSlider";
 import { IPlants } from "@/types/IPlants";
-import { useRouter } from "next/router";
-import { useQuery } from "react-query";
-import { ClipLoader } from "react-spinners";
 
 import { PlantDetail } from "./components/PlantDetail";
 

@@ -1,13 +1,10 @@
 import React, { FC, useLayoutEffect } from "react";
 
 import HomePage from "@/components/screens/Home";
-
 import Layout from "@/layout";
-
 import { usePlantsStore } from "@/store";
-
-import { IPlantsState } from "@/types/IPlantsState";
 import { IPageProps } from "@/types/IPage.props";
+import { IPlantsState } from "@/types/IPlantsState";
 
 const Home: FC<IPageProps> = ({ plants }) => {
       const addPlants = usePlantsStore((state: IPlantsState) => state.addPlants);

@@ -1,4 +1,4 @@
-import icons from "../../../../public/assets/icons";
+import icons from "../../../public/assets/icons";
 
 import styles from "./styles/DownFooter.module.scss";
 

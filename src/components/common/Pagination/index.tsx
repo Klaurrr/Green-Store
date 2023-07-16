@@ -1,10 +1,9 @@
 import { useState } from "react";
-
 import clsx from "clsx";
 
-import { IPaginationProps } from "./Pagination.props";
-
 import icons from "../../../../public/assets/icons";
+
+import { IPaginationProps } from "./Pagination.props";
 
 import styles from "./Pagination.module.scss";
 

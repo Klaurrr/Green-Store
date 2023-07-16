@@ -1,5 +1,6 @@
 import Logo from "@/components/ui/Logo";
-import icons from "../../../../public/assets/icons";
+
+import icons from "../../../public/assets/icons";
 
 import styles from "./styles/CenterFooter.module.scss";
 

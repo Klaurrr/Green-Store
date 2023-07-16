@@ -1,4 +1,4 @@
-import { Catalog, MainBanner, AboutUs, Blog } from "./components";
+import { AboutUs, Blog, Catalog, MainBanner } from "./components";
 
 const HomePage = () => {
       return (

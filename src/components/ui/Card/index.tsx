@@ -1,16 +1,13 @@
 import { FC } from "react";
-
 import { useRouter } from "next/router";
-
-import plantsImg from "../../../../public/assets/plantsImg";
 
 import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
 import HeartSvg from "@/../../public/assets/svg/heart.svg";
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
-
+import { ICardProps } from "@/components/screens/Home/components/Catalog/props/Card.props";
 import { usePlantsStore } from "@/store";
 
-import { ICardProps } from "@/components/screens/Home/components/Catalog/props/Card.props";
+import plantsImg from "../../../../public/assets/plantsImg";
 
 import styles from "./Card.module.scss";
 

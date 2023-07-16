@@ -1,10 +1,11 @@
 import React from "react";
 
 import { usePlantsStore } from "@/store";
-import { IPlantsState } from "@/types/IPlantsState";
-import plantsImg from "../../../../../../public/assets/plantsImg";
-import icons from "../../../../../../public/assets/icons";
 import { IPlants } from "@/types/IPlants";
+import { IPlantsState } from "@/types/IPlantsState";
+
+import icons from "../../../../../../public/assets/icons";
+import plantsImg from "../../../../../../public/assets/plantsImg";
 
 import styles from "./styles/PlantsList.module.scss";
 

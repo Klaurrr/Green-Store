@@ -26,6 +26,7 @@ import FacebookGray from "./Facebook_gray.png";
 import LinkedinGray from "./Linkedin_gray.png";
 import Delete from "./Delete.png";
 import ArrowDown from "./ArrowDown.png";
+import Thanks from "./thank-you.png";
 
 import { StaticImageData } from "next/image";
 
@@ -62,4 +63,5 @@ export default <Images>{
       LinkedinGray,
       Delete,
       ArrowDown,
+      Thanks,
 };

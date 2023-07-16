@@ -1,9 +1,7 @@
 import React, { FC, ReactNode } from "react";
-
-import { usePlantsStore } from "@/store";
-
 import clsx from "clsx";
 
+import { usePlantsStore } from "@/store";
 import { IPlantsState } from "@/types/IPlantsState";
 
 import { ICatalogMenuProps } from "./props/CatalogMenu.props";

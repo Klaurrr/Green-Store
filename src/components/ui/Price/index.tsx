@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 
 import { usePlantsStore } from "@/store";
-import { IPriceProps } from "./Price.props";
 
 import styles from "./Price.module.scss";
 
-const Price: FC<IPriceProps> = ({ coupon }) => {
+const Price: FC = () => {
       const { plants, quantity } = usePlantsStore((state) => state.cart);
+      const coupon = usePlantsStore((state) => state.coupon);
 
       const subTotalSum = plants
             .map((plant) => {

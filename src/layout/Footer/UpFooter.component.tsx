@@ -1,6 +1,8 @@
-import icons from "../../../../public/assets/icons";
-import Button from "@/components/ui/Button";
 import { useState } from "react";
+
+import Button from "@/components/ui/Button";
+
+import icons from "../../../public/assets/icons";
 
 import styles from "./styles/UpFooter.module.scss";
 

@@ -1,7 +1,6 @@
 import React from "react";
 
 import plantsImg from "../../../../../../public/assets/plantsImg";
-
 import Button from "../../../../ui/Button";
 
 import styles from "./AboutUs.module.scss";

@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 
 import { ICardsListProps } from "./props/CardsList.props";
-
 import NavBar from "./NavBar.component";
 
 import styles from "./styles/CardsList.module.scss";

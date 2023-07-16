@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 
-import GenerateKey from "@/components/common/GenerateKey";
+import generateKey from "@/components/common/GenerateKey";
 
 import icons from "../../../../../../public/assets/icons";
 
@@ -38,7 +38,7 @@ const NavBar: FC<INavBarProps> = ({ plantsFilter }) => {
                               <li
                                     onClick={() => setActive(li)}
                                     className={active === li ? styles.active : ""}
-                                    key={GenerateKey(li)}
+                                    key={generateKey(li)}
                               >
                                     {li}
                               </li>
@@ -54,7 +54,7 @@ const NavBar: FC<INavBarProps> = ({ plantsFilter }) => {
                                     {["Ascending", "Descending"].map((sort) => (
                                           <p
                                                 onClick={() => sortHandler(sort)}
-                                                key={GenerateKey(sort)}
+                                                key={generateKey(sort)}
                                           >
                                                 {sort} sorting
                                           </p>

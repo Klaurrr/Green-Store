@@ -1,9 +1,9 @@
 import React, { FC } from "react";
+import clsx from "clsx";
 
 import { InputProps } from "./Input.props";
 
 import styles from "./Input.module.scss";
-import clsx from "clsx";
 
 const Input: FC<InputProps> = React.forwardRef((props, ref) => {
       const { title = "", required, placeholder = "", error, ...rest } = props;

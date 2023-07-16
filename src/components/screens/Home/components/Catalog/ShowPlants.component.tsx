@@ -1,15 +1,13 @@
 import React from "react";
 
 import Card from "@/components/ui/Card";
-import GenerateKey from "@/components/common/GenerateKey";
-
 import { usePlantsStore } from "@/store";
-
 import { IPlants } from "@/types/IPlants";
 import { IPlantsState } from "@/types/IPlantsState";
+
 import { IShowPlantsProps } from "./props/ShowPlants.props";
 
-const ShowPlants = ({
+const showPlants = ({
       sort,
       activeCategory,
       setDataForPagination,
@@ -38,12 +36,8 @@ const ShowPlants = ({
                   activeCategory.split(" ")[0] !== "default"
                         ? sortedPlants
                                 .filter((plant) => plant.size === activeCategory.split(" ")[0])
-                                .map((plant) => (
-                                      <Card plant={plant} key={GenerateKey(plant.name)} />
-                                ))
-                        : sortedPlants.map((plant) => (
-                                <Card plant={plant} key={GenerateKey(plant.name)} />
-                          ));
+                                .map((plant) => <Card plant={plant} key={plant.id} />)
+                        : sortedPlants.map((plant) => <Card plant={plant} key={plant.id} />);
 
             setDataForPagination(resultPlants.length);
 
@@ -57,4 +51,4 @@ const ShowPlants = ({
       return showPlants;
 };
 
-export default ShowPlants;
+export default showPlants;

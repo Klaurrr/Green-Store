@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from "react";
-
 import clsx from "clsx";
 
 import Star from "@/../../public/assets/svg/Star.svg";

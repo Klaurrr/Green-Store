@@ -1,25 +1,26 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 
+import generateKey from "@/components/common/GenerateKey";
+import Button from "@/components/ui/Button";
+import CardCheckout from "@/components/ui/CardCheckout";
+import PaymentMethod from "@/components/ui/PaymentMethod";
+import Price from "@/components/ui/Price";
 import { usePlantsStore } from "@/store";
-import plantsImg from "../../../../../../public/assets/plantsImg";
+
+import icons from "../../../../../../public/assets/icons";
+
+import { IOrderProps } from "./Order.props";
 
 import styles from "./Order.module.scss";
-import Price from "@/components/ui/Price";
-import PaymentMethod from "@/components/ui/PaymentMethod";
-import icons from "../../../../../../public/assets/icons";
-import Button from "@/components/ui/Button";
-import GenerateKey from "@/components/common/GenerateKey";
-import { IOrderProps } from "./Order.props";
 
 export const Order: FC<IOrderProps> = ({ currentPaymentMethod, setCurrentPaymentMethod }) => {
       const { plants, quantity } = usePlantsStore((state) => state.cart);
-
-      const [coupon, setCoupon] = useState(false);
+      const { setCoupon } = usePlantsStore((state) => state);
 
       const getCoupon = () => {
             const userCoupon = prompt("Enter a coupon code");
 
-            userCoupon && setCoupon(true);
+            userCoupon && setCoupon();
       };
 
       return (
@@ -31,25 +32,7 @@ export const Order: FC<IOrderProps> = ({ currentPaymentMethod, setCurrentPayment
                   </div>
                   <div className={styles.wrapper}>
                         {plants.map((plant) => (
-                              <div className={styles.plant}>
-                                    <img
-                                          src={plantsImg[plant.img].src}
-                                          alt="plant"
-                                          className={styles.image}
-                                    />
-                                    <div className={styles["plant-title"]}>
-                                          <h4>{plant.name}</h4>
-                                          <p>
-                                                SKU: <span>some SKU</span>
-                                          </p>
-                                    </div>
-                                    <div className={styles.quantity}>
-                                          <span>(x {quantity[plant.name]})</span>
-                                    </div>
-                                    <div className={styles.price}>
-                                          <p>${Math.ceil(plant.price * quantity[plant.name])}</p>
-                                    </div>
-                              </div>
+                              <CardCheckout plant={plant} quantity={quantity[plant.name]} />
                         ))}
                   </div>
                   <div className={styles.wrapper__2}>
@@ -57,7 +40,7 @@ export const Order: FC<IOrderProps> = ({ currentPaymentMethod, setCurrentPayment
                               <h5 className={styles["price-title"]}>
                                     Have a coupon code? <span onClick={getCoupon}>Click here</span>
                               </h5>
-                              <Price coupon={coupon} />
+                              <Price />
                         </div>
                         <div className={styles.payment}>
                               <h3 className={styles.title}>Payment Method</h3>
@@ -70,7 +53,7 @@ export const Order: FC<IOrderProps> = ({ currentPaymentMethod, setCurrentPayment
                                           <div
                                                 className={styles.payment__item}
                                                 onClick={() => setCurrentPaymentMethod(index)}
-                                                key={GenerateKey(`${index}`)}
+                                                key={generateKey(`${index}`)}
                                           >
                                                 <PaymentMethod
                                                       active={index === currentPaymentMethod}

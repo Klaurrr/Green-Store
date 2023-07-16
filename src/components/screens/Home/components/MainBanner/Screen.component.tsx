@@ -1,5 +1,6 @@
-import plantsImg from "../../../../../../public/assets/plantsImg";
 import Button from "@/components/ui/Button";
+
+import plantsImg from "../../../../../../public/assets/plantsImg";
 
 import styles from "./styles/Screen.module.scss";
 

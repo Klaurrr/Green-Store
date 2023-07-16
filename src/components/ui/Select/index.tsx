@@ -1,11 +1,13 @@
 import React, { FC, useEffect, useState } from "react";
-import { ISelectProps } from "./Select.props";
+import clsx from "clsx";
+
+import generateKey from "@/components/common/GenerateKey";
 
 import icons from "../../../../public/assets/icons";
 
+import { ISelectProps } from "./Select.props";
+
 import styles from "./Select.module.scss";
-import clsx from "clsx";
-import GenerateKey from "@/components/common/GenerateKey";
 
 const Select: FC<ISelectProps> = ({
       title,
@@ -44,6 +46,7 @@ const Select: FC<ISelectProps> = ({
                   case "Phones":
                         setValue("Phone", answer);
                         clearErrors("Phone");
+                        break;
             }
       };
       return (
@@ -68,7 +71,7 @@ const Select: FC<ISelectProps> = ({
                                     {answers?.options?.map((answer) => (
                                           <div
                                                 onClick={() => selectOption(answer)}
-                                                key={GenerateKey(answer)}
+                                                key={generateKey(answer)}
                                           >
                                                 {answer}
                                           </div>

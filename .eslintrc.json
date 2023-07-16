@@ -2,23 +2,60 @@
 	"root": true,
 	"parser": "@typescript-eslint/parser",
 	"plugins": [
-		"@typescript-eslint"
+		"@typescript-eslint",
+		"import",
+		"simple-import-sort"
 	],
+	"extends": "google",
 	"rules": {
-		"semi": "off",
-		"@typescript-eslint/semi": [
-			"warn"
+		"object-curly-spacing": [
+			"warn",
+			"always"
 		],
-		"@typescript-eslint/no-empty-interface": [
+		"quotes": [
+			"warn",
+			"double"
+		],
+		"linebreak-style": "off",
+		"indent": [
+			"off"
+		],
+		"max-len": [
+			"off",
+			100
+		],
+		"simple-import-sort/imports": [
 			"error",
 			{
-				"allowSingleExtends": true
+				"groups": [
+					[
+						"^react",
+						"^@?\\w"
+					],
+					[
+						"^(@|components)(/.*|$)"
+					],
+					[
+						"^\u0000"
+					],
+					[
+						"^\\.\\.(?!/?$)",
+						"^\\.\\./?$"
+					],
+					[
+						"^\\./(?=.*/)(?!/?$)",
+						"^\\.(?!/?$)",
+						"^\\./?$"
+					],
+					[
+						"^.+\\.?(scss)$"
+					]
+				]
 			}
-		]
-	},
-	"extends": [
-		"eslint:recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
-		"plugin:@typescript-eslint/recommended"
-	]
+		],
+		"require-jsdoc": "off",
+		"simple-import-sort/exports": "error",
+		"no-unused-vars": "warn",
+		"operator-linebreak": "off"
+	}
 }

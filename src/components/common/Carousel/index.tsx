@@ -1,4 +1,4 @@
-import { useEffect, useState, Children, cloneElement } from "react";
+import { Children, cloneElement, useEffect, useState } from "react";
 
 import { Props } from "./Carousel.props";
 
@@ -9,10 +9,10 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
       const [offset, setOffset] = useState(0);
       const [currentPage, setCurrentPage] = useState(0);
 
-      const page_width = 1200;
+      const PAGE_WIDTH = 1200;
 
       useEffect(() => {
-            setCurrentPage(Math.abs(offset / page_width));
+            setCurrentPage(Math.abs(offset / PAGE_WIDTH));
       }, [offset]);
 
       useEffect(() => {
@@ -21,8 +21,8 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
                         return cloneElement(child, {
                               style: {
                                     height: "100%",
-                                    minWidth: `${page_width}px`,
-                                    maxWidth: `${page_width}px`,
+                                    minWidth: `${PAGE_WIDTH}px`,
+                                    maxWidth: `${PAGE_WIDTH}px`,
                               },
                         });
                   })
@@ -44,7 +44,7 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
                               <button
                                     key={index}
                                     onClick={() => {
-                                          setOffset(-index * page_width);
+                                          setOffset(-index * PAGE_WIDTH);
                                           setCurrentPage(Number(index));
                                     }}
                                     className={

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
+import Pagination from "@/components/common/Pagination";
+import { usePlantsStore } from "@/store";
+
 import CardsList from "./CardsList.component";
 import Menu from "./Menu.component";
-import ShowPlants from "./ShowPlants.component";
-import Pagination from "@/components/common/Pagination";
-
-import { usePlantsStore } from "@/store";
+import showPlants from "./ShowPlants.component";
 
 import styles from "./styles/Catalog.module.scss";
 
@@ -36,7 +36,7 @@ export const Catalog = () => {
                         />
                         <CardsList
                               setSort={setSort}
-                              showPlants={ShowPlants({
+                              showPlants={showPlants({
                                     sort,
                                     activeCategory,
                                     setDataForPagination,

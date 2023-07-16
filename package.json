@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint -- --fix"
   },
   "dependencies": {
     "@types/node": "18.15.5",
@@ -14,8 +15,8 @@
     "@types/react-dom": "18.0.11",
     "clsx": "^1.2.1",
     "cors": "^2.8.5",
-    "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "next": "13.2.4",
     "next-svgr": "^0.0.2",
     "react": "18.2.0",
@@ -30,6 +31,9 @@
     "@svgr/webpack": "^7.0.0",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.45.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.27.5",
     "sass": "^1.59.3"
   }
 }

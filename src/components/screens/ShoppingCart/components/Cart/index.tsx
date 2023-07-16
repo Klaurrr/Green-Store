@@ -1,10 +1,10 @@
-import PlantsList from "./PlantsList.component";
-import CartTotals from "./CartTotals.component";
-
 import { useQuery } from "react-query";
+import { ClipLoader } from "react-spinners";
+
 import PlantsSlider from "../../../../ui/PlantsSlider";
 
-import { ClipLoader } from "react-spinners";
+import CartTotals from "./CartTotals.component";
+import PlantsList from "./PlantsList.component";
 
 import styles from "./styles/Cart.module.scss";
 

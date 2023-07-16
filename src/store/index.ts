@@ -1,6 +1,6 @@
-import { IPlants } from "@/types/IPlants";
-import { IPlantsState } from "@/types/IPlantsState";
 import { create } from "zustand";
+
+import { IPlantsState } from "@/types/IPlantsState";
 
 export const usePlantsStore = create<IPlantsState>((set) => ({
       plants: [],
@@ -11,6 +11,7 @@ export const usePlantsStore = create<IPlantsState>((set) => ({
       filteredPlants: [],
       dataForPagination: 0,
       activeCategory: "default",
+      coupon: false,
 
       addPlants: (plants) => {
             set(() => ({
@@ -58,6 +59,11 @@ export const usePlantsStore = create<IPlantsState>((set) => ({
       setActiveCategory: (category) => {
             set(() => ({
                   activeCategory: category,
+            }));
+      },
+      setCoupon: () => {
+            set(() => ({
+                  coupon: true,
             }));
       },
 }));

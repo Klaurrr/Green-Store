@@ -1,6 +1,7 @@
 import React, { FC } from "react";
-import { IPaymentMethodProps } from "./PaymentMethod.props";
 import clsx from "clsx";
+
+import { IPaymentMethodProps } from "./PaymentMethod.props";
 
 import styles from "./PaymentMethod.module.scss";
 

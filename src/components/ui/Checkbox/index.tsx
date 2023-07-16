@@ -1,5 +1,4 @@
 import React, { FC, useState } from "react";
-
 import clsx from "clsx";
 
 import { ICheckboxProps } from "./Checkbox.props";

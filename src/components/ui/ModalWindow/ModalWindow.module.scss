@@ -1,0 +1,173 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 300%;
+
+    background: rgba(10, 13, 18, 0.25);
+
+    .container {
+        width: 580px;
+        background: #FFF;
+        margin: 70px auto 0;
+
+
+        .wrapper_1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: rgba(70, 163, 88, 0.06);
+            height: 156px;
+            width: 100%;
+
+
+            h4 {
+                color: #727272;
+                font-size: 16px;
+                margin-top: 15px;
+            }
+        }
+
+        .wrapper_2 {
+            border-bottom: 10px solid #46A358;
+
+            .info {
+                display: flex;
+                justify-content: center;
+                gap: 22px;
+                padding: 16px 0;
+                border-bottom: 1px solid rgba(70, 163, 88, 0.20);
+                border-top: 1px solid rgba(70, 163, 88, 0.20);
+
+                div {
+                    border-right: 1px solid rgba(70, 163, 88, 0.20);
+                    padding-right: 22px;
+
+                    &:last-child {
+                        border: none;
+                        padding: 0;
+                    }
+
+                    .info__title {
+                        color: #727272;
+                        font-size: 14px;
+                    }
+
+                    .info__content {
+                        color: #727272;
+                        font-size: 15px;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .order {
+                padding: 18px 40px 0;
+
+                &__title {
+                    color: #3D3D3D;
+                    font-size: 15px;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                }
+
+                &__subtitles {
+                    display: flex;
+                    padding-bottom: 11px;
+                    border-bottom: 1px solid rgba(70, 163, 88, 0.50);
+                    justify-content: space-between;
+
+                    :nth-child(2) {
+                        margin: 0 50px 0 288px;
+                    }
+
+                    h4 {
+                        color: #3D3D3D;
+                        font-size: 16px;
+                        font-weight: 500;
+
+                    }
+                }
+
+                &__plants {
+                    margin-top: 11px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+
+            .price {
+                padding: 0 40px 20px 40px;
+                margin: 20px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 20px;
+                border-bottom: 1px solid rgba(70, 163, 88, 0.50);
+                margin-bottom: 20px;
+
+                .col-1,
+                .col-2 {
+                    width: 250px;
+                }
+
+                .shiping,
+                .total {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .col-1 {
+                    .shiping {
+                        font-size: 15px;
+
+                        span {
+                            text-align: right;
+                            font-size: 18px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+                .col-2 {
+                    .total {
+                        font-size: 16px;
+                        font-weight: 700;
+
+                        span {
+                            color: #46A358;
+                            font-size: 18px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+
+            .notification {
+                padding: 0 48px;
+
+                p {
+                    color: #727272;
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+
+            .button {
+                display: flex;
+                justify-content: center;
+                margin: 0 auto;
+                padding: 50px 0;
+            }
+        }
+
+
+    }
+
+}

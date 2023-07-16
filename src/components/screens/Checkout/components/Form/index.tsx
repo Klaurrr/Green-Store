@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
+import Checkbox from "../../../../ui/Checkbox";
 import Input from "../../../../ui/Input";
 import Select from "../../../../ui/Select";
-import Checkbox from "../../../../ui/Checkbox";
 
 import { IFormProps } from "./IForm.props";
 
@@ -132,7 +132,10 @@ export const Form: FC<IFormProps> = ({
                         <Controller
                               name="Email"
                               control={control}
-                              rules={{ required: true }}
+                              rules={{
+                                    required: true,
+                                    pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                              }}
                               render={({ field }: { [key: string]: any }) => (
                                     <Input
                                           title={"Email Address"}
@@ -143,18 +146,19 @@ export const Form: FC<IFormProps> = ({
                               )}
                               defaultValue=""
                         />
-                        <Select
-                              title="Phone Number"
-                              width="80px"
-                              answers={{
-                                    title: "Phones",
-                                    options: ["+799", "+535", "+964"],
-                              }}
-                              placeholder="+530"
-                              register={(validate) => register("Phone", { validate: validate })}
-                              error={Phone}
-                              setValue={setValue}
-                              clearErrors={clearErrors}
+                        <Controller
+                              name="Phone"
+                              control={control}
+                              rules={{ required: true, pattern: /^\+?\d{1,12}$/ }}
+                              render={({ field }: { [key: string]: any }) => (
+                                    <Input
+                                          title={"Phone Number"}
+                                          required
+                                          error={Phone}
+                                          {...field}
+                                    />
+                              )}
+                              defaultValue=""
                         />
                   </div>
                   <Checkbox>Ship to a different address?</Checkbox>

@@ -1,6 +1,6 @@
-import UpFooter from "./UpFooter.component";
 import CenterFooter from "./CenterFooter.component";
 import DownFooter from "./DownFooter.component";
+import UpFooter from "./UpFooter.component";
 
 import styles from "./styles/Footer.module.scss";
 
