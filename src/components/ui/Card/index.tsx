@@ -14,11 +14,16 @@ import styles from "./Card.module.scss";
 const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
       const router = useRouter();
 
-      const addCart = usePlantsStore((state) => state.addCart);
+      const { addCart, addToWishlist } = usePlantsStore((state) => state);
 
-      const addCartHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-            e.stopPropagation();
+      const addCartHandler = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            event.stopPropagation();
             addCart(plant, 1);
+      };
+
+      const addToWishlistHandler = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            event.stopPropagation();
+            addToWishlist(plant);
       };
 
       return (
@@ -28,18 +33,14 @@ const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
                         width: forSlider ? "220px" : "258px",
                         height: forSlider ? "255px" : "355px",
                   }}
-                  onClick={() => router.push(`/Shop/${plant.id}`)}
-            >
+                  onClick={() => router.push(`/Shop/${plant.id}`)}>
                   <div
                         className={styles.wrapper_1}
-                        style={{ height: forSlider ? "255px" : "300px" }}
-                  >
+                        style={{ height: forSlider ? "255px" : "300px" }}>
                         <img src={plantsImg[`${plant.img}`].src} alt="plant-img" />
                         <div className={styles.icons} style={{ left: forSlider ? "53px" : "73px" }}>
-                              <div onClick={addCartHandler}>
-                                    <CartSvg />
-                              </div>
-                              <HeartSvg />
+                              <CartSvg onClick={addCartHandler} />
+                              <HeartSvg onClick={addToWishlistHandler} />
                               <SearchIcon />
                         </div>
                   </div>

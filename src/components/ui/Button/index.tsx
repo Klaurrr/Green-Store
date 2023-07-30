@@ -1,15 +1,12 @@
 import { FC } from "react";
 import clsx from "clsx";
 
-import icons from "../../../../public/assets/icons";
-
 import { IProps } from "./Button.props";
 
 import styles from "./Button.module.scss";
 
 const Button: FC<IProps> = ({ children, handler, invert, type, style }) => {
       const fontStyle = {
-            alignItems: children === "Find More" ? "end" : "center",
             fontSize: style.fontSize,
             fontWeight: style.fontWeight,
       };
@@ -21,23 +18,7 @@ const Button: FC<IProps> = ({ children, handler, invert, type, style }) => {
                   onClick={handler}
                   type={type}
             >
-                  <div style={fontStyle}>
-                        {children === "Login" && (
-                              <img
-                                    src={icons.Logout.src}
-                                    alt="logout-img"
-                                    style={{ marginRight: "2px" }}
-                              />
-                        )}
-                        {children}
-                        {children === "Find More" && (
-                              <img
-                                    src={icons.ArrowRight.src}
-                                    alt="arrow-img"
-                                    style={{ marginLeft: "2px" }}
-                              />
-                        )}
-                  </div>
+                  <div style={fontStyle}>{children}</div>
             </button>
       );
 };

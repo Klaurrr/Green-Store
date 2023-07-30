@@ -8,6 +8,7 @@ export const usePlantsStore = create<IPlantsState>((set) => ({
             plants: [],
             quantity: {},
       },
+      wishlist: [],
       filteredPlants: [],
       dataForPagination: 0,
       activeCategory: "default",
@@ -45,6 +46,13 @@ export const usePlantsStore = create<IPlantsState>((set) => ({
                         }
                   )
             );
+      },
+      addToWishlist: (currentPlant) => {
+            set((state) => ({
+                  wishlist: state.wishlist.some((plant) => plant.name === currentPlant.name)
+                        ? [...state.wishlist]
+                        : [...state.wishlist, currentPlant],
+            }));
       },
       addFilteredPlants: (plants) => {
             set(() => ({

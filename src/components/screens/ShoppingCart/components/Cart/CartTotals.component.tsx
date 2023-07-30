@@ -13,7 +13,10 @@ const CartTotals = () => {
 
       const [inputValue, setInputValue] = useState("");
 
-      const { plants, setCoupon } = usePlantsStore((state) => state);
+      const {
+            cart: { plants },
+            setCoupon,
+      } = usePlantsStore((state) => state);
 
       const handleFormSubmit = (event: React.FormEvent) => {
             event.preventDefault();

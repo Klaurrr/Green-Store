@@ -1,7 +1,7 @@
 .container {
     display: flex;
     align-items: flex-start;
-
+    justify-content: space-between;
     height: 53px;
     border-bottom: 0.3px solid rgba(70, 163, 88, 0.2);
 
@@ -82,6 +82,14 @@
             svg {
                 cursor: pointer;
             }
+        }
+
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
         }
     }
 }

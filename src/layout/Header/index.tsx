@@ -1,13 +1,19 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { signOut, useSession } from "next-auth/react";
 
 import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
 import Button from "@/components/ui/Button";
+import Login from "@/components/ui/Login";
 import Logo from "@/components/ui/Logo";
 import { usePlantsStore } from "@/store";
 import { IPlantsState } from "@/types/IPlantsState";
+
+import icons from "../../../public/assets/icons";
 
 import styles from "./Header.module.scss";
 
@@ -17,6 +23,10 @@ const Header = React.memo(() => {
       const links = ["Home", "Shop", "Plant Care", "Blogs"];
 
       const { plants } = usePlantsStore((state: IPlantsState) => state?.cart);
+
+      const [windowIsVisible, setWindowIsVisible] = useState(false);
+
+      const session = useSession();
 
       return (
             <header className={styles.container}>
@@ -31,8 +41,7 @@ const Header = React.memo(() => {
                                           `${item.replace(/\s/g, "")}`
                                                 ? styles.active
                                                 : ""
-                                    }
-                              >
+                                    }>
                                     {item}
                               </Link>
                         ))}
@@ -42,14 +51,35 @@ const Header = React.memo(() => {
                               <SearchIcon />
                               <div
                                     className={styles.cart}
-                                    onClick={() => router.push("/Shop/ShoppingCart")}
-                              >
+                                    onClick={() => router.push("/Shop/ShoppingCart")}>
                                     <CartSvg />
                                     <div className={styles.counter}>{plants.length}</div>
                               </div>
                         </div>
-                        <Button style={{ width: "100px", height: "35px" }}>Login</Button>
+                        {session?.data ? (
+                              <img
+                                    className={styles.avatar}
+                                    src={
+                                          session.data.user?.image
+                                                ? session.data.user?.image
+                                                : icons.Logo.src
+                                    }
+                                    onClick={() => router.push("/Account")}
+                              />
+                        ) : (
+                              <Button
+                                    style={{ width: "100px", height: "35px" }}
+                                    handler={() => setWindowIsVisible(true)}>
+                                    <img
+                                          src={icons.Logout.src}
+                                          alt="logout-img"
+                                          style={{ marginRight: "2px" }}
+                                    />
+                                    Login
+                              </Button>
+                        )}
                   </div>
+                  {windowIsVisible && <Login setWindowIsVisible={setWindowIsVisible} />}
             </header>
       );
 });

@@ -1,0 +1,16 @@
+.title {
+    margin-bottom: 21px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.wrapper {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 30px;
+
+    .optional-input {
+        display: flex;
+        align-items: flex-end;
+    }
+}

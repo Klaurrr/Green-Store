@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { SessionProvider } from "next-auth/react";
 
 import Footer from "@/layout/Footer";
 import Header from "@/layout/Header";
@@ -10,9 +11,11 @@ import styles from "./Layout.module.scss";
 const Layout: FC<Props> = ({ children }) => {
       return (
             <section className={styles.container}>
-                  <Header />
-                  {children}
-                  <Footer />
+                  <SessionProvider>
+                        <Header />
+                        {children}
+                        <Footer />
+                  </SessionProvider>
             </section>
       );
 };

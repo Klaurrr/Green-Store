@@ -5,4 +5,5 @@ export interface InputProps {
       required?: boolean;
       placeholder?: string;
       error: FieldErrors<FieldValues>;
+      style?: React.CSSProperties | undefined;
 }

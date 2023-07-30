@@ -8,7 +8,6 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
       const [pages, setPages] = useState<any>([]);
       const [offset, setOffset] = useState(0);
       const [currentPage, setCurrentPage] = useState(0);
-
       const PAGE_WIDTH = 1200;
 
       useEffect(() => {
@@ -34,8 +33,7 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
                   <div className={styles.window}>
                         <div
                               className={styles.pages_container}
-                              style={{ transform: `translateX(${offset}px)` }}
-                        >
+                              style={{ transform: `translateX(${offset}px)` }}>
                               {pages}
                         </div>
                   </div>

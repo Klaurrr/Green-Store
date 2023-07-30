@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { Controller, useForm } from "react-hook-form";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
@@ -60,7 +61,14 @@ const CheckoutPage = () => {
                               setCurrentPaymentMethod={setCurrentPaymentMethod}
                         />
                   </form>
-                  {windowIsVisible && <ModalWindow setWindowIsVisible={setWindowIsVisible} />}
+                  {windowIsVisible && (
+                        <>
+                              {createPortal(
+                                    <ModalWindow setWindowIsVisible={setWindowIsVisible} />,
+                                    document.body
+                              )}
+                        </>
+                  )}
             </>
       );
 };

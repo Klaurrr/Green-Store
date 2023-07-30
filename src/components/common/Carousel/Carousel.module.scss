@@ -27,38 +27,6 @@
             transition-property: transform;
         }
     }
-
-    .arrows {
-        div {
-            position: absolute;
-            top: 40%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            width: 60px;
-            height: 60px;
-
-            cursor: pointer;
-
-            border-radius: 50%;
-            background-color: #FFF;
-            box-shadow: 0 4px 50px 2px rgb(34 60 80 / 25%);
-
-            &:first-child {
-                left: -30px;
-
-                svg {
-                    transform: rotate(180deg);
-                }
-            }
-
-            &:last-child {
-                right: -30px
-            }
-        }
-    }
 }
 
 .dots {

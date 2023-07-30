@@ -1,5 +1,6 @@
 import React from "react";
 
+import icons from "../../../../../../public/assets/icons";
 import plantsImg from "../../../../../../public/assets/plantsImg";
 import Button from "../../../../ui/Button";
 
@@ -19,6 +20,11 @@ export const AboutUs = () => {
                                     </p>
                                     <Button style={{ width: "140px", height: "40px" }}>
                                           Find More
+                                          <img
+                                                src={icons.ArrowRight.src}
+                                                alt="arrow-img"
+                                                style={{ marginLeft: "2px" }}
+                                          />
                                     </Button>
                               </div>
                         </div>
