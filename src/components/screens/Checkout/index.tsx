@@ -23,14 +23,22 @@ const CheckoutPage = () => {
             setValue,
       } = useForm();
 
+      const getPaymentMethod = (): string => {
+            switch (currentPaymentMethod) {
+                  case 0:
+                        return "Cashless";
+                  case 1:
+                        return "Dorect bank transfer";
+                  case 2:
+                        return "Cash on delivery";
+                  default:
+                        return "Cashless";
+            }
+      };
+
       const onSubmit = (data: any) => {
             const formData = Object.assign(data, {
-                  PaymentMethod:
-                        currentPaymentMethod === 0
-                              ? "Cashless"
-                              : currentPaymentMethod === 1
-                              ? "Dorect bank transfer"
-                              : "Cash on delivery",
+                  PaymentMethod: getPaymentMethod(),
             });
 
             fetch("https://api.sbercloud.ru/content/v1/bootcamp/frontend", {
@@ -64,7 +72,10 @@ const CheckoutPage = () => {
                   {windowIsVisible && (
                         <>
                               {createPortal(
-                                    <ModalWindow setWindowIsVisible={setWindowIsVisible} />,
+                                    <ModalWindow
+                                          setWindowIsVisible={setWindowIsVisible}
+                                          paymentMethod={getPaymentMethod()}
+                                    />,
                                     document.body
                               )}
                         </>

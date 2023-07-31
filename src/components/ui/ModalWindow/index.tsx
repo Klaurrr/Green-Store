@@ -11,12 +11,14 @@ import { IModalWindowProps } from "./ModalWindow.props";
 
 import styles from "./ModalWindow.module.scss";
 
-const ModalWindow: FC<IModalWindowProps> = ({ setWindowIsVisible }) => {
+const ModalWindow: FC<IModalWindowProps> = ({ setWindowIsVisible, paymentMethod }) => {
       const { plants, quantity } = usePlantsStore((state) => state.cart);
       const coupon = usePlantsStore((state) => state.coupon);
 
       const [date, setDate] = useState<number | null>(null);
-      const [shiping] = useState(16);
+
+      const COUPON = 15;
+      const SHIPPING = 16;
 
       const subTotalSum = plants
             .map((plant) => {
@@ -26,6 +28,10 @@ const ModalWindow: FC<IModalWindowProps> = ({ setWindowIsVisible }) => {
                   return 0;
             })
             ?.reduce((acc, sum) => acc + sum, 0);
+
+      const totalSum = subTotalSum
+            ? subTotalSum - (coupon ? COUPON : 0) + SHIPPING
+            : subTotalSum + SHIPPING;
 
       const submitHandler = () => {
             setWindowIsVisible(false);
@@ -55,18 +61,14 @@ const ModalWindow: FC<IModalWindowProps> = ({ setWindowIsVisible }) => {
                                     <div>
                                           <p className={styles.info__title}>Total</p>
                                           <span className={styles.info__content}>
-                                                {subTotalSum
-                                                      ? coupon
-                                                            ? subTotalSum - 15
-                                                            : subTotalSum
-                                                      : 0}
+                                                {totalSum}
                                                 .00
                                           </span>
                                     </div>
                                     <div>
                                           <p className={styles.info__title}>Payment Method</p>
                                           <span className={styles.info__content}>
-                                                Cash on delivery
+                                                {paymentMethod}
                                           </span>
                                     </div>
                               </div>
@@ -89,18 +91,13 @@ const ModalWindow: FC<IModalWindowProps> = ({ setWindowIsVisible }) => {
                               <div className={styles.price}>
                                     <div className={styles["col-1"]}>
                                           <p className={styles.shiping}>
-                                                Shiping <span>${shiping}</span>
+                                                Shiping <span>${SHIPPING}</span>
                                           </p>
                                     </div>
                                     <div className={styles["col-2"]}>
                                           <h4 className={styles.total}>
                                                 Total
-                                                <span>
-                                                      $
-                                                      {coupon
-                                                            ? subTotalSum + shiping - 15
-                                                            : subTotalSum + shiping}
-                                                </span>
+                                                <span>${totalSum}</span>
                                           </h4>
                                     </div>
                               </div>
@@ -117,8 +114,7 @@ const ModalWindow: FC<IModalWindowProps> = ({ setWindowIsVisible }) => {
                                                 width: "162px",
                                                 height: "45px",
                                           }}
-                                          handler={submitHandler}
-                                    >
+                                          handler={submitHandler}>
                                           Track your order
                                     </Button>
                               </div>

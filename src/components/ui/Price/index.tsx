@@ -8,6 +8,9 @@ const Price: FC = () => {
       const { plants, quantity } = usePlantsStore((state) => state.cart);
       const coupon = usePlantsStore((state) => state.coupon);
 
+      const SHIPPING = 16;
+      const COUPON = 15;
+
       const subTotalSum = plants
             .map((plant) => {
                   if (quantity[plant.name]) {
@@ -17,7 +20,9 @@ const Price: FC = () => {
             })
             ?.reduce((acc, sum) => acc + sum, 0);
 
-      const COUPON = 15;
+      const totalSum = subTotalSum
+            ? subTotalSum - (coupon ? COUPON : 0) + SHIPPING
+            : subTotalSum + SHIPPING;
 
       return (
             <>
@@ -32,15 +37,13 @@ const Price: FC = () => {
                   <div className={styles.shiping}>
                         <p>Shiping</p>
                         <div>
-                              <span>$0.00</span>
+                              <span>$16.00</span>
                               <span className={styles.charge}>View shipping charge</span>
                         </div>
                   </div>
                   <div className={styles.total}>
                         <h4>Total</h4>
-                        <span>
-                              ${subTotalSum ? subTotalSum - (coupon ? COUPON : 0) : subTotalSum}
-                        </span>
+                        <span>${totalSum}</span>
                   </div>
             </>
       );
