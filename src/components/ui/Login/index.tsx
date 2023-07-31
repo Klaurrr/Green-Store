@@ -46,7 +46,7 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
       };
 
       const searchParams = useSearchParams();
-      const callbackUrl = searchParams.get("callbackUrl") || "/Home";
+      // const callbackUrl = searchParams.get("callbackUrl") || "/Home";
 
       return (
             <>
@@ -149,7 +149,7 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
                                                 <div
                                                       className={styles.social}
                                                       onClick={() =>
-                                                            signIn("yandex", { callbackUrl })
+                                                            signIn("yandex" /* , { callbackUrl } */)
                                                       }>
                                                       <img
                                                             src={icons.Yandex.src}
