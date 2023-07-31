@@ -1,4 +1,4 @@
-import React, { FC, useLayoutEffect } from "react";
+import React, { FC, useEffect } from "react";
 
 import HomePage from "@/components/screens/Home";
 import Layout from "@/layout";
@@ -9,7 +9,7 @@ import { IPlantsState } from "@/types/IPlantsState";
 const Home: FC<IPageProps> = ({ plants }) => {
       const addPlants = usePlantsStore((state: IPlantsState) => state.addPlants);
 
-      useLayoutEffect(() => {
+      useEffect(() => {
             addPlants(plants);
       }, []);
 

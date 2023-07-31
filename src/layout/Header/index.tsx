@@ -1,9 +1,7 @@
-"use client";
-
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
@@ -27,6 +25,14 @@ const Header = React.memo(() => {
       const [windowIsVisible, setWindowIsVisible] = useState(false);
 
       const session = useSession();
+
+      const currentSessionStatus = useRef(session.status);
+
+      useEffect(() => {
+            if (currentSessionStatus.current !== "authenticated") {
+                  currentSessionStatus.current = "authenticated";
+            }
+      }, [session.status]);
 
       return (
             <header className={styles.container}>
@@ -56,11 +62,11 @@ const Header = React.memo(() => {
                                     <div className={styles.counter}>{plants.length}</div>
                               </div>
                         </div>
-                        {session?.data ? (
+                        {currentSessionStatus.current === "authenticated" ? (
                               <img
                                     className={styles.avatar}
                                     src={
-                                          session.data.user?.image
+                                          session?.data?.user?.image
                                                 ? session.data.user?.image
                                                 : icons.Logo.src
                                     }
