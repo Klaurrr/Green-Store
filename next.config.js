@@ -9,7 +9,12 @@ module.exports = {
 
             return config;
       },
-
+      env: {
+            YANDEX_CLIENT_ID: process.env.YANDEX_CLIENT_ID,
+            YANDEX_SECRET: process.env.YANDEX_SECRET,
+            NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+            NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+      },
       async headers() {
             return [
                   {
