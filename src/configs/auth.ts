@@ -35,7 +35,7 @@ export const authConfig: AuthOptions = {
                   },
             }),
       ],
-      // pages: {
-      //       signIn: "/Home",
-      // },
+      pages: {
+            signIn: "/Home",
+      },
 };
