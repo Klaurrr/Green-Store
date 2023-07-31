@@ -10,14 +10,7 @@ import Input from "../Input";
 
 import styles from "./AccountForm.module.scss";
 
-const AccountForm: FC<IFormProps> = ({
-      errors,
-      control,
-      register,
-      setValue,
-      clearErrors,
-      Controller,
-}) => {
+const AccountForm: FC<IFormProps> = ({ errors, control, Controller }) => {
       const {
             PersonalEmail,
             FirstNamePers,

@@ -27,6 +27,8 @@ const Header = React.memo(() => {
 
       const session = useSession();
 
+      console.log(process.env.YANDEX_SECRET);
+
       return (
             <header className={styles.container}>
                   <Logo />
@@ -58,15 +60,11 @@ const Header = React.memo(() => {
                         <div className={styles.auth}>
                               {session.status === "loading" && <ClipLoader color="#46A358" />}
                               {session.status === "authenticated" && (
-                                    <img
-                                          className={styles.avatar}
-                                          src={
-                                                session?.data?.user?.image
-                                                      ? session.data.user?.image
-                                                      : icons.Logo.src
-                                          }
-                                          onClick={() => router.push("/Account")}
-                                    />
+                                    <Button
+                                          style={{ width: "100px", height: "35px" }}
+                                          handler={() => router.push("/Account")}>
+                                          Account
+                                    </Button>
                               )}
                               {session.status === "unauthenticated" && (
                                     <Button
