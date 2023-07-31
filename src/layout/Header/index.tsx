@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ClipLoader } from "react-spinners";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
@@ -54,29 +55,32 @@ const Header = React.memo(() => {
                                     <div className={styles.counter}>{plants.length}</div>
                               </div>
                         </div>
-                        {session.status === "authenticated" && (
-                              <img
-                                    className={styles.avatar}
-                                    src={
-                                          session?.data?.user?.image
-                                                ? session.data.user?.image
-                                                : icons.Logo.src
-                                    }
-                                    onClick={() => router.push("/Account")}
-                              />
-                        )}
-                        {session.status === "unauthenticated" && (
-                              <Button
-                                    style={{ width: "100px", height: "35px" }}
-                                    handler={() => setWindowIsVisible(true)}>
+                        <div className={styles.auth}>
+                              {session.status === "loading" && <ClipLoader color="#46A358" />}
+                              {session.status === "authenticated" && (
                                     <img
-                                          src={icons.Logout.src}
-                                          alt="logout-img"
-                                          style={{ marginRight: "2px" }}
+                                          className={styles.avatar}
+                                          src={
+                                                session?.data?.user?.image
+                                                      ? session.data.user?.image
+                                                      : icons.Logo.src
+                                          }
+                                          onClick={() => router.push("/Account")}
                                     />
-                                    Login
-                              </Button>
-                        )}
+                              )}
+                              {session.status === "unauthenticated" && (
+                                    <Button
+                                          style={{ width: "100px", height: "35px" }}
+                                          handler={() => setWindowIsVisible(true)}>
+                                          <img
+                                                src={icons.Logout.src}
+                                                alt="logout-img"
+                                                style={{ marginRight: "2px" }}
+                                          />
+                                          Login
+                                    </Button>
+                              )}
+                        </div>
                   </div>
                   {windowIsVisible && <Login setWindowIsVisible={setWindowIsVisible} />}
             </header>
