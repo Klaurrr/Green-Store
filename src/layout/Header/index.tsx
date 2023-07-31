@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
@@ -25,14 +25,6 @@ const Header = React.memo(() => {
       const [windowIsVisible, setWindowIsVisible] = useState(false);
 
       const session = useSession();
-
-      const currentSessionStatus = useRef(session.status);
-
-      useEffect(() => {
-            if (currentSessionStatus.current !== "authenticated") {
-                  currentSessionStatus.current = "authenticated";
-            }
-      }, [session.status]);
 
       return (
             <header className={styles.container}>
@@ -62,7 +54,7 @@ const Header = React.memo(() => {
                                     <div className={styles.counter}>{plants.length}</div>
                               </div>
                         </div>
-                        {currentSessionStatus.current === "authenticated" ? (
+                        {session.status === "authenticated" && (
                               <img
                                     className={styles.avatar}
                                     src={
@@ -72,7 +64,8 @@ const Header = React.memo(() => {
                                     }
                                     onClick={() => router.push("/Account")}
                               />
-                        ) : (
+                        )}
+                        {session.status === "unauthenticated" && (
                               <Button
                                     style={{ width: "100px", height: "35px" }}
                                     handler={() => setWindowIsVisible(true)}>
