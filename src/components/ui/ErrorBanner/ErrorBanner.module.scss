@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    background: linear-gradient(97.77deg, rgba(245, 245, 245, 0.5) -23.46%, rgba(245, 245, 245, 0.5) 107.51%);
+    width: 100%;
+
+    .wrapper_1 {
+        padding: 68px 0px 85px 40px;
+
+        .description_container {
+            .title {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #3D3D3D;
+
+            }
+
+
+            .subtitle {
+                margin: 30px 0px 30px 0px;
+                font-weight: 900;
+                font-size: 70px;
+                line-height: 70px;
+                text-transform: uppercase;
+                color: #3D3D3D;
+
+                span {
+                    font-weight: 900;
+                    color: #46A358;
+                }
+            }
+
+
+            .description {
+                font-size: 14px;
+                line-height: 24px;
+                color: #727272;
+            }
+
+        }
+    }
+
+    button {
+        margin-top: 45px;
+    }
+}

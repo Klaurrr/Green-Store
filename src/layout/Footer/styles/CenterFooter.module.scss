@@ -27,8 +27,14 @@
                 margin-right: 12px;
             }
 
-            p {
+            p,
+            a {
                 font-size: 14px;
+            }
+
+            a {
+                cursor: pointer;
+                text-decoration: none;
             }
         }
     }

@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import clsx from "clsx";
+import { useRouter } from "next/router";
 
 import Rating from "@/components/common/Rating";
 import Button from "@/components/ui/Button";
@@ -16,6 +17,8 @@ const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
 
       const [currentSize, setCurrentSize] = useState("S");
       const [counter, setCounter] = useState(1);
+
+      const router = useRouter();
 
       const addCart = usePlantsStore((state) => state.addCart);
       const { plants } = usePlantsStore((state) => state.cart);
@@ -59,8 +62,7 @@ const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
                                                       ? clsx(styles.size__item, styles.active)
                                                       : styles.size__item
                                           }
-                                          onClick={() => setCurrentSize(size)}
-                                    >
+                                          onClick={() => setCurrentSize(size)}>
                                           {size}
                                     </div>
                               ))}
@@ -73,13 +75,21 @@ const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
                               <div onClick={() => countHandler("increase")}>+</div>
                         </div>
                         <div className={styles.buttons}>
-                              <Button style={{ width: "130px", height: "40px" }}>BUY NOW</Button>
+                              <Button
+                                    style={{ width: "130px", height: "40px" }}
+                                    handler={() => {
+                                          addCartHandler(), router.push("/Shop/ShoppingCart");
+                                    }}>
+                                    BUY NOW
+                              </Button>
                               <Button
                                     style={{ width: "130px", height: "40px" }}
                                     invert
-                                    handler={addCartHandler}
-                              >
-                                    {plants.includes(currentPlant[0]) ? "ADDED" : "ADD TO CART"}
+                                    handler={addCartHandler}>
+                                    {plants.filter((plant) => plant.id === currentPlant[0].id)
+                                          .length > 0
+                                          ? "ADDED"
+                                          : "ADD TO CART"}
                               </Button>
                         </div>
                   </div>

@@ -1,10 +1,10 @@
-import ShopPage from "@/components/screens/Shop";
+import ErrorBanner from "@/components/ui/ErrorBanner";
 import Layout from "@/layout";
 
 const Shop = () => {
       return (
             <Layout>
-                  <ShopPage />
+                  <ErrorBanner />
             </Layout>
       );
 };

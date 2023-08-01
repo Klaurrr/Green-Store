@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
-import Layout from "@/layout";
-
 import { Content, Switcher } from "./components";
 
 import styles from "./Account.module.scss";

@@ -39,7 +39,7 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
             });
 
             if (res && !res.error) {
-                  router.push("/Account");
+                  setWindowIsVisible(false);
             } else {
                   console.log(res);
             }

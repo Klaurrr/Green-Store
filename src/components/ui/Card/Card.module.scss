@@ -33,17 +33,13 @@
         opacity: 0;
         bottom: 14px;
         transition: all 0.2s ease-in-out;
+        gap: 27px;
 
-        svg {
-            &:first-child {
+        .active {
+            path {
                 fill: #46A358;
-            }
 
-            &:nth-child(2) {
-                fill: #3D3D3D;
-                margin: 0px 27px;
             }
-
         }
     }
 

@@ -12,16 +12,16 @@ const CenterFooter = () => {
                         <div>
                               <img src={icons.Location.src} alt="location-img" />
                               <p>
-                                    70 West Buckingham Ave. <br /> Farmingdale, NY 11735
+                                    Nizhny Novgorod <br /> Russia
                               </p>
                         </div>
                         <div>
                               <img src={icons.Message.src} alt="Message-img" />
-                              <p>contact@greenshop.com</p>
+                              <a href="mailto:UsachevDev@yandex.ru">UsachevDev@yandex.ru</a>
                         </div>
                         <div>
                               <img src={icons.Calling.src} alt="Calling-img" />
-                              <p>+88 01911 717 490</p>
+                              <a href="tel:+79040455531">+7 904 04 555 31</a>
                         </div>
                   </div>
             </div>

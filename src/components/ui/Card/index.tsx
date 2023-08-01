@@ -14,7 +14,7 @@ import styles from "./Card.module.scss";
 const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
       const router = useRouter();
 
-      const { addCart, addToWishlist } = usePlantsStore((state) => state);
+      const { addCart, addToWishlist, cart, wishlist } = usePlantsStore((state) => state);
 
       const addCartHandler = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             event.stopPropagation();
@@ -38,9 +38,21 @@ const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
                         className={styles.wrapper_1}
                         style={{ height: forSlider ? "255px" : "300px" }}>
                         <img src={plantsImg[`${plant.img}`].src} alt="plant-img" />
-                        <div className={styles.icons} style={{ left: forSlider ? "53px" : "73px" }}>
-                              <CartSvg onClick={addCartHandler} />
-                              <HeartSvg onClick={addToWishlistHandler} />
+                        <div className={styles.icons}>
+                              <CartSvg
+                                    onClick={addCartHandler}
+                                    className={
+                                          cart.plants.filter((item) => item.id === plant.id)
+                                                .length > 0 && styles.active
+                                    }
+                              />
+                              <HeartSvg
+                                    onClick={addToWishlistHandler}
+                                    className={
+                                          wishlist.filter((item) => item.id === plant.id).length >
+                                                0 && styles.active
+                                    }
+                              />
                               <SearchIcon />
                         </div>
                   </div>
