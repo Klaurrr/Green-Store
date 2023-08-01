@@ -86,8 +86,7 @@ const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
                                     style={{ width: "130px", height: "40px" }}
                                     invert
                                     handler={addCartHandler}>
-                                    {plants.filter((plant) => plant.id === currentPlant[0].id)
-                                          .length > 0
+                                    {plants.some((plant) => plant.id === currentPlant[0].id)
                                           ? "ADDED"
                                           : "ADD TO CART"}
                               </Button>

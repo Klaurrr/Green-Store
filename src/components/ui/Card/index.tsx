@@ -42,15 +42,15 @@ const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
                               <CartSvg
                                     onClick={addCartHandler}
                                     className={
-                                          cart.plants.filter((item) => item.id === plant.id)
-                                                .length > 0 && styles.active
+                                          cart.plants.some((item) => item.id === plant.id) &&
+                                          styles.active
                                     }
                               />
                               <HeartSvg
                                     onClick={addToWishlistHandler}
                                     className={
-                                          wishlist.filter((item) => item.id === plant.id).length >
-                                                0 && styles.active
+                                          wishlist.some((item) => item.id === plant.id) &&
+                                          styles.active
                                     }
                               />
                               <SearchIcon />
