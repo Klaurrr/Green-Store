@@ -27,6 +27,11 @@ const Header = React.memo(() => {
 
       const session = useSession();
 
+      console.log(process.env.YANDEX_CLIENT_ID);
+      console.log(process.env.YANDEX_SECRET);
+      console.log(process.env.NEXTAUTH_SECRET);
+      console.log(process.env.NEXTAUTH_URL);
+
       return (
             <header className={styles.container}>
                   <Logo />
