@@ -26,9 +26,9 @@
   font-style: normal;
 }
 
-html,
+
 body {
-  overflow-y: overlay;
+  /* overflow-y: hidden; */
   height: 100vh;
 }
 

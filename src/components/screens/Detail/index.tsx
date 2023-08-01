@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useQuery } from "react-query";
 import { ClipLoader } from "react-spinners";
 import { useRouter } from "next/router";
@@ -19,8 +20,14 @@ const DetailPage = () => {
 
       const currentPlant = allPlants?.filter((item: IPlants) => String(item.id) === query.id);
 
+      const currentRef = useRef<any>(null);
+
+      useEffect(() => {
+            window.scrollTo(0, 0);
+      }, []);
+
       return (
-            <>
+            <div ref={currentRef}>
                   <BreadCrumbs />
                   {allPlants ? (
                         <>
@@ -32,7 +39,7 @@ const DetailPage = () => {
                               <ClipLoader color="#46A358" />
                         </div>
                   )}
-            </>
+            </div>
       );
 };
 

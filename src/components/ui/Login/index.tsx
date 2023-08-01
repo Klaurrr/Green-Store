@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Controller, useForm } from "react-hook-form";
 import { useSearchParams } from "next/navigation";
@@ -47,6 +47,14 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
 
       const searchParams = useSearchParams();
       const callbackUrl = searchParams.get("callbackUrl") || "/Home";
+
+      useEffect(() => {
+            document.body.style.overflowY = "hidden";
+
+            return () => {
+                  document.body.style.overflowY = "initial";
+            };
+      }, []);
 
       return (
             <>
