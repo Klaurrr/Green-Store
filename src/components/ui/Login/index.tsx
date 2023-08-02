@@ -2,7 +2,6 @@ import { FC, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Controller, useForm } from "react-hook-form";
 import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
 
 import icons from "../../../../public/assets/icons";
@@ -19,8 +18,6 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
       const [mode, setMode] = useState("Login");
 
       const [hidePassword, setHidePassword] = useState(true);
-
-      const router = useRouter();
 
       const {
             control,

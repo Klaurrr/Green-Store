@@ -2,12 +2,10 @@ import { FC } from "react";
 
 import plantsImg from "../../../../../../public/assets/plantsImg";
 
-import { IPlantDetailProps } from "./props/PlantDetail.props";
-import PlantDescription from "./PlantDescription.component";
-import PlantInfo from "./PlantInfo.component";
-import PlantSwitcher from "./PlantSwitcher.component";
+import { PlantDescription, PlantInfo, PlantSwitcher } from "./components";
+import { IPlantDetailProps } from "./PlantDetail.props";
 
-import styles from "./styles/PlantDetail.module.scss";
+import styles from "./PlantDetail.module.scss";
 
 export const PlantDetail: FC<IPlantDetailProps> = ({ currentPlant }) => {
       const MOCK_IMAGES = Array(4).fill(plantsImg[currentPlant[0]?.img]?.src);

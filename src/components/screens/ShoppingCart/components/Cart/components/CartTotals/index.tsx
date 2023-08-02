@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 
+import Button from "@/components/ui/Button";
 import Price from "@/components/ui/Price";
 import { usePlantsStore } from "@/store";
 
-import Button from "../../../../ui/Button";
+import styles from "./CartTotals.module.scss";
 
-import styles from "./styles/CartTotals.module.scss";
-
-const CartTotals = () => {
+export const CartTotals = () => {
       const router = useRouter();
 
       const [inputValue, setInputValue] = useState("");
@@ -52,8 +51,7 @@ const CartTotals = () => {
                                           ? "rgb(70, 163, 88)"
                                           : "rgb(70, 163, 88, 0.3)",
                               }}
-                              handler={() => router.push("/Shop/Checkout")}
-                        >
+                              handler={() => router.push("/Shop/Checkout")}>
                               Proceed To Checkout
                         </Button>
                   </div>
@@ -63,5 +61,3 @@ const CartTotals = () => {
             </div>
       );
 };
-
-export default CartTotals;

@@ -6,13 +6,12 @@ import Rating from "@/components/common/Rating";
 import Button from "@/components/ui/Button";
 import { usePlantsStore } from "@/store";
 
-import icons from "../../../../../../public/assets/icons";
+import icons from "../../../../../../../../public/assets/icons";
+import { IPlantDetailProps } from "../../PlantDetail.props";
 
-import { IPlantDetailProps } from "./props/PlantDetail.props";
+import styles from "./PlantInfo.module.scss";
 
-import styles from "./styles/PlantInfo.module.scss";
-
-const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
+export const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
       const { name, price, rating, description } = currentPlant[0];
 
       const [currentSize, setCurrentSize] = useState("S");
@@ -120,5 +119,3 @@ const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
             </section>
       );
 };
-
-export default PlantInfo;

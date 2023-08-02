@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
 
-import { IPlantDetailProps } from "./props/PlantDetail.props";
+import { IPlantDetailProps } from "../../PlantDetail.props";
 
-import styles from "./styles/PlantDescription.module.scss";
+import styles from "./PlantDescription.module.scss";
 
-const PlantDescription: FC<IPlantDetailProps> = ({ currentPlant }) => {
+export const PlantDescription: FC<IPlantDetailProps> = ({ currentPlant }) => {
       const { description } = currentPlant[0];
 
       const [currentInfo, setCurrentInfo] = useState("Product Description");
@@ -16,8 +16,7 @@ const PlantDescription: FC<IPlantDetailProps> = ({ currentPlant }) => {
                               <p
                                     className={currentInfo === item ? styles.active : ""}
                                     onClick={() => setCurrentInfo(item)}
-                                    key={index}
-                              >
+                                    key={index}>
                                     {item}
                               </p>
                         ))}
@@ -32,5 +31,3 @@ const PlantDescription: FC<IPlantDetailProps> = ({ currentPlant }) => {
             </section>
       );
 };
-
-export default PlantDescription;

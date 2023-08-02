@@ -4,12 +4,12 @@ import { usePlantsStore } from "@/store";
 import { IPlants } from "@/types/IPlants";
 import { IPlantsState } from "@/types/IPlantsState";
 
-import icons from "../../../../../../public/assets/icons";
-import plantsImg from "../../../../../../public/assets/plantsImg";
+import icons from "../../../../../../../../public/assets/icons";
+import plantsImg from "../../../../../../../../public/assets/plantsImg";
 
-import styles from "./styles/PlantsList.module.scss";
+import styles from "./PlantsList.module.scss";
 
-const PlantsList = () => {
+export const PlantsList = () => {
       const { plants, quantity } = usePlantsStore((state: IPlantsState) => state?.cart);
 
       const deletePlantFromCart = usePlantsStore((state) => state.deletePlantFromCart);
@@ -61,16 +61,14 @@ const PlantsList = () => {
                                                 <div
                                                       onClick={() =>
                                                             countHandler("decrease", plant)
-                                                      }
-                                                >
+                                                      }>
                                                       -
                                                 </div>
                                                 <span>{quantity[plant.name]}</span>
                                                 <div
                                                       onClick={() =>
                                                             countHandler("increase", plant)
-                                                      }
-                                                >
+                                                      }>
                                                       +
                                                 </div>
                                           </div>
@@ -98,5 +96,3 @@ const PlantsList = () => {
             </div>
       );
 };
-
-export default PlantsList;

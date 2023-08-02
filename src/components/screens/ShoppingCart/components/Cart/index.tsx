@@ -3,10 +3,9 @@ import { ClipLoader } from "react-spinners";
 
 import PlantsSlider from "../../../../ui/PlantsSlider";
 
-import CartTotals from "./CartTotals.component";
-import PlantsList from "./PlantsList.component";
+import { CartTotals, PlantsList } from "./components";
 
-import styles from "./styles/Cart.module.scss";
+import styles from "./Cart.module.scss";
 
 const Cart = () => {
       const { data: plants } = useQuery("allPlants", () =>

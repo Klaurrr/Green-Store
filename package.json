@@ -15,8 +15,6 @@
     "@types/react-dom": "18.0.11",
     "clsx": "^1.2.1",
     "cors": "^2.8.5",
-    "eslint-config-next": "13.2.4",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
     "next": "13.2.4",
     "next-auth": "^4.22.3",
     "next-svgr": "^0.0.2",
@@ -25,7 +23,6 @@
     "react-hook-form": "^7.45.1",
     "react-query": "^3.39.3",
     "react-spinners": "^0.13.8",
-    "typescript": "5.0.2",
     "zustand": "^4.3.6"
   },
   "devDependencies": {
@@ -34,7 +31,10 @@
     "@typescript-eslint/parser": "^5.56.0",
     "eslint": "^8.45.0",
     "eslint-config-google": "^0.14.0",
+    "eslint-config-next": "^13.2.4",
     "eslint-plugin-import": "^2.27.5",
-    "sass": "^1.59.3"
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "sass": "^1.59.3",
+    "typescript": "^5.0.2"
   }
 }

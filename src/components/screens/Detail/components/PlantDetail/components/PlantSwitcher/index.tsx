@@ -1,11 +1,11 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 
-import { IPlantSwitcherProps } from "./props/PlantsSwitcher.props";
+import { IPlantSwitcherProps } from "./PlantsSwitcher.props";
 
-import styles from "./styles/PlantSwitcher.module.scss";
+import styles from "./PlantSwitcher.module.scss";
 
-const PlantSwitcher: FC<IPlantSwitcherProps> = ({ images }) => {
+export const PlantSwitcher: FC<IPlantSwitcherProps> = ({ images }) => {
       const [currentImage, setCurrentImage] = useState(0);
 
       return (
@@ -32,5 +32,3 @@ const PlantSwitcher: FC<IPlantSwitcherProps> = ({ images }) => {
             </article>
       );
 };
-
-export default PlantSwitcher;
