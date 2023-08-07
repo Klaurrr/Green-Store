@@ -64,6 +64,10 @@ $green: #46A358;
                 margin-bottom: 15px;
             }
 
+            .error {
+                color: #F03800;
+            }
+
 
             .inputs {
                 display: flex;
@@ -89,6 +93,10 @@ $green: #46A358;
                 cursor: pointer;
                 align-self: flex-end;
                 margin: 14px 0 27px;
+            }
+
+            .cliploader {
+                height: 45px;
             }
         }
 

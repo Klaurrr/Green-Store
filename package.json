@@ -10,11 +10,15 @@
     "lint:fix": "next lint -- --fix"
   },
   "dependencies": {
+    "@types/mongoose": "^5.11.97",
     "@types/node": "18.15.5",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
     "clsx": "^1.2.1",
     "cors": "^2.8.5",
+    "mongoose": "^7.4.2",
     "next": "13.2.4",
     "next-auth": "^4.22.3",
     "next-svgr": "^0.0.2",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^7.0.0",
+    "@types/bcrypt": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "eslint": "^8.45.0",

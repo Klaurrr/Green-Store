@@ -14,6 +14,7 @@ module.exports = {
             YANDEX_SECRET: process.env.YANDEX_SECRET,
             NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
             NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+            MONGODB_URI: process.env.MONGODB_URI,
       },
       async headers() {
             return [

@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from "react";
+import mongoose from "mongoose";
 
 import HomePage from "@/components/screens/Home";
 import Layout from "@/layout";

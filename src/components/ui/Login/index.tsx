@@ -1,6 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Controller, useForm } from "react-hook-form";
+import { ClipLoader } from "react-spinners";
+import axios, { AxiosError } from "axios";
 import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
@@ -19,6 +21,9 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
 
       const [hidePassword, setHidePassword] = useState(true);
 
+      const [submitError, setSubmitError] = useState("");
+      const [loading, setLoading] = useState(false);
+
       const {
             control,
             handleSubmit,
@@ -29,16 +34,46 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
             event.preventDefault();
             const { email, password } = data;
 
-            const res = await signIn("credentials", {
-                  email,
-                  password,
-                  redirect: false,
-            });
+            if (mode === "Login") {
+                  const res = await signIn("credentials", {
+                        email,
+                        password,
+                        redirect: false,
+                  });
 
-            if (res && !res.error) {
-                  setWindowIsVisible(false);
+                  if (res && !res.error) {
+                        setWindowIsVisible(false);
+                  } else {
+                        setSubmitError(res?.error || "unknown error");
+                  }
             } else {
-                  console.log(res);
+                  try {
+                        setLoading(true);
+                        const apiRes = await axios.post(
+                              "http://localhost:3000/api/auth/signup",
+                              data
+                        );
+                        if (apiRes?.data?.success) {
+                              const res = await signIn("credentials", {
+                                    email,
+                                    password,
+                                    redirect: false,
+                              });
+
+                              if (res && !res.error) {
+                                    setWindowIsVisible(false);
+                              } else {
+                                    setSubmitError(res?.error || "unknown error");
+                              }
+                        }
+                  } catch (error: unknown) {
+                        if (error instanceof AxiosError) {
+                              const errorMsg = error.response?.data?.error;
+                              setSubmitError(errorMsg);
+                        }
+                  }
+
+                  setLoading(false);
             }
       };
 
@@ -52,6 +87,10 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
                   document.body.style.overflowY = "initial";
             };
       }, []);
+
+      useEffect(() => {
+            setSubmitError("");
+      }, [mode]);
 
       return (
             <>
@@ -76,10 +115,15 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
                                           </h1>
                                     </div>
                                     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-                                          <h2>
-                                                Enter your username and password to{" "}
-                                                {mode === "Login" ? "Login" : "Register"}
-                                          </h2>
+                                          {submitError ? (
+                                                <h2 className={styles.error}>{submitError}</h2>
+                                          ) : (
+                                                <h2>
+                                                      Enter your username and password to{" "}
+                                                      {mode === "Login" ? "Login" : "Register"}
+                                                </h2>
+                                          )}
+
                                           <div className={styles.inputs}>
                                                 <Controller
                                                       name="email"
@@ -138,11 +182,17 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
                                                 />
                                           </div>
                                           <p className={styles.forgot}>Forgot Password?</p>
-                                          <Button
-                                                style={{ width: "300px", height: "45px" }}
-                                                type="submit">
-                                                {mode === "Login" ? "Login" : "Register"}
-                                          </Button>
+                                          {loading ? (
+                                                <div className={styles.cliploader}>
+                                                      <ClipLoader color="#46A358" />
+                                                </div>
+                                          ) : (
+                                                <Button
+                                                      style={{ width: "300px", height: "45px" }}
+                                                      type="submit">
+                                                      {mode === "Login" ? "Login" : "Register"}
+                                                </Button>
+                                          )}
                                     </form>
                                     <div className={styles.alternative}>
                                           <div className={styles.login__with}>

@@ -1,7 +1,12 @@
 /* eslint-disable new-cap */
+import { compare, hash } from "bcrypt";
 import type { AuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import YandexProvider from "next-auth/providers/yandex";
+
+import User from "@/models/user";
+
+import { connectToMongoDB } from "../../lib/mongodb";
 
 export const authConfig: AuthOptions = {
       providers: [
@@ -18,20 +23,32 @@ export const authConfig: AuthOptions = {
                         if (!credentials?.email || !credentials?.password) return null;
 
                         // Тут какую-нибудь базу надо подключить и оттуда user подтягивать
-                        const currentUser = [
-                              {
-                                    email: "UsachevDev@yandex.ru",
-                                    password: "qwerty1234",
-                              },
-                        ].find((user) => user.email === credentials.email);
+                        await connectToMongoDB().catch((err) => {
+                              throw new Error(err);
+                        });
 
-                        if (currentUser && currentUser.password === credentials.password) {
-                              const { password, ...userWithoutPass } = currentUser;
+                        const user = await User.findOne({
+                              email: credentials?.email,
+                        }).select("+password");
 
-                              return userWithoutPass as any;
+                        if (!user) {
+                              throw new Error("Invalid credentials");
                         }
 
-                        return null;
+                        if (user) {
+                              const { password, ...userWithoutPass } = user;
+
+                              const isPasswordCorrect = await compare(
+                                    credentials.password,
+                                    password
+                              );
+
+                              if (isPasswordCorrect) {
+                                    return userWithoutPass as any;
+                              } else {
+                                    throw new Error("Invalid credentials");
+                              }
+                        }
                   },
             }),
       ],
