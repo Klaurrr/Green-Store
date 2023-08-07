@@ -50,7 +50,7 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
                   try {
                         setLoading(true);
                         const apiRes = await axios.post(
-                              "http://localhost:3000/api/auth/signup",
+                              "https://green-store-beige.vercel.app/api/auth/signup",
                               data
                         );
                         if (apiRes?.data?.success) {

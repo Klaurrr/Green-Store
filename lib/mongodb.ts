@@ -4,8 +4,6 @@ if (!process.env.MONGODB_URI) {
       throw new Error(`Что-то не так с env переменной: ${process.env.MONGODB_URI}`);
 }
 
-("@ts-ignore");
-
 export const connectToMongoDB = async () => {
       try {
             const { connection } = await mongoose.connect(process.env.MONGODB_URI!);

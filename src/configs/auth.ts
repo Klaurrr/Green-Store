@@ -22,7 +22,6 @@ export const authConfig: AuthOptions = {
                   async authorize(credentials) {
                         if (!credentials?.email || !credentials?.password) return null;
 
-                        // Тут какую-нибудь базу надо подключить и оттуда user подтягивать
                         await connectToMongoDB().catch((err) => {
                               throw new Error(err);
                         });
