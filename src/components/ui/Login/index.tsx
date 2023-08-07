@@ -35,6 +35,7 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
             const { email, password } = data;
 
             if (mode === "Login") {
+                  setLoading(true);
                   const res = await signIn("credentials", {
                         email,
                         password,
@@ -46,6 +47,8 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
                   } else {
                         setSubmitError(res?.error || "unknown error");
                   }
+
+                  setLoading(false);
             } else {
                   try {
                         setLoading(true);
