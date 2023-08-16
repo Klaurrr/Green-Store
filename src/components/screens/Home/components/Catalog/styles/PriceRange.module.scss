@@ -47,4 +47,14 @@
             }
         }
     }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        & {
+            .wrapper {
+                .price {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 }

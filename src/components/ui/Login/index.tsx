@@ -6,6 +6,8 @@ import axios, { AxiosError } from "axios";
 import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
+import useWindowSize from "@/hooks/UseWindowSize";
+
 import icons from "../../../../public/assets/icons";
 import Cross from "../../../../public/assets/svg/Cross.svg";
 import Hide from "../../../../public/assets/svg/Hide.svg";
@@ -83,13 +85,7 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
       const searchParams = useSearchParams();
       const callbackUrl = searchParams.get("callbackUrl") || "/Home";
 
-      useEffect(() => {
-            document.body.style.overflowY = "hidden";
-
-            return () => {
-                  document.body.style.overflowY = "initial";
-            };
-      }, []);
+      const isSmallScreen = useWindowSize();
 
       useEffect(() => {
             setSubmitError("");
@@ -99,11 +95,17 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
             <>
                   {createPortal(
                         <div className={styles.container}>
+                              {isSmallScreen && (
+                                    <div className={styles.logo}>
+                                          <img src={icons.Logo.src} alt="Logo" />
+                                          <h1>GREEN SHOP</h1>
+                                    </div>
+                              )}
                               <div className={styles.wrapper}>
-                                    <Cross
-                                          className={styles.cross}
-                                          onClick={() => setWindowIsVisible(false)}
-                                    />
+                                    <div className={styles.cross}>
+                                          <Cross onClick={() => setWindowIsVisible(false)} />
+                                    </div>
+
                                     <div className={styles.modes}>
                                           <h1
                                                 className={mode === "Login" ? styles.active : ""}

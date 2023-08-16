@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
 import PlantsSlider from "@/components/ui/PlantsSlider";
+import useWindowSize from "@/hooks/UseWindowSize";
 import { IPlants } from "@/types/IPlants";
 
 import { PlantDetail } from "./components/PlantDetail";
@@ -22,6 +23,8 @@ const DetailPage = () => {
 
       const currentRef = useRef<any>(null);
 
+      const isSmallScreen = useWindowSize();
+
       useEffect(() => {
             window.scrollTo(0, 0);
       }, []);
@@ -32,7 +35,9 @@ const DetailPage = () => {
                   {allPlants ? (
                         <>
                               <PlantDetail currentPlant={currentPlant} />
-                              <PlantsSlider plants={allPlants} title="Releted Products" />
+                              {!isSmallScreen && (
+                                    <PlantsSlider plants={allPlants} title="Releted Products" />
+                              )}
                         </>
                   ) : (
                         <div className={styles.preloader}>

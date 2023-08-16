@@ -13,4 +13,20 @@
         display: flex;
         align-items: flex-end;
     }
+
+
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .title {
+        font-size: 19px;
+    }
 }

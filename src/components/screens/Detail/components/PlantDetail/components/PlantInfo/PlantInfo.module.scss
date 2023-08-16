@@ -157,5 +157,86 @@
         }
     }
 
+    @media (max-width: 768px) {
+        margin: 20px 0;
 
+        .buttons__wrapper {
+            align-items: flex-start;
+            flex-direction: column;
+
+            .counter {
+                margin: 22px 0;
+            }
+
+            .buttons {
+                margin: 0 0 22px 0;
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .title {
+            font-size: 30px;
+        }
+
+        .important {
+            span {
+                font-size: 24px;
+            }
+
+            .rating {
+                .review {
+                    font-size: 17px;
+                }
+            }
+        }
+
+        .short__info {
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .size {
+            h3 {
+                font-size: 18px;
+            }
+
+            &__item {
+                font-size: 20px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .active {
+                font-size: 20px;
+            }
+        }
+
+        .buttons__wrapper {
+            .counter {
+                span {
+                    font-size: 22px;
+                }
+
+                div {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .other {
+            font-size: 17px;
+        }
+
+        .socials {
+            h3 {
+                font-size: 17px;
+            }
+        }
+    }
 }

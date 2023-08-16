@@ -18,13 +18,15 @@ const Cart = () => {
                         <PlantsList />
                         <CartTotals />
                   </div>
-                  {plants ? (
-                        <PlantsSlider title="You may be interested in" plants={plants} />
-                  ) : (
-                        <div className={styles.preloader}>
-                              <ClipLoader color="#46A358" />
-                        </div>
-                  )}
+                  <div className={styles.wrapper_2}>
+                        {plants ? (
+                              <PlantsSlider title="You may be interested in" plants={plants} />
+                        ) : (
+                              <div className={styles.preloader}>
+                                    <ClipLoader color="#46A358" />
+                              </div>
+                        )}
+                  </div>
             </div>
       );
 };

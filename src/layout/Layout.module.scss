@@ -1,4 +1,24 @@
 .container {
-    width: 1200px;
+    // width: 1230px;
+    width: 100%;
+    max-width: 1230px;
     margin: 25px auto 0px auto;
+    padding: 0 15px;
+
+    @media (max-width: 430px) {
+        min-width: 430px;
+    }
+
+    @media (max-width: 769px) {
+        max-width: none;
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        width: 1230px;
+        max-width: none;
+    }
+
+    @media (min-width: 1024px) {
+        width: 1230px;
+    }
 }

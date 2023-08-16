@@ -1,3 +1,57 @@
+.form {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    margin: 0 auto;
+
+    .input__wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        svg {
+            position: absolute;
+            top: 11px;
+            left: 11px;
+
+            path {
+                fill: #A5A5A5;
+            }
+        }
+
+        input {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            background: #F8F8F8;
+            border: none;
+            padding: 0 40px;
+            font-size: 14px;
+
+            &::placeholder {
+                color: #A5A5A5;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .button {
+        min-width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: linear-gradient(137deg, rgba(70, 163, 88, 0.45) 0%, #46A358 100%);
+        box-shadow: 0px 10px 20px 0px rgba(70, 163, 88, 0.30);
+        margin-left: 8px;
+    }
+
+}
+
 .container {
     display: flex;
     align-items: flex-start;
@@ -6,11 +60,52 @@
     border-bottom: 0.3px solid rgba(70, 163, 88, 0.2);
 
 
+    .smallscreen__icons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+
+        .circle {
+
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            justify-content: center;
+
+            div {
+                width: 65px;
+                height: 65px;
+                background: linear-gradient(180deg, rgba(70, 163, 88, 0.40) 0%, #46A358 100%);
+                border-radius: 50%;
+                justify-content: center;
+            }
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 52px;
+
+            .icon__active {
+
+                path {
+                    fill: #46A358;
+                }
+
+            }
+        }
+    }
+
+
     .nav {
+        display: flex;
+        gap: 50px;
         margin: 8px 0px 0px 230px;
 
         a {
-            margin-right: 50px;
             text-decoration: none;
             color: #3D3D3D;
             font-size: 16px;
@@ -99,5 +194,69 @@
         }
 
 
+    }
+
+
+    @media (max-width: 1023px) {
+        .nav {
+            margin: 8px 0 0 0;
+
+            a {
+                font-size: 20px;
+            }
+        }
+
+        .menu {
+            margin: 0;
+
+            .images {
+                svg {
+                    scale: 1.5;
+                }
+
+                .cart {
+
+                    margin: 0px 45px;
+
+                    .counter {
+                        top: -5px;
+                        right: -6px;
+                        width: 20px;
+                        height: 20px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 769px) {
+        & {
+            position: fixed;
+            z-index: 15;
+            width: 92%;
+            bottom: 0;
+            left: 4%;
+            background-image: url("data:image/svg+xml,%3Csvg width='414' height='135' viewBox='0 0 414 135' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M282.85 40C269.09 40 256.87 48.2 251.02 60.65C243.26 77.17 226.46 88.62 207 88.62C187.54 88.62 170.74 77.18 162.98 60.65C157.13 48.2 144.9 40 131.15 40H28.93C12.95 40 0 52.95 0 68.93V134.95H414V68.93C414 52.95 401.05 40 385.07 40H282.85Z' fill='white'/%3E%3C/svg%3E%0A");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 40px;
+
+            .nav,
+            .menu,
+            .logo {
+                display: none;
+            }
+
+        }
+
+
+    }
+
+    @media (max-width: 420px) {
+        & {
+            padding: 20px 10px;
+        }
     }
 }

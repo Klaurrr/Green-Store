@@ -39,12 +39,6 @@ const ModalWindow: FC<IModalWindowProps> = ({ setWindowIsVisible, paymentMethod 
 
       useEffect(() => {
             setDate(Math.floor(Math.random() * 9999999));
-
-            document.body.style.overflowY = "hidden";
-
-            return () => {
-                  document.body.style.overflowY = "initial";
-            };
       }, []);
 
       return (

@@ -47,4 +47,28 @@
         }
 
     }
+
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        &-title {
+            h4 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .quantity {
+            font-size: 16px;
+        }
+
+        .price {
+            p {
+                font-size: 20px;
+            }
+
+        }
+    }
 }

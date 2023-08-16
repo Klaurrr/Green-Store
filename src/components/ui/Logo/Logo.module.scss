@@ -9,4 +9,8 @@
         font-size: 18px;
         margin-left: 6px;
     }
+
+    @media (max-width: 769px) {
+        display: none;
+    }
 }

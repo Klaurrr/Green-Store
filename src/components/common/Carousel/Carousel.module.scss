@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
 
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
 
 
@@ -27,11 +27,30 @@
             transition-property: transform;
         }
     }
+
+    @media (max-width: 768px) {
+        & {
+            max-width: 768px;
+            max-height: 190px;
+
+            .window {
+                .pages_container {
+                    max-height: 190px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        min-width: 1024px;
+    }
 }
 
 .dots {
     position: absolute;
     bottom: 17px;
+    display: flex;
+    gap: 7px;
 
     .button {
         width: 8px;
@@ -42,7 +61,6 @@
         border: none;
         cursor: pointer;
         background: rgba(70, 163, 88);
-        margin-right: 7px;
 
         &_active {
             @extend .button;
@@ -50,6 +68,31 @@
             opacity: 1;
         }
     }
+
+    @media (max-width: 768px) {
+        & {
+            bottom: -5px;
+            gap: 10px;
+
+            .button {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        & {
+            bottom: 15px;
+            gap: 15px;
+
+            .button {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+
 }
 
 .switches {
@@ -70,6 +113,15 @@
             @extend .button;
             background-color: #46A358;
 
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        gap: 15px;
+
+        .button {
+            width: 20px;
+            height: 20px;
         }
     }
 }

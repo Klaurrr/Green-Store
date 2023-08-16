@@ -41,6 +41,11 @@
     .wrapper__2 {
         width: 320px;
         float: right;
+
+        @media (max-width: 768px) {
+            width: auto;
+            float: none;
+        }
     }
 
 
@@ -73,6 +78,43 @@
 
             .payment__item {
                 cursor: pointer;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin: 20px 0 0;
+
+        .subtitle,
+        .wrapper,
+        .price-title {
+            display: none;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        .title {
+            font-size: 19px;
+        }
+
+        .subtitle {
+            h4 {
+                font-size: 18px;
+            }
+
+        }
+
+        .totalPrice {
+            h5 {
+                font-size: 16px;
+            }
+        }
+
+        .payment {
+            .payment__items {
+                .payment__item {
+                    font-size: 18px;
+                }
             }
         }
     }

@@ -40,4 +40,33 @@
             }
         }
     }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 10px;
+        max-width: 768px;
+
+        .wrapper {
+            width: auto;
+            height: auto;
+
+            img[alt="plant-img"] {
+                width: 45%;
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .wrapper {
+            .description {
+                h3 {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }

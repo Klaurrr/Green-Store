@@ -11,4 +11,15 @@
         justify-content: center;
     }
 
+
+    @media (max-width: 768px) {
+
+        .wrapper {
+            display: block;
+        }
+
+        .wrapper_2 {
+            display: none;
+        }
+    }
 }

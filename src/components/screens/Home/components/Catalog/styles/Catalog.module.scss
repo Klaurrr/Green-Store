@@ -9,4 +9,13 @@
         justify-content: flex-end;
     }
 
+
+    @media (max-width: 768px) {
+        & {
+            .pagination {
+                justify-content: center;
+                margin-top: 40px;
+            }
+        }
+    }
 }

@@ -53,11 +53,9 @@ export const Order: FC<IOrderProps> = ({ currentPaymentMethod, setCurrentPayment
                                           <div
                                                 className={styles.payment__item}
                                                 onClick={() => setCurrentPaymentMethod(index)}
-                                                key={generateKey(`${index}`)}
-                                          >
+                                                key={generateKey(`${index}`)}>
                                                 <PaymentMethod
-                                                      active={index === currentPaymentMethod}
-                                                >
+                                                      active={index === currentPaymentMethod}>
                                                       {item}
                                                 </PaymentMethod>
                                           </div>
@@ -71,8 +69,7 @@ export const Order: FC<IOrderProps> = ({ currentPaymentMethod, setCurrentPayment
                                     fontSize: "15px",
                                     fontWeight: "700",
                               }}
-                              type="submit"
-                        >
+                              type="submit">
                               Place Order
                         </Button>
                   </div>

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FFF;
+    z-index: 10;
+    top: 12px;
+    right: 11px;
+
+
+
+}
+
+.active {
+    svg {
+        path {
+            fill: #46A358;
+        }
+    }
+}

@@ -15,4 +15,10 @@
         justify-content: space-between;
         margin-top: 60px;
     }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .title {
+            font-size: 19px;
+        }
+    }
 }

@@ -3,4 +3,10 @@
     display: flex;
     gap: 30px;
     margin-bottom: 230px;
+
+    @media (max-width: 768px) {
+        display: block;
+        margin-bottom: 90px;
+        margin-top: 30px;
+    }
 }

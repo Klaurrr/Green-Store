@@ -31,4 +31,22 @@
         }
     }
 
+    @media (max-width: 768px) {
+        margin: 40px 0 20px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .switches {
+            p {
+                font-size: 19px;
+            }
+        }
+
+        .desc {
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
 }

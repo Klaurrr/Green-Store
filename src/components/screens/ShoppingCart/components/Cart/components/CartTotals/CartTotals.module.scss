@@ -64,4 +64,46 @@
         font-size: 15px;
         cursor: pointer;
     }
+
+    @media (max-width: 768px) {
+        position: fixed;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        width: auto;
+
+        .title {
+            display: none;
+        }
+
+        .coupon {
+            display: none;
+        }
+
+        .button {
+            button {
+                width: 100% !important;
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .title {
+            font-size: 20px;
+        }
+
+        .coupon {
+            font-size: 16px;
+        }
+
+        .form {
+            input {
+                font-size: 16px;
+            }
+        }
+
+        .continue {
+            font-size: 17px;
+        }
+    }
 }

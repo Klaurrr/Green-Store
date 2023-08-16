@@ -16,11 +16,11 @@
             align-items: center;
 
             &:first-child {
-                margin-right: 90px;
+                margin-right: 75px;
             }
 
             &:nth-child(3) {
-                margin: 0px 75px 0px 62px;
+                margin: 0px 65px 0px 140px;
             }
 
             img {
@@ -35,6 +35,49 @@
             a {
                 cursor: pointer;
                 text-decoration: none;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+
+        .wrapper {
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
+            justify-content: space-between;
+
+            div {
+                &:first-child {
+                    display: none;
+                }
+
+                &:nth-child(3) {
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        .wrapper {
+            width: 100%;
+            justify-content: space-between;
+            padding: 27px 23px;
+
+            div {
+
+                &:first-child,
+                &:nth-child(3) {
+                    margin: 0;
+                }
+
+                p,
+                a {
+                    font-size: 18px;
+                }
+
             }
         }
     }

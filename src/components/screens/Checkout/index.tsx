@@ -4,6 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
 import ModalWindow from "@/components/ui/ModalWindow";
+import useWindowSize from "@/hooks/UseWindowSize";
 
 import { Form } from "./components/Form";
 import { Order } from "./components/Order";
@@ -13,6 +14,8 @@ import styles from "./Checkout.module.scss";
 const CheckoutPage = () => {
       const [currentPaymentMethod, setCurrentPaymentMethod] = useState(0);
       const [windowIsVisible, setWindowIsVisible] = useState(false);
+
+      const isSmallScreen = useWindowSize();
 
       const {
             handleSubmit,
@@ -55,22 +58,26 @@ const CheckoutPage = () => {
       return (
             <>
                   <BreadCrumbs />
-                  <form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
-                        <Form
-                              control={control}
-                              Controller={Controller}
-                              errors={errors}
-                              register={register}
-                              clearErrors={clearErrors}
-                              setValue={setValue}
-                        />
-                        <Order
-                              currentPaymentMethod={currentPaymentMethod}
-                              setCurrentPaymentMethod={setCurrentPaymentMethod}
-                        />
-                  </form>
-                  {windowIsVisible && (
+                  {windowIsVisible ? (
                         <>
+                              {!isSmallScreen && (
+                                    <form
+                                          onSubmit={handleSubmit(onSubmit)}
+                                          className={styles.container}>
+                                          <Form
+                                                control={control}
+                                                Controller={Controller}
+                                                errors={errors}
+                                                register={register}
+                                                clearErrors={clearErrors}
+                                                setValue={setValue}
+                                          />
+                                          <Order
+                                                currentPaymentMethod={currentPaymentMethod}
+                                                setCurrentPaymentMethod={setCurrentPaymentMethod}
+                                          />
+                                    </form>
+                              )}
                               {createPortal(
                                     <ModalWindow
                                           setWindowIsVisible={setWindowIsVisible}
@@ -79,6 +86,21 @@ const CheckoutPage = () => {
                                     document.body
                               )}
                         </>
+                  ) : (
+                        <form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
+                              <Form
+                                    control={control}
+                                    Controller={Controller}
+                                    errors={errors}
+                                    register={register}
+                                    clearErrors={clearErrors}
+                                    setValue={setValue}
+                              />
+                              <Order
+                                    currentPaymentMethod={currentPaymentMethod}
+                                    setCurrentPaymentMethod={setCurrentPaymentMethod}
+                              />
+                        </form>
                   )}
             </>
       );

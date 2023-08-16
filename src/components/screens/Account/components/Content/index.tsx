@@ -43,7 +43,7 @@ export const Content: FC<IContentProps> = ({
                                                 fontWeight: "700",
                                                 marginTop: "50px",
                                           }}>
-                                          Save Adress
+                                          Save
                                     </Button>
                               </>
                         );

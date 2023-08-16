@@ -73,4 +73,51 @@
 
     }
 
+    @media (max-width: 768px) {
+        display: flex;
+        padding: 0 10px;
+
+        .wrapper {
+            max-width: 100%;
+            width: 100%;
+            justify-content: space-between;
+            padding: 30px 0;
+
+
+            .info {
+                margin: 0;
+            }
+        }
+
+        .connect {
+            display: none;
+
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .wrapper {
+            .info {
+                h3 {
+                    font-size: 20px;
+                }
+
+                ul li {
+                    font-size: 16px;
+                }
+            }
+
+            .connect {
+                .social_title {
+                    font-size: 20px;
+                }
+
+                .payment {
+                    &_title {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
 }

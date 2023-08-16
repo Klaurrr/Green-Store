@@ -1,11 +1,10 @@
 .modal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
     width: 100%;
-    height: 100vh;
-
+    height: 100%;
     background: rgba(10, 13, 18, 0.25);
 
     .container {
@@ -167,6 +166,147 @@
             }
         }
 
+
+    }
+
+    @media (max-width: 768px) {
+        position: initial;
+        background: none;
+
+        .container {
+            .wrapper_1 {
+                h4 {
+                    font-size: 18px;
+                }
+            }
+
+            .wrapper_2 {
+                .info {
+                    div {
+                        .info__title {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .order {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    align-content: center;
+
+                    &__title {
+                        font-size: 17px;
+                    }
+
+                    &__subtitles {
+                        h4 {
+                            font-size: 18px;
+                        }
+                    }
+                }
+
+                .price {
+                    .col-1 {
+                        .shiping {
+                            font-size: 17px;
+
+                            span {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+
+                    .col-2 {
+                        .total {
+                            font-size: 18px;
+
+                            span {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .notification {
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        .container {
+            .wrapper_1 {
+                h4 {
+                    font-size: 18px;
+                }
+            }
+
+            .wrapper_2 {
+                .info {
+                    div {
+                        .info__title {
+                            font-size: 16px;
+                        }
+
+                        .info__content {
+                            font-size: 17px;
+                        }
+                    }
+                }
+
+                .order {
+                    &__title {
+                        font-size: 17px;
+                    }
+
+                    &__subtitles {
+
+                        :nth-child(2) {
+                            margin: 0px 35px 0 270px;
+                        }
+
+                        h4 {
+                            font-size: 18px;
+                        }
+                    }
+                }
+
+                .price {
+                    .col-1 {
+                        .shiping {
+                            font-size: 17px;
+
+                            span {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+
+                    .col-2 {
+                        .total {
+                            font-size: 18px;
+
+                            span {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+
+                .notification {
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+
+        }
 
     }
 

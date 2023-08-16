@@ -1,10 +1,10 @@
 .container {
     height: 362px;
     width: 268px;
-
+    background: #FBFBFB;
 
     .wrapper {
-        background: #FBFBFB;
+
 
         padding: 9px 30px 13px 15px;
 
@@ -48,6 +48,31 @@
                 svg {
                     fill: #46A358;
                 }
+            }
+        }
+    }
+
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        position: relative;
+
+        .wrapper {
+            .date {
+                font-size: 16px;
+            }
+
+            .title {
+                font-size: 22px;
+            }
+
+            .desc {
+                display: none;
+            }
+
+            .read {
+                font-size: 16px;
+                position: absolute;
+                bottom: 35px;
             }
         }
     }

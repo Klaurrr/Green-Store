@@ -7,6 +7,7 @@
         flex-direction: column;
         gap: 16px;
 
+
         .active {
             outline: 1px solid #46A358;
         }
@@ -21,5 +22,57 @@
 
     .image {
         margin: 0 76px 0 46px;
+    }
+
+    @media (max-width: 565px) {
+        justify-content: center;
+
+        .switches {
+            display: none;
+        }
+
+        .switches+div {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile__icons {
+            position: absolute;
+            top: 15px;
+            padding: 0 15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .switches+div {
+            position: relative;
+            margin: 0;
+        }
+
+        .switches {
+            margin-right: 46px;
+        }
+
+        .image {
+            margin: 0;
+        }
+
+        .mobile__icons {
+            width: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 15px;
+        }
     }
 }

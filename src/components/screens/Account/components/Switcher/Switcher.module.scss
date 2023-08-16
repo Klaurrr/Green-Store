@@ -79,4 +79,32 @@
             font-weight: 700;
         }
     }
+
+    @media (max-width: 768px) {
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        h2 {
+            font-size: 20px;
+        }
+
+        .wrapper {
+            .page {
+                p {
+                    font-size: 17px;
+                }
+            }
+        }
+
+        .logout {
+            p {
+                color: #46A358;
+                font-size: 17px;
+                font-weight: 700;
+            }
+        }
+    }
 }

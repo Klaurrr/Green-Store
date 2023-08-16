@@ -46,3 +46,38 @@
         color: #46A358;
     }
 }
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .subtotal,
+    .shiping,
+    .discount {
+        p {
+            font-size: 18px;
+        }
+
+        span {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    .shiping {
+        div {
+            :last-child {
+                font-size: 16px
+            }
+        }
+    }
+
+    .total {
+        h4 {
+            font-size: 18px;
+        }
+
+        span {
+            font-size: 20px;
+        }
+    }
+}

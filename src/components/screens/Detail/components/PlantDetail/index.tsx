@@ -13,7 +13,7 @@ export const PlantDetail: FC<IPlantDetailProps> = ({ currentPlant }) => {
       return (
             <main className={styles.container}>
                   <div className={styles.wrapper}>
-                        <PlantSwitcher images={MOCK_IMAGES} />
+                        <PlantSwitcher images={MOCK_IMAGES} currentPlant={currentPlant} />
                         <PlantInfo currentPlant={currentPlant} />
                   </div>
 

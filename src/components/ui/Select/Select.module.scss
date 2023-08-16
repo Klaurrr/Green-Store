@@ -64,4 +64,34 @@
     .error {
         border: 1px solid #F03800;
     }
+
+    @media (max-width: 768px) {
+        .select {
+            width: 100% !important;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        h3 {
+            font-size: 17px;
+        }
+
+        .select {
+            .field {
+                .placeholder {
+                    font-size: 16px;
+                }
+
+                .value {
+                    font-size: 17px;
+                }
+            }
+
+            .answers {
+                div {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }

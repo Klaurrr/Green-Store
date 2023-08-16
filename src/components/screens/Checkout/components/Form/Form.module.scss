@@ -1,5 +1,7 @@
 .container {
     .textarea {
+        display: inline-flex;
+        flex-direction: column;
         margin-top: 55px;
 
         h3 {
@@ -19,6 +21,25 @@
             &:focus {
                 outline: none;
 
+            }
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+
+            textarea {
+                width: auto;
+                min-width: 350px;
+            }
+        }
+
+
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        .textarea {
+            h3 {
+                font-size: 17px
             }
         }
     }

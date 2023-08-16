@@ -1,8 +1,11 @@
 import { FC } from "react";
 
+import useCurrentPath from "@/hooks/UseCurrentPath";
+import useWindowSize from "@/hooks/UseWindowSize";
 import { IFormProps } from "@/types/IForm.props";
 
 import Input from "../Input";
+import ReturnHat from "../ReturnHat";
 import Select from "../Select";
 
 import styles from "./AdressForm.module.scss";
@@ -17,9 +20,18 @@ const AdressForm: FC<IFormProps> = ({
 }) => {
       const { Email, FirstName, LastName, Street, City, Zip, Country, Phone, State } =
             errors && errors;
+
+      const isSmallScreen = useWindowSize();
+      const currentPath = useCurrentPath();
+
       return (
             <>
-                  <h3 className={styles.title}>Billing Address</h3>
+                  {isSmallScreen && currentPath !== "Account" ? (
+                        <ReturnHat title="Checkout" />
+                  ) : (
+                        <h1 className={styles.title}>Billing Address</h1>
+                  )}
+
                   <div className={styles.wrapper}>
                         <Controller
                               name="FirstName"

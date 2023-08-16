@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+
+    .title {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+}

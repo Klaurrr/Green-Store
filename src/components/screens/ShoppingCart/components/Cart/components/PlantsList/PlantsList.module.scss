@@ -22,96 +22,156 @@
 
     }
 
+
+
     .list {
         display: flex;
         flex-direction: column;
         gap: 10px;
 
-        .plant {
-            display: flex;
-            align-items: center;
-            height: 70px;
-            width: 782px;
-            background: #FBFBFB;
-            position: relative;
-
-            .image {
-                width: 70px;
-                height: 70px;
-                margin-right: 15px;
-            }
-
-
-            &-title {
-                h4 {
-                    font-weight: 500;
-                    font-size: 16px;
-                }
-
-                p {
-                    color: #A5A5A5;
-                    font-size: 14px;
-
-
-                    span {
-                        color: #727272;
-
-                    }
-                }
-            }
-
-            .price {
-                position: absolute;
-                left: 312px;
-
-                p {
-                    font-weight: 500;
-                    font-size: 16px;
-                    color: #727272;
-                }
-            }
-
-            .quantity {
-                display: flex;
-                align-items: center;
-                gap: 16px;
-                position: absolute;
-                left: 458px;
-
-                div {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 23px;
-                    height: 23px;
-                    border-radius: 100%;
-                    color: #FFF;
-                    cursor: pointer;
-                    background: linear-gradient(180deg, #46A358 0%, rgba(70, 163, 88, 0.8) 100%);
-                }
-            }
-
-            .total {
-                position: absolute;
-                left: 621px;
-
-                p {
-                    font-weight: 700;
-                    font-size: 16px;
-                    color: #46A358;
-                }
-            }
-
-            .delete {
-                position: absolute;
-                right: 30px;
-                cursor: pointer;
-            }
-        }
-
         .empty {
             font-weight: 700;
             line-height: 16px;
         }
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        position: relative;
+
+        .header {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-bottom: 30px;
+
+            .title {
+                text-align: center;
+                width: 100%;
+                position: absolute;
+
+                h1 {
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .titles {
+            display: none;
+        }
+
+        .wrapper {
+            border-radius: 0 14px 14px 0;
+            background: linear-gradient(144deg, #FFF 0%, #FFF 100%);
+            box-shadow: 0px 6px 20px 0px rgba(210, 210, 210, 0.25);
+
+            width: 100%;
+            height: 100%;
+            padding-left: 15px;
+        }
+
+        .list {
+            .plant {
+                min-width: 358px;
+                height: 100px;
+                width: 100%;
+                border-radius: 14px;
+
+                .delete {
+                    display: none; //Потом убрать
+                }
+
+                .price {
+                    display: none;
+                }
+
+                .total {
+                    left: 115px;
+                    bottom: 15px;
+                }
+
+                .quantity {
+                    left: auto;
+                    right: 16px;
+                }
+
+                .image {
+                    min-width: 100px;
+                    min-height: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0;
+                }
+            }
+        }
+
+        .plant-title {
+            padding-bottom: 30px;
+
+            p {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .titles {
+            h3 {
+                font-size: 18px;
+
+                &:last-child {
+                    margin-left: 88px;
+                }
+
+                &:nth-child(2) {
+                    margin: 0 106px 0 237px;
+                }
+            }
+        }
+
+
+        .wrapper {
+            .plant-title {
+                h4 {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .list {
+            .plant {
+                .price {
+                    p {
+                        font-size: 18px;
+                    }
+                }
+
+                .quantity {
+                    div {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    span {
+                        font-size: 18px;
+                    }
+                }
+
+
+                .total {
+                    p {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+
     }
 }

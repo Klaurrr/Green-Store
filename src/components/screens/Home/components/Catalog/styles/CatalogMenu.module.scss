@@ -21,4 +21,23 @@
             line-height: 40px;
         }
     }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        & {
+            .wrapper {
+                h3 {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+
 }

@@ -42,4 +42,13 @@
         @extend .paginate__item;
         transform: rotate(180deg);
     }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .paginate__item {
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
 }

@@ -49,4 +49,8 @@
             opacity: 1;
         }
     }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        font-size: 17px;
+    }
 }

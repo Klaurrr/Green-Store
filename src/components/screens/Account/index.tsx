@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
+import ReturnHat from "@/components/ui/ReturnHat";
+import useWindowSize from "@/hooks/UseWindowSize";
+
 import { Content, Switcher } from "./components";
 
 import styles from "./Account.module.scss";
@@ -17,12 +20,15 @@ const AccountPage = () => {
             setValue,
       } = useForm();
 
+      const isSmallScreen = useWindowSize();
+
       const onSubmit = (data: any) => {
             console.log(data);
       };
 
       return (
             <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
+                  {isSmallScreen && <ReturnHat title="Account" />}
                   <Switcher setCurrentPage={setCurrentPage} currentPage={currentPage} />
                   <Content
                         currentPage={currentPage}
