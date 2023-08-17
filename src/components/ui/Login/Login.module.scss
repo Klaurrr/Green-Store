@@ -176,6 +176,14 @@ $green: #46A358;
         background-color: #FFF;
         flex-direction: column;
 
+        .wrapper {
+            border: none;
+
+            .cross {
+                display: none;
+            }
+        }
+
         .logo {
             display: flex;
             align-items: center;
@@ -191,11 +199,5 @@ $green: #46A358;
 
     }
 
-    .wrapper {
-        border: none;
 
-        .cross {
-            display: none;
-        }
-    }
 }

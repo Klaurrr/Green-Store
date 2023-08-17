@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { Controller, useForm } from "react-hook-form";
+import dynamic from "next/dynamic";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
-import ModalWindow from "@/components/ui/ModalWindow";
 import useWindowSize from "@/hooks/UseWindowSize";
 
 import { Form } from "./components/Form";
 import { Order } from "./components/Order";
 
 import styles from "./Checkout.module.scss";
+
+const DynamicModalWindow = dynamic(() => import("@/components/ui/ModalWindow"), { ssr: false });
 
 const CheckoutPage = () => {
       const [currentPaymentMethod, setCurrentPaymentMethod] = useState(0);
@@ -79,7 +81,7 @@ const CheckoutPage = () => {
                                     </form>
                               )}
                               {createPortal(
-                                    <ModalWindow
+                                    <DynamicModalWindow
                                           setWindowIsVisible={setWindowIsVisible}
                                           paymentMethod={getPaymentMethod()}
                                     />,

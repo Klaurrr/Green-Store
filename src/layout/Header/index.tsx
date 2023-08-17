@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ClipLoader } from "react-spinners";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
@@ -8,7 +9,6 @@ import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
 import Filter from "@/../../public/assets/svg/Filter.svg";
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
 import Button from "@/components/ui/Button";
-import Login from "@/components/ui/Login";
 import Logo from "@/components/ui/Logo";
 import useCurrentPath from "@/hooks/UseCurrentPath";
 import useWindowSize from "@/hooks/UseWindowSize";
@@ -24,6 +24,8 @@ import UserIcon from "./../../../public/assets/svg/UserIcon.svg";
 import WishList from "./../../../public/assets/svg/Wishlist.svg";
 
 import styles from "./Header.module.scss";
+
+const DynamicLogin = dynamic(() => import("@/components/ui/Login"), { ssr: false });
 
 const Header = React.memo(() => {
       const { push } = useRouter();
@@ -166,7 +168,9 @@ const Header = React.memo(() => {
                                     )}
                               </div>
                         </div>
-                        {windowIsVisible && <Login setWindowIsVisible={setWindowIsVisible} />}
+                        {windowIsVisible && (
+                              <DynamicLogin setWindowIsVisible={setWindowIsVisible} />
+                        )}
                   </main>
             </header>
       );
