@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 import ReturnHat from "@/components/ui/ReturnHat";
 import useWindowSize from "@/hooks/UseWindowSize";
@@ -22,7 +22,7 @@ const AccountPage = () => {
 
       const isSmallScreen = useWindowSize();
 
-      const onSubmit = (data: any) => {
+      const onSubmit: SubmitHandler<{}> = (data) => {
             console.log(data);
       };
 

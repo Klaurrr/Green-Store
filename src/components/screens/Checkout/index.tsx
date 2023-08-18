@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
@@ -41,7 +41,7 @@ const CheckoutPage = () => {
             }
       };
 
-      const onSubmit = (data: any) => {
+      const onSubmit: SubmitHandler<{}> = (data) => {
             const formData = Object.assign(data, {
                   PaymentMethod: getPaymentMethod(),
             });

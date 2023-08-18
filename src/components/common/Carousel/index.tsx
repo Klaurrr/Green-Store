@@ -1,4 +1,4 @@
-import { Children, cloneElement, useEffect, useState } from "react";
+import { Children, cloneElement, ReactNode, useEffect, useState } from "react";
 
 import useWindowSize from "@/hooks/UseWindowSize";
 
@@ -7,10 +7,12 @@ import { Props } from "./Carousel.props";
 import styles from "./Carousel.module.scss";
 
 const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
-      const [pages, setPages] = useState<any>([]);
+      const [pages, setPages] = useState<ReactNode[]>([]);
       const [offset, setOffset] = useState(0);
       const [currentPage, setCurrentPage] = useState(0);
       const isSmallScreen = useWindowSize();
+      const [startX, setStartX] = useState(0);
+      const [currentX, setCurrentX] = useState(0);
       const PAGE_WIDTH = isSmallScreen ? window.innerWidth - 30 : 1200;
 
       useEffect(() => {
@@ -29,10 +31,7 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
                         });
                   })
             );
-      }, []);
-
-      const [startX, setStartX] = useState(0);
-      const [currentX, setCurrentX] = useState(0);
+      }, [children]);
 
       const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
             setStartX(e.touches[0].clientX);
@@ -81,7 +80,7 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
                         </div>
                   </div>
                   <div className={Banner ? styles.dots : styles.switches}>
-                        {pages.map((_item: undefined, index: string) => (
+                        {pages.map((_item, index: number) => (
                               <button
                                     key={index}
                                     onClick={() => {
@@ -89,7 +88,7 @@ const Carousel: React.FC<Props> = ({ children, Banner = false }) => {
                                           setCurrentPage(Number(index));
                                     }}
                                     className={
-                                          index == String(currentPage)
+                                          index === currentPage
                                                 ? styles.button_active
                                                 : styles.button
                                     }

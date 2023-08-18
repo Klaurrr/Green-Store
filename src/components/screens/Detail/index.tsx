@@ -4,6 +4,7 @@ import { ClipLoader } from "react-spinners";
 import { useRouter } from "next/router";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
+import ErrorBanner from "@/components/ui/ErrorBanner";
 import PlantsSlider from "@/components/ui/PlantsSlider";
 import useWindowSize from "@/hooks/UseWindowSize";
 import { IPlants } from "@/types/IPlants";
@@ -15,13 +16,13 @@ import styles from "./ShopDetail.module.scss";
 const DetailPage = () => {
       const { query } = useRouter();
 
-      const { data: allPlants } = useQuery("allPlants", () =>
-            fetch("https://green-store-beige.vercel.app/api/plants").then((res) => res.json())
+      const { data: allPlants, isLoading } = useQuery("allPlants", () =>
+            fetch(process.env.PLANTS_URL!).then((res) => res.json())
       );
 
       const currentPlant = allPlants?.filter((item: IPlants) => String(item.id) === query.id);
 
-      const currentRef = useRef<any>(null);
+      const currentRef = useRef<HTMLDivElement | null>(null);
 
       const isSmallScreen = useWindowSize();
 
@@ -32,7 +33,11 @@ const DetailPage = () => {
       return (
             <div ref={currentRef}>
                   <BreadCrumbs />
-                  {allPlants ? (
+                  {isLoading ? (
+                        <div className={styles.preloader}>
+                              <ClipLoader color="#46A358" />
+                        </div>
+                  ) : allPlants ? (
                         <>
                               <PlantDetail currentPlant={currentPlant} />
                               {!isSmallScreen && (
@@ -40,9 +45,7 @@ const DetailPage = () => {
                               )}
                         </>
                   ) : (
-                        <div className={styles.preloader}>
-                              <ClipLoader color="#46A358" />
-                        </div>
+                        <ErrorBanner />
                   )}
             </div>
       );
