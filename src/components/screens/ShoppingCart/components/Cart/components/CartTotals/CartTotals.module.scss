@@ -66,11 +66,14 @@
     }
 
     @media (max-width: 768px) {
-        position: fixed;
-        bottom: 15px;
-        left: 15px;
-        right: 15px;
+        // position: fixed;
+        // bottom: 0px;
+        // left: 15px;
+        // right: 15px;
         width: auto;
+        background: #FFF;
+        padding: 10px 0;
+        margin-top: 10px;
 
         .title {
             display: none;

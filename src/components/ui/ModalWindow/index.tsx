@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 import { getDate } from "@/components/common/GetDate/getDate";
 import { usePlantsStore } from "@/store";
@@ -13,9 +14,11 @@ import styles from "./ModalWindow.module.scss";
 
 const ModalWindow: FC<IModalWindowProps> = ({ setWindowIsVisible, paymentMethod }) => {
       const { plants, quantity } = usePlantsStore((state) => state.cart);
-      const coupon = usePlantsStore((state) => state.coupon);
+      const { coupon, resetCart } = usePlantsStore((state) => state);
 
       const [date, setDate] = useState<number | null>(null);
+
+      const { replace } = useRouter();
 
       const COUPON = 15;
       const SHIPPING = 16;
@@ -34,7 +37,9 @@ const ModalWindow: FC<IModalWindowProps> = ({ setWindowIsVisible, paymentMethod 
             : subTotalSum + SHIPPING;
 
       const submitHandler = () => {
+            replace("/Home");
             setWindowIsVisible(false);
+            resetCart();
       };
 
       useEffect(() => {

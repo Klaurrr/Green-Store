@@ -32,6 +32,14 @@ export const usePlantsStore = create<IPlantsState>((set) => ({
                   },
             }));
       },
+      resetCart: () => {
+            set((state) => ({
+                  cart: {
+                        plants: [],
+                        quantity: {},
+                  },
+            }));
+      },
       deletePlantFromCart: (currentPlant) => {
             set(
                   (state) => (

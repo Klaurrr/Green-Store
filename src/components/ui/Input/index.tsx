@@ -21,6 +21,7 @@ const Input: FC<InputProps> = React.forwardRef((props, ref) => {
                         className={clsx(styles.input, error && styles.error)}
                         placeholder={placeholder}
                         style={style}
+                        autoComplete="off"
                         {...rest}
                   />
             </article>

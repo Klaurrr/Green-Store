@@ -16,6 +16,7 @@ export interface IPlantsState {
       activeCategory: string;
       addPlants: (plants: IPlants[]) => void;
       addCart: (plants: IPlants, quantity: number) => void;
+      resetCart: () => void;
       addToWishlist: (currentPlant: IPlants) => void;
       deletePlantFromCart: (currentPlant: IPlants) => void;
       addFilteredPlants: (plants: IPlants[]) => void;
