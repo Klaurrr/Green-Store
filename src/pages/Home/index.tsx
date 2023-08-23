@@ -1,5 +1,4 @@
 import React, { FC, useEffect } from "react";
-import mongoose from "mongoose";
 
 import HomePage from "@/components/screens/Home";
 import Layout from "@/layout";
@@ -23,7 +22,7 @@ const Home: FC<IPageProps> = ({ plants }) => {
 
 export const getStaticProps = async () => {
       try {
-            const response = await fetch("https://green-store-beige.vercel.app/api/plants");
+            const response = await fetch(process.env.PLANTS_URL!);
             const plants = await response.json();
             return {
                   props: {

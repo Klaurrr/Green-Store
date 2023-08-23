@@ -1,12 +1,22 @@
 import axios, { AxiosError } from "axios";
 import { signIn } from "next-auth/react";
 
-const handleLogin = async (
-      setLoading: any,
-      data: any,
-      setWindowIsVisible: any,
-      setSubmitError: any
-) => {
+interface ISignIn {
+      setLoading: (param: boolean) => void;
+      data: {
+            email: string;
+            password: string;
+      };
+      setWindowIsVisible: (param: boolean) => void;
+      setSubmitError: (param: string) => void;
+}
+
+const handleLogin = async ({
+      setLoading,
+      data,
+      setWindowIsVisible,
+      setSubmitError,
+}: ISignIn): Promise<void> => {
       const { email, password } = data;
       setLoading(true);
       const res = await signIn("credentials", {
@@ -24,12 +34,12 @@ const handleLogin = async (
       setLoading(false);
 };
 
-const handleRegistration = async (
-      data: any,
-      setWindowIsVisible: any,
-      setSubmitError: any,
-      setLoading: any
-) => {
+const handleRegistration = async ({
+      data,
+      setWindowIsVisible,
+      setSubmitError,
+      setLoading,
+}: ISignIn): Promise<void> => {
       try {
             const { email, password } = data;
             setLoading(true);

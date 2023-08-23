@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { createPortal } from "react-dom";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
 
 import BreadCrumbs from "@/components/common/BreadCrumbs";
+import Portal from "@/components/common/Portal";
 import useWindowSize from "@/hooks/UseWindowSize";
 
 import { Form } from "./components/Form";
@@ -80,13 +80,12 @@ const CheckoutPage = () => {
                                           />
                                     </form>
                               )}
-                              {createPortal(
+                              <Portal node={document.body}>
                                     <DynamicModalWindow
                                           setWindowIsVisible={setWindowIsVisible}
                                           paymentMethod={getPaymentMethod()}
-                                    />,
-                                    document.body
-                              )}
+                                    />
+                              </Portal>
                         </>
                   ) : (
                         <form onSubmit={handleSubmit(onSubmit)} className={styles.container}>

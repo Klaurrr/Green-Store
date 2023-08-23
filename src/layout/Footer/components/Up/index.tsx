@@ -2,11 +2,11 @@ import { useState } from "react";
 
 import Button from "@/components/ui/Button";
 
-import icons from "../../../public/assets/icons";
+import icons from "../../../../../public/assets/icons";
 
-import styles from "./styles/UpFooter.module.scss";
+import styles from "./UpFooter.module.scss";
 
-const UpFooter = () => {
+export const UpFooter = () => {
       const [value, setValue] = useState("");
 
       const handleClick = (e: MouseEvent) => {
@@ -58,8 +58,7 @@ const UpFooter = () => {
                                           height: "40px",
                                           fontWeight: "700",
                                           fontSize: "18px",
-                                    }}
-                              >
+                                    }}>
                                     Join
                               </Button>
                         </div>
@@ -72,5 +71,3 @@ const UpFooter = () => {
             </div>
       );
 };
-
-export default UpFooter;

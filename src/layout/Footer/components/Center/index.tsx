@@ -1,10 +1,10 @@
 import Logo from "@/components/ui/Logo";
 
-import icons from "../../../public/assets/icons";
+import icons from "../../../../../public/assets/icons";
 
-import styles from "./styles/CenterFooter.module.scss";
+import styles from "./CenterFooter.module.scss";
 
-const CenterFooter = () => {
+export const CenterFooter = () => {
       return (
             <div className={styles.container}>
                   <div className={styles.wrapper}>
@@ -27,5 +27,3 @@ const CenterFooter = () => {
             </div>
       );
 };
-
-export default CenterFooter;

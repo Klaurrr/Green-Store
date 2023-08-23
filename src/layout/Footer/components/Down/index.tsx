@@ -1,8 +1,8 @@
-import icons from "../../../public/assets/icons";
+import icons from "../../../../../public/assets/icons";
 
-import styles from "./styles/DownFooter.module.scss";
+import styles from "./DownFooter.module.scss";
 
-const DownFooter = () => {
+export const DownFooter = () => {
       return (
             <div className={styles.container}>
                   <div className={styles.wrapper}>
@@ -59,5 +59,3 @@ const DownFooter = () => {
             </div>
       );
 };
-
-export default DownFooter;

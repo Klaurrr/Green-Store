@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { ClipLoader } from "react-spinners";
 import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
+import Portal from "@/components/common/Portal";
 import useWindowSize from "@/hooks/UseWindowSize";
 import { handleLogin, handleRegistration } from "@/utils/handleSignIn";
 
@@ -52,7 +52,7 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
 
       return (
             <>
-                  {createPortal(
+                  <Portal node={document.body}>
                         <div className={styles.container}>
                               {isSmallScreen && (
                                     <div className={styles.logo}>
@@ -179,9 +179,8 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
                                           </div>
                                     </div>
                               </div>
-                        </div>,
-                        document.body
-                  )}
+                        </div>
+                  </Portal>
             </>
       );
 };
