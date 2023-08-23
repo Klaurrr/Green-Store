@@ -4,11 +4,11 @@ import clsx from "clsx";
 import { usePlantsStore } from "@/store";
 import { IPlantsState } from "@/types/IPlantsState";
 
-import { ICatalogMenuProps } from "./props/CatalogMenu.props";
+import { IStateProps } from "../props/IState.props";
 
-import styles from "./styles/Categories.module.scss";
+import styles from "./Categories.module.scss";
 
-const Categories: FC<ICatalogMenuProps> = ({ active, setActive }) => {
+export const Categories: FC<IStateProps> = ({ active, setActive }) => {
       const plants = usePlantsStore((state: IPlantsState) => state?.plants);
 
       return (
@@ -17,13 +17,8 @@ const Categories: FC<ICatalogMenuProps> = ({ active, setActive }) => {
                   {["Large Plants", "Small Plants"].map((size, index) => (
                         <div
                               key={index}
-                              className={
-                                    active === size
-                                          ? clsx(styles.wrapper, styles.active)
-                                          : styles.wrapper
-                              }
-                              onClick={() => setActive(size)}
-                        >
+                              className={clsx(styles.wrapper, active === size && styles.active)}
+                              onClick={() => setActive(size)}>
                               <p>{size}</p>
                               <p>
                                     (
@@ -41,5 +36,3 @@ const Categories: FC<ICatalogMenuProps> = ({ active, setActive }) => {
             </div>
       );
 };
-
-export default Categories;

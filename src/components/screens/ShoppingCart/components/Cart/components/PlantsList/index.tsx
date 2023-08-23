@@ -28,7 +28,7 @@ export const PlantsList = () => {
                   <div className={styles.list}>
                         {plants?.length > 0 ? (
                               plants.map((plant: IPlants, index) => (
-                                    <Card plant={plant} key={generateKey(index.toString())} />
+                                    <Card plant={plant} key={generateKey(`${index}`)} />
                               ))
                         ) : (
                               <h1 className={styles.empty}>Ваша корзина пуста...</h1>

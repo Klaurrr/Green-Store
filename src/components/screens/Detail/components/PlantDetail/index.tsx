@@ -8,7 +8,7 @@ import { IPlantDetailProps } from "./PlantDetail.props";
 import styles from "./PlantDetail.module.scss";
 
 export const PlantDetail: FC<IPlantDetailProps> = ({ currentPlant }) => {
-      const MOCK_IMAGES = Array(4).fill(plantsImg[currentPlant[0]?.img]?.src);
+      const MOCK_IMAGES = Array(4).fill(plantsImg[currentPlant?.img]?.src);
 
       return (
             <main className={styles.container}>
@@ -17,7 +17,7 @@ export const PlantDetail: FC<IPlantDetailProps> = ({ currentPlant }) => {
                         <PlantInfo currentPlant={currentPlant} />
                   </div>
 
-                  <PlantDescription currentPlant={currentPlant} />
+                  <PlantDescription description={currentPlant.description} />
             </main>
       );
 };

@@ -8,7 +8,7 @@ import { usePlantsStore } from "@/store";
 import styles from "./CartTotals.module.scss";
 
 export const CartTotals = () => {
-      const router = useRouter();
+      const { push } = useRouter();
 
       const [inputValue, setInputValue] = useState("");
 
@@ -51,11 +51,11 @@ export const CartTotals = () => {
                                           ? "rgb(70, 163, 88)"
                                           : "rgb(70, 163, 88, 0.3)",
                               }}
-                              handler={() => router.push("/Shop/Checkout")}>
+                              handler={() => push("/Shop/Checkout")}>
                               Proceed To Checkout
                         </Button>
                   </div>
-                  <h5 className={styles.continue} onClick={() => router.push("/Home")}>
+                  <h5 className={styles.continue} onClick={() => push("/Home")}>
                         Continue Shopping
                   </h5>
             </div>

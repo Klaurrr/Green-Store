@@ -2,16 +2,16 @@ import React, { FC, useState } from "react";
 
 import generateKey from "@/components/common/GenerateKey";
 
-import icons from "../../../../../../public/assets/icons";
+import icons from "../../../../../../../../public/assets/icons";
 
-import { INavBarProps } from "./props/NavBar.props";
+import { INavBarProps } from "./NavBar.props";
 
-import styles from "./styles/NavBar.module.scss";
+import styles from "./NavBar.module.scss";
 
 const NavBar: FC<INavBarProps> = ({ plantsFilter }) => {
       const [active, setActive] = useState("All Plants");
 
-      const [sort, setSort] = useState({
+      const [{ sortView, dropActive }, setSort] = useState({
             sortView: "Default sorting",
             dropActive: false,
       });
@@ -19,7 +19,7 @@ const NavBar: FC<INavBarProps> = ({ plantsFilter }) => {
       const dropHandler = () => {
             setSort((prev) => ({
                   ...prev,
-                  dropActive: !sort.dropActive,
+                  dropActive: !dropActive,
             }));
       };
 
@@ -38,24 +38,22 @@ const NavBar: FC<INavBarProps> = ({ plantsFilter }) => {
                               <li
                                     onClick={() => setActive(li)}
                                     className={active === li ? styles.active : ""}
-                                    key={generateKey(li)}
-                              >
+                                    key={generateKey(li)}>
                                     {li}
                               </li>
                         ))}
                   </ul>
                   <div className={styles.sort} onClick={dropHandler}>
                         <p className={styles.sort_view}>
-                              Short by: {sort.sortView}
+                              Short by: {sortView}
                               <img src={icons.Arrow.src} alt="arrow-img" />
                         </p>
-                        {sort.dropActive && (
+                        {dropActive && (
                               <div className={styles.drop}>
                                     {["Ascending", "Descending"].map((sort) => (
                                           <p
                                                 onClick={() => sortHandler(sort)}
-                                                key={generateKey(sort)}
-                                          >
+                                                key={generateKey(sort)}>
                                                 {sort} sorting
                                           </p>
                                     ))}

@@ -2,9 +2,9 @@ import React, { FC } from "react";
 
 import ArrowRight from "@/../../public/assets/svg/ArrowRight.svg";
 
-import { IBlogItemProps } from "./props/BlogItem.props";
+import { IBlogItemProps } from "./BlogItem.props";
 
-import styles from "./styles/BlogItem.module.scss";
+import styles from "./BlogItem.module.scss";
 
 const BlogItem: FC<IBlogItemProps> = ({ plant }) => {
       const { date, timeForRead, title, desc, img } = plant;

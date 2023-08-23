@@ -13,14 +13,8 @@ const Checkbox: FC<ICheckboxProps> = ({ children }) => {
                   <label
                         htmlFor="checkbox"
                         className={clsx(styles.label, checked && styles.checked)}
-                        onClick={() => setChecked(() => !checked)}
-                  ></label>
-                  <input
-                        type="checkbox"
-                        id="checkbox"
-                        className={styles.checkbox}
-                        onClick={() => console.log("checked")}
-                  />
+                        onClick={() => setChecked(() => !checked)}></label>
+                  <input type="checkbox" id="checkbox" className={styles.checkbox} />
                   {children}
             </div>
       );

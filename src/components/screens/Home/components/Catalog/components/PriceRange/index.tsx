@@ -4,11 +4,11 @@ import Button from "@/components/ui/Button";
 import { usePlantsStore } from "@/store";
 import { IPlantsState } from "@/types/IPlantsState";
 
-import { IPriceRangeProps } from "./props/PriceRange.props";
+import { IPriceRangeProps } from "./PriceRange.props";
 
-import styles from "./styles/PriceRange.module.scss";
+import styles from "./PriceRange.module.scss";
 
-const PriceRange: FC<IPriceRangeProps> = ({ setCurrentPage }) => {
+export const PriceRange: FC<IPriceRangeProps> = ({ setCurrentPage }) => {
       const [value, setValue] = useState(0);
 
       const plants = usePlantsStore((state: IPlantsState) => state?.plants);
@@ -43,13 +43,10 @@ const PriceRange: FC<IPriceRangeProps> = ({ setCurrentPage }) => {
 
                         <Button
                               handler={() => filterHandler()}
-                              style={{ width: "90px", height: "35px", fontWeight: "700" }}
-                        >
+                              style={{ width: "90px", height: "35px", fontWeight: "700" }}>
                               Filter
                         </Button>
                   </div>
             </div>
       );
 };
-
-export default PriceRange;

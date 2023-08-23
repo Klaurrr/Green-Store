@@ -1,12 +1,10 @@
 import { FC, useState } from "react";
 
-import { IPlantDetailProps } from "../../PlantDetail.props";
+import { IPlantDescProps } from "./PlantDescription.props";
 
 import styles from "./PlantDescription.module.scss";
 
-export const PlantDescription: FC<IPlantDetailProps> = ({ currentPlant }) => {
-      const { description } = currentPlant[0];
-
+export const PlantDescription: FC<IPlantDescProps> = ({ description }) => {
       const [currentInfo, setCurrentInfo] = useState("Product Description");
 
       return (

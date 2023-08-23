@@ -1,11 +1,12 @@
 import React, { FC } from "react";
 
-import { ICardsListProps } from "./props/CardsList.props";
-import NavBar from "./NavBar.component";
+import NavBar from "../NavBar";
 
-import styles from "./styles/CardsList.module.scss";
+import { ICardsListProps } from "./CardsList.props";
 
-const CardsList: FC<ICardsListProps> = ({ setSort, showPlants }) => {
+import styles from "./CardsList.module.scss";
+
+export const CardsList: FC<ICardsListProps> = ({ setSort, showPlants }) => {
       return (
             <div className={styles.container}>
                   <NavBar plantsFilter={setSort} />
@@ -13,5 +14,3 @@ const CardsList: FC<ICardsListProps> = ({ setSort, showPlants }) => {
             </div>
       );
 };
-
-export default CardsList;

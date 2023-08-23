@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { ClipLoader } from "react-spinners";
 import { useSession } from "next-auth/react";
 
 import { IFormProps } from "@/types/IForm.props";
@@ -24,11 +25,12 @@ const AccountForm: FC<IFormProps> = ({ errors, control, Controller }) => {
 
       const session = useSession();
 
-      const [hidePassword, setHidePassword] = useState({
-            currentPass: true,
-            newPass: true,
-            confirmNewPass: true,
-      });
+      const [{ passwordIsVisible, newPasswordIsVisible, confirmPassVisibility }, setHidePassword] =
+            useState({
+                  passwordIsVisible: true,
+                  newPasswordIsVisible: true,
+                  confirmPassVisibility: true,
+            });
 
       return (
             <>
@@ -115,17 +117,23 @@ const AccountForm: FC<IFormProps> = ({ errors, control, Controller }) => {
                               <h3>Photo</h3>
                               <div className={styles.change__wrapper}>
                                     <div>
-                                          <img
-                                                className={
-                                                      session.data?.user?.image ? styles.hasImg : ""
-                                                }
-                                                src={
-                                                      session.data?.user?.image
-                                                            ? session.data?.user?.image
-                                                            : icons.JustImage.src
-                                                }
-                                                alt="just image "
-                                          />
+                                          {session.status === "loading" ? (
+                                                <ClipLoader color="#46A358" />
+                                          ) : (
+                                                <img
+                                                      className={
+                                                            session.data?.user?.image
+                                                                  ? styles.hasImg
+                                                                  : ""
+                                                      }
+                                                      src={
+                                                            session.data?.user?.image
+                                                                  ? session.data?.user?.image
+                                                                  : icons.JustImage.src
+                                                      }
+                                                      alt="just image"
+                                                />
+                                          )}
                                     </div>
 
                                     <div>
@@ -157,16 +165,14 @@ const AccountForm: FC<IFormProps> = ({ errors, control, Controller }) => {
                                           <h3>Current Password</h3>
                                           <Input
                                                 error={CurrentPass}
-                                                type={
-                                                      hidePassword.currentPass ? "password" : "text"
-                                                }
+                                                type={passwordIsVisible ? "password" : "text"}
                                                 {...field}
                                           />
                                           <Hide
                                                 onClick={() =>
                                                       setHidePassword((prev) => ({
                                                             ...prev,
-                                                            currentPass: !hidePassword.currentPass,
+                                                            passwordIsVisible: !passwordIsVisible,
                                                       }))
                                                 }
                                           />
@@ -183,14 +189,15 @@ const AccountForm: FC<IFormProps> = ({ errors, control, Controller }) => {
                                           <h3>New password</h3>
                                           <Input
                                                 error={NewPass}
-                                                type={hidePassword.newPass ? "password" : "text"}
+                                                type={newPasswordIsVisible ? "password" : "text"}
                                                 {...field}
                                           />
                                           <Hide
                                                 onClick={() =>
                                                       setHidePassword((prev) => ({
                                                             ...prev,
-                                                            newPass: !hidePassword.newPass,
+                                                            newPasswordIsVisible:
+                                                                  !newPasswordIsVisible,
                                                       }))
                                                 }
                                           />
@@ -207,19 +214,15 @@ const AccountForm: FC<IFormProps> = ({ errors, control, Controller }) => {
                                           <h3>Confirm new password</h3>
                                           <Input
                                                 error={ConfirmPass}
-                                                type={
-                                                      hidePassword.confirmNewPass
-                                                            ? "password"
-                                                            : "text"
-                                                }
+                                                type={confirmPassVisibility ? "password" : "text"}
                                                 {...field}
                                           />
                                           <Hide
                                                 onClick={() =>
                                                       setHidePassword((prev) => ({
                                                             ...prev,
-                                                            confirmNewPass:
-                                                                  !hidePassword.confirmNewPass,
+                                                            confirmPassVisibility:
+                                                                  !confirmPassVisibility,
                                                       }))
                                                 }
                                           />

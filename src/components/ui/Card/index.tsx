@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import CartSvg from "@/../../public/assets/svg/CartSvg.svg";
 import HeartSvg from "@/../../public/assets/svg/heart.svg";
 import SearchIcon from "@/../../public/assets/svg/SearchIcon.svg";
-import { ICardProps } from "@/components/screens/Home/components/Catalog/props/Card.props";
+import { ICardProps } from "@/components/ui/Card/Card.props";
 import useWindowSize from "@/hooks/UseWindowSize";
 import { usePlantsStore } from "@/store";
 
@@ -14,7 +14,8 @@ import IconMobile from "../IconMobile";
 import styles from "./Card.module.scss";
 
 const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
-      const router = useRouter();
+      const { name, price, img, id } = plant;
+      const { push } = useRouter();
 
       const isSmallScreen = useWindowSize();
 
@@ -37,10 +38,10 @@ const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
                         minWidth: forSlider ? "220px" : "258px",
                         minHeight: forSlider ? "255px" : "355px",
                   }}
-                  onClick={() => router.push(`/Shop/${plant.id}`)}>
+                  onClick={() => push(`/Shop/${id}`)}>
                   {isSmallScreen && (
                         <IconMobile
-                              active={wishlist.some((item) => item.id === plant.id)}
+                              active={wishlist.some((item) => item.id === id)}
                               style={{ position: "absolute" }}>
                               <HeartSvg onClick={addToWishlistHandler} />
                         </IconMobile>
@@ -48,28 +49,27 @@ const Card: FC<ICardProps> = ({ plant, forSlider = false }) => {
                   <div
                         className={styles.wrapper_1}
                         style={{ height: forSlider ? "255px" : "300px" }}>
-                        <img src={plantsImg[`${plant.img}`].src} alt="plant-img" />
+                        <img src={plantsImg[`${img}`].src} alt="plant-img" />
                         <div className={styles.icons}>
                               <CartSvg
                                     onClick={addCartHandler}
                                     className={
-                                          cart.plants.some((item) => item.id === plant.id) &&
+                                          cart.plants.some((item) => item.id === id) &&
                                           styles.active
                                     }
                               />
                               <HeartSvg
                                     onClick={addToWishlistHandler}
                                     className={
-                                          wishlist.some((item) => item.id === plant.id) &&
-                                          styles.active
+                                          wishlist.some((item) => item.id === id) && styles.active
                                     }
                               />
                               <SearchIcon />
                         </div>
                   </div>
                   <div className={styles.wrapper_2}>
-                        <p>{plant.name}</p>
-                        <span>${plant.price}</span>
+                        <p>{name}</p>
+                        <span>${price}</span>
                   </div>
             </div>
       );

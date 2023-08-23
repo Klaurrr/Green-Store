@@ -1,7 +1,9 @@
 import React from "react";
 
+import ErrorBanner from "@/components/ui/ErrorBanner";
+
 const ShopPage = () => {
-      return <div>ShopPage</div>;
+      return <ErrorBanner />;
 };
 
 export default ShopPage;

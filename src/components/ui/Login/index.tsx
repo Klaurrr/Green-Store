@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { ClipLoader } from "react-spinners";
-import axios, { AxiosError } from "axios";
 import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 import useWindowSize from "@/hooks/UseWindowSize";
+import { handleLogin, handleRegistration } from "@/utils/handleSignIn";
 
 import icons from "../../../../public/assets/icons";
 import Cross from "../../../../public/assets/svg/Cross.svg";
@@ -32,53 +32,12 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
             formState: { errors },
       } = useForm();
 
-      const onSubmit = async (data: any, event: any) => {
-            event.preventDefault();
-            const { email, password } = data;
-
+      const onSubmit: SubmitHandler<any> = async (data, event) => {
+            event?.preventDefault();
             if (mode === "Login") {
-                  setLoading(true);
-                  const res = await signIn("credentials", {
-                        email,
-                        password,
-                        redirect: false,
-                  });
-
-                  if (res && !res.error) {
-                        setWindowIsVisible(false);
-                  } else {
-                        setSubmitError(res?.error || "unknown error");
-                  }
-
-                  setLoading(false);
+                  handleLogin(setLoading, data, setWindowIsVisible, setSubmitError);
             } else {
-                  try {
-                        setLoading(true);
-                        const apiRes = await axios.post(
-                              "https://green-store-beige.vercel.app/api/auth/signup",
-                              data
-                        );
-                        if (apiRes?.data?.success) {
-                              const res = await signIn("credentials", {
-                                    email,
-                                    password,
-                                    redirect: false,
-                              });
-
-                              if (res && !res.error) {
-                                    setWindowIsVisible(false);
-                              } else {
-                                    setSubmitError(res?.error || "unknown error");
-                              }
-                        }
-                  } catch (error: unknown) {
-                        if (error instanceof AxiosError) {
-                              const errorMsg = error.response?.data?.error;
-                              setSubmitError(errorMsg);
-                        }
-                  }
-
-                  setLoading(false);
+                  handleRegistration(data, setWindowIsVisible, setSubmitError, setLoading);
             }
       };
 

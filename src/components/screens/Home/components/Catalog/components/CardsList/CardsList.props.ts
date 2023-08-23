@@ -1,4 +1,4 @@
 export interface ICardsListProps {
       setSort: (key: string) => void;
-      showPlants: any;
+      showPlants: JSX.Element | JSX.Element[];
 }

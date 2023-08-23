@@ -1,10 +1,12 @@
 import React from "react";
 
+import generateKey from "@/components/common/GenerateKey";
+
 import icons from "../../../../../../public/assets/icons";
 
-import BlogItem from "./BlogItem.component";
+import BlogItem from "./components/BlogItem";
 
-import styles from "./styles/Blog.module.scss";
+import styles from "./Blog.module.scss";
 
 export const Blog = () => {
       const MOCKS = [
@@ -43,11 +45,11 @@ export const Blog = () => {
                   <h2>Our Blog Posts</h2>
                   <p>
                         We are an online plant shop offering a wide range of cheap and trendy
-                        plants.{" "}
+                        plants.
                   </p>
                   <div className={styles.blogs}>
                         {MOCKS.map((plant, index) => (
-                              <BlogItem plant={plant} key={`${plant}_${index}`} />
+                              <BlogItem plant={plant} key={generateKey(`${index}`)} />
                         ))}
                   </div>
             </div>

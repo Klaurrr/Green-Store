@@ -1,7 +1,8 @@
-import { FC, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+import generateKey from "@/components/common/GenerateKey";
 import IconMobile from "@/components/ui/IconMobile";
 import useWindowSize from "@/hooks/UseWindowSize";
 import { usePlantsStore } from "@/store";
@@ -22,10 +23,15 @@ export const PlantSwitcher: FC<IPlantSwitcherProps> = ({ images, currentPlant })
 
       const { addToWishlist, wishlist } = usePlantsStore((state) => state);
 
-      const addToWishlistHandler = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-            event.stopPropagation();
-            addToWishlist(currentPlant[0]);
-      };
+      const addToWishlistHandler = useCallback(
+            (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+                  event.stopPropagation();
+                  addToWishlist(currentPlant);
+            },
+            [addToWishlist, currentPlant]
+      );
+
+      const STYLES = { width: "48px", height: "48px", background: "#F6F6F6" };
 
       return (
             <article className={styles.container}>
@@ -36,30 +42,21 @@ export const PlantSwitcher: FC<IPlantSwitcherProps> = ({ images, currentPlant })
                                     alt="slider with plants"
                                     className={index === currentImage ? styles.active : ""}
                                     onClick={() => setCurrentImage(index)}
-                                    key={index}
+                                    key={generateKey(`${index}`)}
                               />
                         ))}
                   </div>
                   <div>
                         {isSmallScreen && (
                               <div className={styles.mobile__icons}>
-                                    <IconMobile
-                                          style={{
-                                                width: "48px",
-                                                height: "48px",
-                                                background: "#F6F6F6",
-                                          }}>
+                                    <IconMobile style={STYLES}>
                                           <ArrowLeft onClick={() => push("/Home")} />
                                     </IconMobile>
                                     <IconMobile
                                           active={wishlist.some(
-                                                (item) => item.id === currentPlant[0].id
+                                                (item) => item.id === currentPlant.id
                                           )}
-                                          style={{
-                                                width: "48px",
-                                                height: "48px",
-                                                background: "#F6F6F6",
-                                          }}>
+                                          style={STYLES}>
                                           <HeartSvg onClick={addToWishlistHandler} />
                                     </IconMobile>
                               </div>

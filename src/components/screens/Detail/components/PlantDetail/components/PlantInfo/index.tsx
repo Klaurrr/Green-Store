@@ -12,7 +12,7 @@ import { IPlantDetailProps } from "../../PlantDetail.props";
 import styles from "./PlantInfo.module.scss";
 
 export const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
-      const { name, price, rating, description } = currentPlant[0];
+      const { name, price, rating, description } = currentPlant;
 
       const [currentSize, setCurrentSize] = useState("S");
       const [counter, setCounter] = useState(1);
@@ -23,16 +23,16 @@ export const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
       const { plants } = usePlantsStore((state) => state.cart);
 
       const countHandler = (operation: string) => {
-            if (operation === "decrease") {
-                  if (counter > 1) {
-                        setCounter(counter - 1);
-                  }
-            } else setCounter(counter + 1);
+            setCounter((prevCounter) =>
+                  operation === "decrease" ? Math.max(prevCounter - 1, 1) : prevCounter + 1
+            );
       };
 
       const addCartHandler = () => {
-            addCart(currentPlant[0], counter);
+            addCart(currentPlant, counter);
       };
+
+      const BUTTON_STYLE = { width: "130px", height: "40px" };
 
       return (
             <section className={styles.container}>
@@ -75,17 +75,14 @@ export const PlantInfo: FC<IPlantDetailProps> = ({ currentPlant }) => {
                         </div>
                         <div className={styles.buttons}>
                               <Button
-                                    style={{ width: "130px", height: "40px" }}
+                                    style={BUTTON_STYLE}
                                     handler={() => {
                                           addCartHandler(), router.push("/Shop/ShoppingCart");
                                     }}>
                                     BUY NOW
                               </Button>
-                              <Button
-                                    style={{ width: "130px", height: "40px" }}
-                                    invert
-                                    handler={addCartHandler}>
-                                    {plants.some((plant) => plant.id === currentPlant[0].id)
+                              <Button style={BUTTON_STYLE} invert handler={addCartHandler}>
+                                    {plants.some((plant) => plant.id === currentPlant.id)
                                           ? "ADDED"
                                           : "ADD TO CART"}
                               </Button>

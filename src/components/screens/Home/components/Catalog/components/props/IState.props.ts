@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-export interface ICatalogMenuProps {
+export interface IStateProps {
       active: string;
       setActive: Dispatch<SetStateAction<string>>;
 }

@@ -16,11 +16,11 @@ module.exports = {
             NEXTAUTH_URL: process.env.NEXTAUTH_URL,
             MONGODB_URI: process.env.MONGODB_URI,
             PLANTS_URL: process.env.PLANTS_URL,
+            SIGNUP: process.env.SIGNUP,
       },
       async headers() {
             return [
                   {
-                        // matching all API routes
                         source: "/api/:path*",
                         headers: [
                               { key: "Access-Control-Allow-Credentials", value: "true" },

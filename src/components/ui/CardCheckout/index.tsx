@@ -7,11 +7,13 @@ import { ICardCheckoutProps } from "./CardCheckout.props";
 import styles from "./CardCheckout.module.scss";
 
 const CardCheckout: FC<ICardCheckoutProps> = ({ plant, quantity }) => {
+      const { img, name, price } = plant;
+
       return (
             <div className={styles.plant}>
-                  <img src={plantsImg[plant.img].src} alt="plant" className={styles.image} />
+                  <img src={plantsImg[img].src} alt="plant" className={styles.image} />
                   <div className={styles["plant-title"]}>
-                        <h4>{plant.name}</h4>
+                        <h4>{name}</h4>
                         <p>
                               SKU: <span>some SKU</span>
                         </p>
@@ -20,7 +22,7 @@ const CardCheckout: FC<ICardCheckoutProps> = ({ plant, quantity }) => {
                         <span>(x {quantity})</span>
                   </div>
                   <div className={styles.price}>
-                        <p>${Math.ceil(plant.price * quantity)}</p>
+                        <p>${Math.ceil(price * quantity)}</p>
                   </div>
             </div>
       );

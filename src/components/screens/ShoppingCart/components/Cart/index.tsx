@@ -8,8 +8,8 @@ import { CartTotals, PlantsList } from "./components";
 import styles from "./Cart.module.scss";
 
 const Cart = () => {
-      const { data: plants } = useQuery("allPlants", () =>
-            fetch("https://green-store-beige.vercel.app/api/plants").then((res) => res.json())
+      const { data: plants, isLoading } = useQuery("allPlants", () =>
+            fetch(process.env.PLANTS_URL!).then((res) => res.json())
       );
 
       return (
@@ -19,12 +19,14 @@ const Cart = () => {
                         <CartTotals />
                   </div>
                   <div className={styles.wrapper_2}>
-                        {plants ? (
-                              <PlantsSlider title="You may be interested in" plants={plants} />
-                        ) : (
+                        {isLoading ? (
                               <div className={styles.preloader}>
                                     <ClipLoader color="#46A358" />
                               </div>
+                        ) : plants ? (
+                              <PlantsSlider title="You may be interested in" plants={plants} />
+                        ) : (
+                              <h1>Слайдер сломался...</h1>
                         )}
                   </div>
             </div>

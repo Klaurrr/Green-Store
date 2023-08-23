@@ -1,8 +1,8 @@
 import Button from "@/components/ui/Button";
 
-import plantsImg from "../../../../../../public/assets/plantsImg";
+import plantsImg from "../../../../../../../../public/assets/plantsImg";
 
-import styles from "./styles/Screen.module.scss";
+import styles from "./Screen.module.scss";
 
 const Screen = () => {
       return (

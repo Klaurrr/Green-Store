@@ -1,15 +1,13 @@
 import { FC } from "react";
 
-import icons from "../../../../../../public/assets/icons";
+import icons from "../../../../../../../../public/assets/icons";
 
-import { IMenuProps } from "./props/Menu.props";
-import Categories from "./Categories.component";
-import PriceRange from "./PriceRange.component";
-import Size from "./Size.component";
+import { Categories, PriceRange, Size } from "./../";
+import { IMenuProps } from "./Menu.props";
 
-import styles from "./styles/CatalogMenu.module.scss";
+import styles from "./CatalogMenu.module.scss";
 
-const Menu: FC<IMenuProps> = ({ active, setActive, setCurrentPage }) => {
+export const Menu: FC<IMenuProps> = ({ active, setActive, setCurrentPage }) => {
       return (
             <div className={styles.container}>
                   <div className={styles.wrapper}>
@@ -24,5 +22,3 @@ const Menu: FC<IMenuProps> = ({ active, setActive, setCurrentPage }) => {
             </div>
       );
 };
-
-export default Menu;

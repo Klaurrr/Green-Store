@@ -5,7 +5,7 @@ import Button from "../Button";
 import styles from "./ErrorBanner.module.scss";
 
 const ErrorBanner = () => {
-      const router = useRouter();
+      const { push } = useRouter();
 
       return (
             <div className={styles.container}>
@@ -21,7 +21,7 @@ const ErrorBanner = () => {
                         </div>
                         <Button
                               style={{ width: "140px", height: "40px", fontWeight: "700" }}
-                              handler={() => router.push("/Home")}>
+                              handler={() => push("/Home")}>
                               RETURN
                         </Button>
                   </div>

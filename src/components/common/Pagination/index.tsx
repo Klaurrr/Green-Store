@@ -2,6 +2,7 @@ import { useState } from "react";
 import clsx from "clsx";
 
 import icons from "../../../../public/assets/icons";
+import generateKey from "../GenerateKey";
 
 import { IPaginationProps } from "./Pagination.props";
 
@@ -62,8 +63,7 @@ const Pagination = ({
                                           : styles.paginate__item
                               }
                               onClick={() => paginate(number)}
-                              key={`${number}_${index}`}
-                        >
+                              key={generateKey(`${index}`)}>
                               {number}
                         </div>
                   ))}

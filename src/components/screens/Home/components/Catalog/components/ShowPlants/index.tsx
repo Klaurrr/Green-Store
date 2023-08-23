@@ -5,9 +5,9 @@ import { usePlantsStore } from "@/store";
 import { IPlants } from "@/types/IPlants";
 import { IPlantsState } from "@/types/IPlantsState";
 
-import { IShowPlantsProps } from "./props/ShowPlants.props";
+import { IShowPlantsProps } from "./ShowPlants.props";
 
-const showPlants = ({
+export const showPlants = ({
       sort,
       activeCategory,
       setDataForPagination,
@@ -50,5 +50,3 @@ const showPlants = ({
 
       return showPlants;
 };
-
-export default showPlants;

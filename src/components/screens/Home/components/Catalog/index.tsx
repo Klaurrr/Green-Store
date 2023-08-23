@@ -3,19 +3,17 @@ import React, { useEffect, useState } from "react";
 import Pagination from "@/components/common/Pagination";
 import { usePlantsStore } from "@/store";
 
-import CardsList from "./CardsList.component";
-import Menu from "./Menu.component";
-import showPlants from "./ShowPlants.component";
+import { CardsList, Menu, showPlants } from "./components";
 
-import styles from "./styles/Catalog.module.scss";
+import styles from "./Catalog.module.scss";
 
 export const Catalog = () => {
-      const [activeCategory, setActiveCategory] = useState("default");
+      const [activeCategory, setActiveCategory] = useState<string>("default");
       const [sort, setSort] = useState<string>("default");
 
       const plants = usePlantsStore((state) => state.plants);
 
-      const [dataForPagination, setDataForPagination] = useState(0);
+      const [dataForPagination, setDataForPagination] = useState<number>(0);
       const [currentPage, setCurrentPage] = useState<number>(1);
       const [dataPerPage] = useState<number>(6);
 

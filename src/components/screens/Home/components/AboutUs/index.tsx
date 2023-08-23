@@ -1,5 +1,7 @@
 import React from "react";
 
+import generateKey from "@/components/common/GenerateKey";
+
 import icons from "../../../../../../public/assets/icons";
 import plantsImg from "../../../../../../public/assets/plantsImg";
 import Button from "../../../../ui/Button";
@@ -10,7 +12,7 @@ export const AboutUs = () => {
       return (
             <div className={styles.container}>
                   {["Arugula", "Monstera"].map((plant, index) => (
-                        <div className={styles.wrapper} key={`${plant}_${index}`}>
+                        <div className={styles.wrapper} key={generateKey(`${index}`)}>
                               <img src={plantsImg[`${plant}`].src} alt="plant-img" />
                               <div className={styles.description}>
                                     <h3>Summer cactus & succulents</h3>

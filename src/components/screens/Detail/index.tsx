@@ -39,7 +39,7 @@ const DetailPage = () => {
                         </div>
                   ) : allPlants ? (
                         <>
-                              <PlantDetail currentPlant={currentPlant} />
+                              <PlantDetail currentPlant={currentPlant[0]} />
                               {!isSmallScreen && (
                                     <PlantsSlider plants={allPlants} title="Releted Products" />
                               )}
