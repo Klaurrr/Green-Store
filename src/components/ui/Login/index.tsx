@@ -35,9 +35,9 @@ const Login: FC<ILoginProps> = ({ setWindowIsVisible }) => {
       const onSubmit: SubmitHandler<any> = async (data, event) => {
             event?.preventDefault();
             if (mode === "Login") {
-                  handleLogin(setLoading, data, setWindowIsVisible, setSubmitError);
+                  handleLogin({ setLoading, data, setWindowIsVisible, setSubmitError });
             } else {
-                  handleRegistration(data, setWindowIsVisible, setSubmitError, setLoading);
+                  handleRegistration({ data, setWindowIsVisible, setSubmitError, setLoading });
             }
       };
 
