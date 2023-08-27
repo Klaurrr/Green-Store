@@ -1,46 +1,46 @@
 .container {
-    .textarea {
-        display: inline-flex;
-        flex-direction: column;
-        margin-top: 55px;
+	.textarea {
+		display: inline-flex;
+		flex-direction: column;
+		margin-top: 55px;
 
-        h3 {
-            font-size: 15px;
-            line-height: 15px;
-            margin-bottom: 10px;
-        }
+		h3 {
+			font-size: 15px;
+			line-height: 15px;
+			margin-bottom: 10px;
+		}
 
-        textarea {
-            width: 350px;
-            height: 152px;
-            border-radius: 3px;
-            border: 1px solid #EAEAEA;
-            padding: 9px;
-            resize: none;
+		textarea {
+			width: 350px;
+			height: 152px;
+			border-radius: 3px;
+			border: 1px solid #EAEAEA;
+			padding: 9px;
+			resize: none;
 
-            &:focus {
-                outline: none;
+			&:focus {
+				outline: none;
 
-            }
-        }
+			}
+		}
 
-        @media (max-width: 768px) {
-            width: 100%;
+		@media (width <= 768px) {
+			width: 100%;
 
-            textarea {
-                width: auto;
-                min-width: 350px;
-            }
-        }
+			textarea {
+				width: auto;
+				min-width: 350px;
+			}
+		}
 
 
-    }
+	}
 
-    @media (min-width: 769px) and (max-width: 1023px) {
-        .textarea {
-            h3 {
-                font-size: 17px
-            }
-        }
-    }
+	@media (width >= 769px) and (width <= 1023px) {
+		.textarea {
+			h3 {
+				font-size: 17px
+			}
+		}
+	}
 }

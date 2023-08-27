@@ -1,150 +1,147 @@
 .container {
-    cursor: pointer;
-    margin-bottom: 50px;
-    position: relative;
-
-    max-height: 355px;
-    max-width: 258px;
-
-
-    &::before {
-        content: "";
-        opacity: 0;
-        transition: all 0.2s ease-in-out;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: green;
-        z-index: 1;
-    }
-
-    &:hover {
-
-        &::before,
-        .icons {
-            opacity: 1;
-        }
-    }
+	cursor: pointer;
+	margin-bottom: 50px;
+	position: relative;
+	max-height: 355px;
+	max-width: 258px;
 
 
-    .icons {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        opacity: 0;
-        bottom: 14px;
-        transition: all 0.2s ease-in-out;
-        gap: 27px;
+	&::before {
+		content: "";
+		opacity: 0;
+		transition: all 0.2s ease-in-out;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: green;
+		z-index: 1;
+	}
 
-        .active {
-            path {
-                fill: #46A358;
-            }
-        }
-    }
+	&:hover {
+		&::before,
+		.icons {
+			opacity: 1;
+		}
+	}
+
+
+	.icons {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		opacity: 0;
+		bottom: 14px;
+		transition: all 0.2s ease-in-out;
+		gap: 27px;
+
+		.active {
+			path {
+				fill: #46A358;
+			}
+		}
+	}
 
 
 
 
-    .wrapper_1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+	.wrapper_1 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: 300px;
+		background: #FBFBFB;
 
-        height: 300px;
-        background: #FBFBFB;
+		img {
+			width: 70%;
+			height: 70%;
+		}
+	}
 
-        img {
-            width: 70%;
-            height: 70%;
-        }
-    }
+	.wrapper_2 {
+		margin-top: 12px;
 
-    .wrapper_2 {
-        margin-top: 12px;
+		p {
+			font-size: 16px;
+			line-height: 16px;
+			margin-bottom: 5px;
+		}
 
-        p {
-            font-size: 16px;
-            line-height: 16px;
-            margin-bottom: 5px;
-        }
+		span {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 16px;
+			color: #46A358;
+		}
+	}
 
-        span {
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 16px;
-            color: #46A358;
-        }
-    }
+	@media (width <= 768px) {
+		min-width: 175px !important;
+		min-height: 200px !important;
+		max-width: 175px;
+		max-height: 200px;
 
-    @media (max-width: 768px) {
-        min-width: 175px !important;
-        min-height: 200px !important;
-        max-width: 175px;
-        max-height: 200px;
+		&::before {
+			height: 0;
+		}
 
-        &::before {
-            height: 0;
-        }
+		&:hover {
+			.icons {
+				display: none;
+			}
+		}
 
-        &:hover {
-            .icons {
-                display: none;
-            }
-        }
+		.heart__mobile {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			width: 28px;
+			height: 28px;
+			border-radius: 50%;
+			background: #FFF;
+			z-index: 10;
+			top: 12px;
+			right: 11px;
 
-        .heart__mobile {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: #FFF;
-            z-index: 10;
-            top: 12px;
-            right: 11px;
+			.active {
+				path {
+					fill: #46A358;
+				}
+			}
 
-            .active {
-                path {
-                    fill: #46A358;
-                }
-            }
-
-            svg {
-                path {
-                    fill: #A5A5A5;
-                }
-            }
-        }
-
+			svg {
+				path {
+					fill: #A5A5A5;
+				}
+			}
+		}
 
 
-        .wrapper_1 {
-            border-radius: 20px;
-            max-height: 200px;
+
+		.wrapper_1 {
+			border-radius: 20px;
+			max-height: 200px;
 
 
-            img {
-                width: auto;
-            }
-        }
-    }
+			img {
+				width: auto;
+			}
+		}
+	}
 
-    @media (min-width: 768px) and (max-width: 1023px) {
-        .wrapper_2 {
-            p {
-                font-size: 18px;
-            }
+	@media (width >= 768px) and (width <= 1023px) {
+		.wrapper_2 {
+			p {
+				font-size: 18px;
+			}
 
-            span {
-                font-size: 20px;
-            }
-        }
-    }
+			span {
+				font-size: 20px;
+			}
+		}
+	}
 
 }

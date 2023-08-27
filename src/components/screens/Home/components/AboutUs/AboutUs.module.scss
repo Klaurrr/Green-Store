@@ -1,72 +1,72 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 100px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 100px;
 
-    .wrapper {
-        display: flex;
-        align-items: center;
-        width: 586px;
-        height: 250px;
-        background: #FBFBFB;
+	.wrapper {
+		display: flex;
+		align-items: center;
+		width: 586px;
+		height: 250px;
+		background: #FBFBFB;
 
-        img {
-            height: 100%;
-        }
+		img {
+			height: 100%;
+		}
 
-        .description {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: space-between;
-            text-align: right;
-            height: 100%;
-            line-height: 24px;
-            padding: 37px 30px 46px 0px;
+		.description {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: space-between;
+			text-align: right;
+			height: 100%;
+			line-height: 24px;
+			padding: 37px 30px 46px 0;
 
 
 
-            h3 {
-                width: 150px;
-                height: 48px;
-                font-weight: 900;
-                font-size: 18px;
+			h3 {
+				width: 150px;
+				height: 48px;
+				font-weight: 900;
+				font-size: 18px;
 
-            }
+			}
 
-            p {
-                font-size: 14px;
-                color: #727272;
-            }
-        }
-    }
+			p {
+				font-size: 14px;
+				color: #727272;
+			}
+		}
+	}
 
-    @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 10px;
-        max-width: 768px;
+	@media (width <= 768px) {
+		flex-direction: column;
+		gap: 10px;
+		max-width: 768px;
 
-        .wrapper {
-            width: auto;
-            height: auto;
+		.wrapper {
+			width: auto;
+			height: auto;
 
-            img[alt="plant-img"] {
-                width: 45%;
-            }
-        }
-    }
+			img[alt="plant-img"] {
+				width: 45%;
+			}
+		}
+	}
 
-    @media (min-width: 768px) and (max-width: 1023px) {
-        .wrapper {
-            .description {
-                h3 {
-                    font-size: 20px;
-                }
+	@media (width >= 768px) and (width <= 1023px) {
+		.wrapper {
+			.description {
+				h3 {
+					font-size: 20px;
+				}
 
-                p {
-                    font-size: 16px;
-                }
-            }
-        }
-    }
+				p {
+					font-size: 16px;
+				}
+			}
+		}
+	}
 }

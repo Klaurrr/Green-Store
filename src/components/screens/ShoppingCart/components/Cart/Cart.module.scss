@@ -1,25 +1,23 @@
 .container {
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
 
-    .wrapper {
-        display: flex;
-        justify-content: space-between;
+	}
 
-    }
-
-    .preloader {
-        display: flex;
-        justify-content: center;
-    }
+	.preloader {
+		display: flex;
+		justify-content: center;
+	}
 
 
-    @media (max-width: 768px) {
+	@media (width <= 768px) {
+		.wrapper {
+			display: block;
+		}
 
-        .wrapper {
-            display: block;
-        }
-
-        .wrapper_2 {
-            display: none;
-        }
-    }
+		.wrapper_2 {
+			display: none;
+		}
+	}
 }

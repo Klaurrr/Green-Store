@@ -1,16 +1,16 @@
 .logo {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 
 
-    .title {
-        color: #46a358;
-        font-weight: 800;
-        font-size: 18px;
-        margin-left: 6px;
-    }
+	.title {
+		color: #46A358;
+		font-weight: 800;
+		font-size: 18px;
+		margin-left: 6px;
+	}
 
-    @media (max-width: 769px) {
-        display: none;
-    }
+	@media (width <= 769px) {
+		display: none;
+	}
 }

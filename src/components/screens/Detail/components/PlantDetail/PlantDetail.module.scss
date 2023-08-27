@@ -1,13 +1,13 @@
 .container {
-    .wrapper {
-        display: flex;
-    }
+	.wrapper {
+		display: flex;
+	}
 
-    @media (max-width: 768px) {
-        margin-top: 17px;
+	@media (width <= 768px) {
+		margin-top: 17px;
 
-        .wrapper {
-            display: block;
-        }
-    }
+		.wrapper {
+			display: block;
+		}
+	}
 }

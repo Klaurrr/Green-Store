@@ -1,25 +1,23 @@
 .container {
-    h3 {
-        margin-bottom: 7px;
-    }
+	h3 {
+		margin-bottom: 7px;
+	}
 
-    .wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        padding-left: 10px;
-
-        cursor: pointer;
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 10px;
+		cursor: pointer;
 
 
-    }
+	}
 
-    .active {
-        p {
-            font-weight: 700 !important;
-            color: #46A358;
-        }
+	.active {
+		p {
+			font-weight: 700 !important;
+			color: #46A358;
+		}
 
-    }
+	}
 }

@@ -1,20 +1,20 @@
 .container {
-    width: 100%;
+	width: 100%;
 
-    .signature {
-        text-align: center;
-        font-size: 14px;
-        line-height: 30px;
-        margin-top: 7px;
-    }
+	.signature {
+		text-align: center;
+		font-size: 14px;
+		line-height: 30px;
+		margin-top: 7px;
+	}
 
-    @media (max-width: 768px) {
-        padding-bottom: 120px;
-    }
+	@media (width <= 768px) {
+		padding-bottom: 120px;
+	}
 
-    @media (min-width: 768px) and (max-width: 1023px) {
-        .signature {
-            font-size: 16px;
-        }
-    }
+	@media (width >= 768px) and (width <= 1023px) {
+		.signature {
+			font-size: 16px;
+		}
+	}
 }

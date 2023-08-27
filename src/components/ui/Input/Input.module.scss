@@ -1,54 +1,54 @@
 .container {
-    .title {
-        font-size: 15px;
-        font-weight: 400;
-        margin-bottom: 10px;
-        height: 28px;
-    }
+	.title {
+		font-size: 15px;
+		font-weight: 400;
+		margin-bottom: 10px;
+		height: 28px;
+	}
 
 
-    .required {
-        color: #F03800;
-        font-size: 22px;
-        margin-left: 3px;
-    }
+	.required {
+		color: #F03800;
+		font-size: 22px;
+		margin-left: 3px;
+	}
 
-    .input {
-        width: 350px;
-        height: 40px;
-        border-radius: 3px;
-        border: 1px solid #EAEAEA;
-        padding: 0 13px;
+	.input {
+		width: 350px;
+		height: 40px;
+		border-radius: 3px;
+		border: 1px solid #EAEAEA;
+		padding: 0 13px;
 
-        &:focus {
-            outline: none;
-        }
-    }
+		&:focus {
+			outline: none;
+		}
+	}
 
-    .error {
-        border: 1px solid #F03800;
-    }
+	.error {
+		border: 1px solid #F03800;
+	}
 
-    @media (max-width: 768px) {
-        display: inline-block;
-        width: 100%;
+	@media (width <= 768px) {
+		display: inline-block;
+		width: 100%;
 
-        .input {
-            width: 100%;
-        }
-    }
+		.input {
+			width: 100%;
+		}
+	}
 
-    @media (min-width: 769px) and (max-width: 1023px) {
-        .title {
-            font-size: 17px;
-        }
+	@media (width >= 769px) and (width <= 1023px) {
+		.title {
+			font-size: 17px;
+		}
 
-        .required {
-            font-size: 24px;
-        }
+		.required {
+			font-size: 24px;
+		}
 
-        .input {
-            font-size: 16px;
-        }
-    }
+		.input {
+			font-size: 16px;
+		}
+	}
 }

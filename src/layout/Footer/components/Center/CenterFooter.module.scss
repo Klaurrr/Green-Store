@@ -1,84 +1,83 @@
 .container {
-    background: rgba(70, 163, 88, 0.1);
-    height: 92px;
-    border-top: 1px solid rgba(70, 163, 88, 0.2);
-    border-bottom: 1px solid rgba(70, 163, 88, 0.2);
+	background: rgb(70 163 88 / 10%);
+	height: 92px;
+	border-top: 1px solid rgb(70 163 88 / 20%);
+	border-bottom: 1px solid rgb(70 163 88 / 20%);
 
 
-    .wrapper {
-        display: flex;
-        align-items: center;
-        padding: 27px 0px 27px 23px;
+	.wrapper {
+		display: flex;
+		align-items: center;
+		padding: 27px 0 27px 23px;
 
 
-        div {
-            display: flex;
-            align-items: center;
+		div {
+			display: flex;
+			align-items: center;
 
-            &:first-child {
-                margin-right: 75px;
-            }
+			&:first-child {
+				margin-right: 75px;
+			}
 
-            &:nth-child(3) {
-                margin: 0px 65px 0px 140px;
-            }
+			&:nth-child(3) {
+				margin: 0 65px 0 140px;
+			}
 
-            img {
-                margin-right: 12px;
-            }
+			img {
+				margin-right: 12px;
+			}
 
-            p,
-            a {
-                font-size: 14px;
-            }
+			p,
+			a {
+				font-size: 14px;
+			}
 
-            a {
-                cursor: pointer;
-                text-decoration: none;
-            }
-        }
-    }
+			a {
+				cursor: pointer;
+				text-decoration: none;
+			}
+		}
+	}
 
-    @media (max-width: 768px) {
-        display: flex;
+	@media (width <= 768px) {
+		display: flex;
 
-        .wrapper {
-            max-width: 100%;
-            width: 100%;
-            padding: 0;
-            justify-content: space-between;
+		.wrapper {
+			max-width: 100%;
+			width: 100%;
+			padding: 0;
+			justify-content: space-between;
 
-            div {
-                &:first-child {
-                    display: none;
-                }
+			div {
+				&:first-child {
+					display: none;
+				}
 
-                &:nth-child(3) {
-                    margin: 0 10px;
-                }
-            }
-        }
-    }
+				&:nth-child(3) {
+					margin: 0 10px;
+				}
+			}
+		}
+	}
 
-    @media (min-width: 769px) and (max-width: 1023px) {
-        .wrapper {
-            width: 100%;
-            justify-content: space-between;
-            padding: 27px 23px;
+	@media (width >= 769px) and (width <= 1023px) {
+		.wrapper {
+			width: 100%;
+			justify-content: space-between;
+			padding: 27px 23px;
 
-            div {
+			div {
+				&:first-child,
+				&:nth-child(3) {
+					margin: 0;
+				}
 
-                &:first-child,
-                &:nth-child(3) {
-                    margin: 0;
-                }
+				p,
+				a {
+					font-size: 18px;
+				}
 
-                p,
-                a {
-                    font-size: 18px;
-                }
-
-            }
-        }
-    }
+			}
+		}
+	}
 }

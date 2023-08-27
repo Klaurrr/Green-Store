@@ -1,127 +1,124 @@
 .container {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    max-width: 1200px;
-    margin: 0 auto;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
 
 
-    .window {
-        overflow: hidden;
+	.window {
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
 
-        width: 100%;
-        height: 100%;
 
+		.pages_container {
+			display: flex;
+			height: 100%;
+			transition: translate;
+			transition-timing-function: ease-in-out;
+			transition-duration: 300ms;
+			transition-property: transform;
+		}
+	}
 
-        .pages_container {
-            display: flex;
+	@media (width <= 768px) {
+		& {
+			max-width: 768px;
+			max-height: 190px;
 
-            height: 100%;
+			.window {
+				.pages_container {
+					max-height: 190px;
+				}
+			}
+		}
+	}
 
-            transition: translate;
-            transition-timing-function: ease-in-out;
-            transition-duration: 300ms;
-            transition-property: transform;
-        }
-    }
-
-    @media (max-width: 768px) {
-        & {
-            max-width: 768px;
-            max-height: 190px;
-
-            .window {
-                .pages_container {
-                    max-height: 190px;
-                }
-            }
-        }
-    }
-
-    @media (min-width: 1024px) {
-        min-width: 1024px;
-    }
+	@media (width >= 1024px) {
+		min-width: 1024px;
+	}
 }
 
 .dots {
-    position: absolute;
-    bottom: 17px;
-    display: flex;
-    gap: 7px;
+	position: absolute;
+	bottom: 17px;
+	display: flex;
+	gap: 7px;
 
-    .button {
-        width: 8px;
-        height: 8px;
-        opacity: 0.3;
-        border-radius: 100%;
-        outline: none;
-        border: none;
-        cursor: pointer;
-        background: rgba(70, 163, 88);
+	.button {
+		width: 8px;
+		height: 8px;
+		opacity: 0.3;
+		border-radius: 100%;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		background: rgb(70 163 88);
 
-        &_active {
-            @extend .button;
-            background: #46A358;
-            opacity: 1;
-        }
-    }
+		&_active {
+			@extend .button;
 
-    @media (max-width: 768px) {
-        & {
-            bottom: -5px;
-            gap: 10px;
+			background: #46A358;
+			opacity: 1;
+		}
+	}
 
-            .button {
-                width: 13px;
-                height: 13px;
-            }
-        }
-    }
+	@media (width <= 768px) {
+		& {
+			bottom: -5px;
+			gap: 10px;
 
-    @media (min-width: 769px) and (max-width: 1023px) {
-        & {
-            bottom: 15px;
-            gap: 15px;
+			.button {
+				width: 13px;
+				height: 13px;
+			}
+		}
+	}
 
-            .button {
-                width: 15px;
-                height: 15px;
-            }
-        }
-    }
+	@media (width >= 769px) and (width <= 1023px) {
+		& {
+			bottom: 15px;
+			gap: 15px;
+
+			.button {
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}
 
 }
 
 .switches {
-    display: flex;
-    gap: 10px;
-    margin-top: 60px;
+	display: flex;
+	gap: 10px;
+	margin-top: 60px;
 
-    .button {
-        width: 12px;
-        height: 12px;
-        border: 1px solid #46A358;
-        border-radius: 100%;
-        background: #FFF;
-        cursor: pointer;
+	.button {
+		width: 12px;
+		height: 12px;
+		border: 1px solid #46A358;
+		border-radius: 100%;
+		background: #FFF;
+		cursor: pointer;
 
 
-        &_active {
-            @extend .button;
-            background-color: #46A358;
+		&_active {
+			@extend .button;
 
-        }
-    }
+			background-color: #46A358;
 
-    @media (min-width: 768px) and (max-width: 1023px) {
-        gap: 15px;
+		}
+	}
 
-        .button {
-            width: 20px;
-            height: 20px;
-        }
-    }
+	@media (width >= 768px) and (width <= 1023px) {
+		gap: 15px;
+
+		.button {
+			width: 20px;
+			height: 20px;
+		}
+	}
 }

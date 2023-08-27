@@ -1,121 +1,119 @@
 .container {
-    width: 100%;
-    margin-left: 73px;
+	width: 100%;
+	margin-left: 73px;
 
-    .title {
-        font-size: 17px;
-        font-weight: 700;
-        margin-bottom: 20px;
-    }
+	.title {
+		font-size: 17px;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
 
-    .subtitle {
+	.subtitle {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 10px;
+		border-bottom: 1px solid rgb(70 163 88 / 50%);
+		margin-bottom: 20px;
 
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(70, 163, 88, 0.50);
-        margin-bottom: 20px;
+		h4 {
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 16px;
 
-        h4 {
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 16px;
+			&:last-child {
+				padding-right: 15px;
+			}
+		}
 
-            &:last-child {
-                padding-right: 15px;
-            }
-        }
+	}
 
-    }
-
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 
 
 
-    }
 
-    .wrapper__2 {
-        width: 320px;
-        float: right;
+	}
 
-        @media (max-width: 768px) {
-            width: auto;
-            float: none;
-        }
-    }
+	.wrapper__2 {
+		width: 320px;
+		float: right;
 
-
-    .totalPrice {
-        margin: 17px 0 47px;
-
-        h5 {
-            text-align: right;
-            margin-bottom: 18px;
-
-            color: #3D3D3D;
-            font-size: 14px;
-            line-height: 16px;
-
-            span {
-                color: #46A358;
-                cursor: pointer;
-            }
-        }
-    }
-
-    .payment {
-        margin-bottom: 50px;
-
-        .payment__items {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+		@media (width <= 768px) {
+			width: auto;
+			float: none;
+		}
+	}
 
 
-            .payment__item {
-                cursor: pointer;
-            }
-        }
-    }
+	.totalPrice {
+		margin: 17px 0 47px;
 
-    @media (max-width: 768px) {
-        margin: 20px 0 0;
+		h5 {
+			text-align: right;
+			margin-bottom: 18px;
+			color: #3D3D3D;
+			font-size: 14px;
+			line-height: 16px;
 
-        .subtitle,
-        .wrapper,
-        .price-title {
-            display: none;
-        }
-    }
+			span {
+				color: #46A358;
+				cursor: pointer;
+			}
+		}
+	}
 
-    @media (min-width: 769px) and (max-width: 1023px) {
-        .title {
-            font-size: 19px;
-        }
+	.payment {
+		margin-bottom: 50px;
 
-        .subtitle {
-            h4 {
-                font-size: 18px;
-            }
+		.payment__items {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
 
-        }
 
-        .totalPrice {
-            h5 {
-                font-size: 16px;
-            }
-        }
+			.payment__item {
+				cursor: pointer;
+			}
+		}
+	}
 
-        .payment {
-            .payment__items {
-                .payment__item {
-                    font-size: 18px;
-                }
-            }
-        }
-    }
+	@media (width <= 768px) {
+		margin: 20px 0 0;
+
+		.subtitle,
+		.wrapper,
+		.price-title {
+			display: none;
+		}
+	}
+
+	@media (width >= 769px) and (width <= 1023px) {
+		.title {
+			font-size: 19px;
+		}
+
+		.subtitle {
+			h4 {
+				font-size: 18px;
+			}
+
+		}
+
+		.totalPrice {
+			h5 {
+				font-size: 16px;
+			}
+		}
+
+		.payment {
+			.payment__items {
+				.payment__item {
+					font-size: 18px;
+				}
+			}
+		}
+	}
 }

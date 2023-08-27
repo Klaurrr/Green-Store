@@ -1,54 +1,48 @@
 .container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
 
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    .paginate__item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-
-        user-select: none;
-
-        width: 35px;
-        height: 35px;
-
-        font-size: 18px;
-        line-height: 16px;
-
-
-        border-radius: 4px;
-
-        border: 1px solid #E5E5E5;
+	.paginate__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		user-select: none;
+		width: 35px;
+		height: 35px;
+		font-size: 18px;
+		line-height: 16px;
+		border-radius: 4px;
+		border: 1px solid #E5E5E5;
 
 
 
-    }
+	}
 
-    .active {
-        font-weight: 700;
-        background: #46A358;
-        border: none;
-        color: #FFFFFF;
-    }
+	.active {
+		font-weight: 700;
+		background: #46A358;
+		border: none;
+		color: #FFF;
+	}
 
-    .next_button {
-        @extend .paginate__item;
-    }
+	.next_button {
+		@extend .paginate__item;
+	}
 
-    .previous_button {
-        @extend .paginate__item;
-        transform: rotate(180deg);
-    }
+	.previous_button {
+		@extend .paginate__item;
 
-    @media (min-width: 768px) and (max-width: 1023px) {
-        .paginate__item {
-            width: 45px;
-            height: 45px;
-            font-size: 20px;
-            font-weight: 500;
-        }
-    }
+		transform: rotate(180deg);
+	}
+
+	@media (width >= 768px) and (width <= 1023px) {
+		.paginate__item {
+			width: 45px;
+			height: 45px;
+			font-size: 20px;
+			font-weight: 500;
+		}
+	}
 }

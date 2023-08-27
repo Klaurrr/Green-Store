@@ -1,52 +1,52 @@
 .container {
-    margin-top: 100px;
+	margin-top: 100px;
 
-    .switches {
-        display: flex;
-        gap: 30px;
-        border-bottom: 1px solid rgba(70, 163, 88, 0.2);
+	.switches {
+		display: flex;
+		gap: 30px;
+		border-bottom: 1px solid rgb(70 163 88 / 20%);
 
 
-        p {
-            font-size: 17px;
-            line-height: 16px;
-            padding-bottom: 12px;
-            cursor: pointer;
-        }
+		p {
+			font-size: 17px;
+			line-height: 16px;
+			padding-bottom: 12px;
+			cursor: pointer;
+		}
 
-        .active {
-            font-weight: 700;
-            color: #46A358;
-            border-bottom: 3px solid #46A358;
-        }
-    }
+		.active {
+			font-weight: 700;
+			color: #46A358;
+			border-bottom: 3px solid #46A358;
+		}
+	}
 
-    .desc {
-        margin-top: 18px;
+	.desc {
+		margin-top: 18px;
 
-        p {
-            font-size: 14px;
-            line-height: 24px;
-            color: #727272;
-        }
-    }
+		p {
+			font-size: 14px;
+			line-height: 24px;
+			color: #727272;
+		}
+	}
 
-    @media (max-width: 768px) {
-        margin: 40px 0 20px;
-    }
+	@media (width <= 768px) {
+		margin: 40px 0 20px;
+	}
 
-    @media (min-width: 768px) and (max-width: 1023px) {
-        .switches {
-            p {
-                font-size: 19px;
-            }
-        }
+	@media (width >= 768px) and (width <= 1023px) {
+		.switches {
+			p {
+				font-size: 19px;
+			}
+		}
 
-        .desc {
-            p {
-                font-size: 16px;
-            }
-        }
-    }
+		.desc {
+			p {
+				font-size: 16px;
+			}
+		}
+	}
 
 }

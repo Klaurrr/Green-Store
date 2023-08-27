@@ -1,60 +1,60 @@
 .container {
-    margin: 35px 0px 45px 0px;
+	margin: 35px 0 45px;
 
-    h3 {
-        margin-bottom: 20px;
-    }
-
-
-    .wrapper {
-        padding-left: 10px;
-
-        input[type="range"] {
-            width: 200px;
-            height: 15px;
-            appearance: none;
-            background: rgba(70, 163, 88, 0.2);
-            outline: none;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: inset 0 0 5px rgba(70, 163, 88, 0.2);
-            ;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: #46A358;
-            border: 3px solid #FFFFFF;
-            cursor: pointer;
-            box-shadow: -407px 0 0 400px #46A358;
-
-        }
+	h3 {
+		margin-bottom: 20px;
+	}
 
 
+	.wrapper {
+		padding-left: 10px;
+
+		input[type="range"] {
+			width: 200px;
+			height: 15px;
+			appearance: none;
+			background: rgb(70 163 88 / 20%);
+			outline: none;
+			border-radius: 15px;
+			overflow: hidden;
+			box-shadow: inset 0 0 5px rgb(70 163 88 / 20%);
+		;
+		}
+
+		input[type="range"]::-webkit-slider-thumb {
+			appearance: none;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: #46A358;
+			border: 3px solid #FFF;
+			cursor: pointer;
+			box-shadow: -407px 0 0 400px #46A358;
+
+		}
 
 
-        .price {
-            margin: 15px 0px;
-            font-size: 15px;
-            line-height: 16px;
 
-            span {
-                font-weight: 700;
-                color: #46A358;
-            }
-        }
-    }
 
-    @media (min-width: 769px) and (max-width: 1023px) {
-        & {
-            .wrapper {
-                .price {
-                    font-size: 18px;
-                }
-            }
-        }
-    }
+		.price {
+			margin: 15px 0;
+			font-size: 15px;
+			line-height: 16px;
+
+			span {
+				font-weight: 700;
+				color: #46A358;
+			}
+		}
+	}
+
+	@media (width >= 769px) and (width <= 1023px) {
+		& {
+			.wrapper {
+				.price {
+					font-size: 18px;
+				}
+			}
+		}
+	}
 }

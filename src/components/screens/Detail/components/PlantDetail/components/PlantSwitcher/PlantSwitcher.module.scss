@@ -1,78 +1,78 @@
 .container {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 
-    .switches {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+	.switches {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
 
 
-        .active {
-            outline: 1px solid #46A358;
-        }
+		.active {
+			outline: 1px solid #46A358;
+		}
 
-        img {
-            width: 100px;
-            height: 100px;
-            cursor: pointer;
-            user-select: none;
-        }
-    }
+		img {
+			width: 100px;
+			height: 100px;
+			cursor: pointer;
+			user-select: none;
+		}
+	}
 
-    .image {
-        margin: 0 76px 0 46px;
-    }
+	.image {
+		margin: 0 76px 0 46px;
+	}
 
-    @media (max-width: 565px) {
-        justify-content: center;
+	@media (width <= 565px) {
+		justify-content: center;
 
-        .switches {
-            display: none;
-        }
+		.switches {
+			display: none;
+		}
 
-        .switches+div {
-            position: relative;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+		.switches+div {
+			position: relative;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
-        .mobile__icons {
-            position: absolute;
-            top: 15px;
-            padding: 0 15px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
+		.mobile__icons {
+			position: absolute;
+			top: 15px;
+			padding: 0 15px;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
 
-        .image {
-            margin: 0;
-        }
-    }
+		.image {
+			margin: 0;
+		}
+	}
 
-    @media (max-width: 768px) {
-        .switches+div {
-            position: relative;
-            margin: 0;
-        }
+	@media (width <= 768px) {
+		.switches+div {
+			position: relative;
+			margin: 0;
+		}
 
-        .switches {
-            margin-right: 46px;
-        }
+		.switches {
+			margin-right: 46px;
+		}
 
-        .image {
-            margin: 0;
-        }
+		.image {
+			margin: 0;
+		}
 
-        .mobile__icons {
-            width: 100%;
-            position: absolute;
-            display: flex;
-            justify-content: space-between;
-            padding-right: 15px;
-        }
-    }
+		.mobile__icons {
+			width: 100%;
+			position: absolute;
+			display: flex;
+			justify-content: space-between;
+			padding-right: 15px;
+		}
+	}
 }

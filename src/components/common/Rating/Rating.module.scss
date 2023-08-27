@@ -1,14 +1,13 @@
 .container {
-    display: flex;
-    gap: 5px;
+	display: flex;
+	gap: 5px;
 
-    .star {
-        cursor: pointer;
-        fill: #C4C4C4;
-    }
+	.star {
+		cursor: pointer;
+		fill: #C4C4C4;
+	}
 
-    .fill {
-
-        fill: #FFAC0C;
-    }
+	.fill {
+		fill: #FFAC0C;
+	}
 }

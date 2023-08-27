@@ -1,13 +1,13 @@
 .container {
-    width: 100%;
+	width: 100%;
 
-    .wishlist {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 77px;
+	.wishlist {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 77px;
 
-        @media (max-width: 768px) {
-            justify-content: center;
-        }
-    }
+		@media (width <= 768px) {
+			justify-content: center;
+		}
+	}
 }

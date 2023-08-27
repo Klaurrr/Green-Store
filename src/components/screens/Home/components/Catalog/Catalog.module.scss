@@ -1,21 +1,21 @@
 .container {
-    .wrapper {
-        display: flex;
-    }
+	.wrapper {
+		display: flex;
+	}
 
-    .pagination {
-        display: flex;
-        margin-top: 20px;
-        justify-content: flex-end;
-    }
+	.pagination {
+		display: flex;
+		margin-top: 20px;
+		justify-content: flex-end;
+	}
 
 
-    @media (max-width: 768px) {
-        & {
-            .pagination {
-                justify-content: center;
-                margin-top: 40px;
-            }
-        }
-    }
+	@media (width <= 768px) {
+		& {
+			.pagination {
+				justify-content: center;
+				margin-top: 40px;
+			}
+		}
+	}
 }

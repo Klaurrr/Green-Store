@@ -1,97 +1,97 @@
 .container {
-    h3 {
-        font-size: 15px;
-        font-weight: 400;
-        margin-bottom: 10px;
+	h3 {
+		font-size: 15px;
+		font-weight: 400;
+		margin-bottom: 10px;
 
-        span {
-            color: #F03800;
-            font-size: 22px;
-        }
-    }
+		span {
+			color: #F03800;
+			font-size: 22px;
+		}
+	}
 
-    .select {
-        display: flex;
-        align-items: center;
-        border-radius: 3px;
-        border: 1px solid #EAEAEA;
-        height: 40px;
-        padding: 0 13px;
-        cursor: pointer;
-        position: relative;
+	.select {
+		display: flex;
+		align-items: center;
+		border-radius: 3px;
+		border: 1px solid #EAEAEA;
+		height: 40px;
+		padding: 0 13px;
+		cursor: pointer;
+		position: relative;
 
-        .field {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+		.field {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 
 
-            .placeholder {
-                color: #A5A5A5;
-                font-size: 14px;
-                font-weight: 400;
-            }
+			.placeholder {
+				color: #A5A5A5;
+				font-size: 14px;
+				font-weight: 400;
+			}
 
-            .value {
-                font-size: 15px;
-                font-weight: 400;
-            }
-        }
+			.value {
+				font-size: 15px;
+				font-weight: 400;
+			}
+		}
 
-        .answers {
-            box-shadow: 4px 4px 25px 0px rgba(135, 135, 135, 0.24);
-            position: absolute;
-            z-index: 1;
-            top: 45px;
-            left: 0;
-            width: 100%;
-            background: #ffffff;
-            border-radius: 3px;
+		.answers {
+			box-shadow: 4px 4px 25px 0 rgb(135 135 135 / 24%);
+			position: absolute;
+			z-index: 1;
+			top: 45px;
+			left: 0;
+			width: 100%;
+			background: #FFF;
+			border-radius: 3px;
 
-            div {
-                padding: 10px 13px;
-                transition: all 0.2s ease;
+			div {
+				padding: 10px 13px;
+				transition: all 0.2s ease;
 
-                &:hover {
-                    background: #46A358;
-                    color: #FFF;
-                }
-            }
-        }
-    }
+				&:hover {
+					background: #46A358;
+					color: #FFF;
+				}
+			}
+		}
+	}
 
-    .error {
-        border: 1px solid #F03800;
-    }
+	.error {
+		border: 1px solid #F03800;
+	}
 
-    @media (max-width: 768px) {
-        .select {
-            width: 100% !important;
-        }
-    }
+	@media (width <= 768px) {
+		.select {
+			width: 100% !important;
+		}
+	}
 
-    @media (min-width: 769px) and (max-width: 1023px) {
-        h3 {
-            font-size: 17px;
-        }
+	@media (width >= 769px) and (width <= 1023px) {
+		h3 {
+			font-size: 17px;
+		}
 
-        .select {
-            .field {
-                .placeholder {
-                    font-size: 16px;
-                }
+		.select {
+			.field {
+				.placeholder {
+					font-size: 16px;
+				}
 
-                .value {
-                    font-size: 17px;
-                }
-            }
+				.value {
+					font-size: 17px;
+				}
+			}
 
-            .answers {
-                div {
-                    font-size: 16px;
-                }
-            }
-        }
-    }
+			.answers {
+				div {
+					font-size: 16px;
+				}
+			}
+		}
+	}
 }

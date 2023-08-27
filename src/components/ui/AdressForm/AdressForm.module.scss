@@ -1,32 +1,32 @@
 .title {
-    margin-bottom: 21px;
-    font-size: 17px;
-    font-weight: 700;
+	margin-bottom: 21px;
+	font-size: 17px;
+	font-weight: 700;
 }
 
 .wrapper {
-    display: flex;
-    gap: 22px;
-    margin-bottom: 30px;
+	display: flex;
+	gap: 22px;
+	margin-bottom: 30px;
 
-    .optional-input {
-        display: flex;
-        align-items: flex-end;
-    }
+	.optional-input {
+		display: flex;
+		align-items: flex-end;
+	}
 
 
 }
 
-@media (max-width: 768px) {
-    .wrapper {
-        display: inline-flex;
-        flex-direction: column;
-        width: 100%;
-    }
+@media (width <= 768px) {
+	.wrapper {
+		display: inline-flex;
+		flex-direction: column;
+		width: 100%;
+	}
 }
 
-@media (min-width: 769px) and (max-width: 1023px) {
-    .title {
-        font-size: 19px;
-    }
+@media (width >= 769px) and (width <= 1023px) {
+	.title {
+		font-size: 19px;
+	}
 }

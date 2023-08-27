@@ -1,79 +1,77 @@
 .container {
-    height: 362px;
-    width: 268px;
-    background: #FBFBFB;
+	height: 362px;
+	width: 268px;
+	background: #FBFBFB;
 
-    .wrapper {
+	.wrapper {
+		padding: 9px 30px 13px 15px;
 
+		.date {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			color: #46A358;
+		}
 
-        padding: 9px 30px 13px 15px;
+		.title {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 26px;
+			margin: 4px 0;
+		}
 
-        .date {
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 16px;
-            color: #46A358;
-        }
+		.desc {
+			font-size: 14px;
+			line-height: 22px;
+			color: #727272;
+		}
 
-        .title {
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 26px;
-            margin: 4px 0px;
-        }
+		.read {
+			cursor: pointer;
+			display: inline-flex;
+			align-items: center;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			margin-top: 9px;
 
-        .desc {
-            font-size: 14px;
-            line-height: 22px;
-            color: #727272;
-        }
+			svg {
+				fill: #3D3D3D;
+				margin-left: 5px;
+			}
 
-        .read {
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 16px;
-            margin-top: 9px;
+			&:hover {
+				color: #46A358;
 
-            svg {
-                fill: #3D3D3D;
-                margin-left: 5px;
-            }
-
-            &:hover {
-                color: #46A358;
-
-                svg {
-                    fill: #46A358;
-                }
-            }
-        }
-    }
+				svg {
+					fill: #46A358;
+				}
+			}
+		}
+	}
 
 
-    @media (min-width: 768px) and (max-width: 1023px) {
-        position: relative;
+	@media (width >= 768px) and (width <= 1023px) {
+		position: relative;
 
-        .wrapper {
-            .date {
-                font-size: 16px;
-            }
+		.wrapper {
+			.date {
+				font-size: 16px;
+			}
 
-            .title {
-                font-size: 22px;
-            }
+			.title {
+				font-size: 22px;
+			}
 
-            .desc {
-                display: none;
-            }
+			.desc {
+				display: none;
+			}
 
-            .read {
-                font-size: 16px;
-                position: absolute;
-                bottom: 35px;
-            }
-        }
-    }
+			.read {
+				font-size: 16px;
+				position: absolute;
+				bottom: 35px;
+			}
+		}
+	}
 }

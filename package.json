@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint -- --fix"
+    "lint:fix": "next lint -- --fix",
+    "stylelint": "stylelint \"**/*.scss\" --fix"
   },
   "dependencies": {
     "@types/mongoose": "^5.11.97",
@@ -40,6 +41,9 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "sass": "^1.59.3",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3",
     "typescript": "^5.0.2"
   }
 }
